@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const TabItem = ({number, title, description, active, onClick }) => {
     return (
@@ -16,6 +17,21 @@ const TabItem = ({number, title, description, active, onClick }) => {
         </div>
       </div>
     );
+};
+
+//Prop Validation
+TabItem.propTypes = {
+  number: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired, // Accepts string or number
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  active: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
+};
+
+//Default Props (optional)
+TabItem.defaultProps = {
+  active: false,
+  onClick: () => {},
 };
 
 export default TabItem;

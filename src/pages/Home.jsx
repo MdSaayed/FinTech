@@ -7,6 +7,9 @@ import Button from '../components/button/Button';
 import Subtitle from '../components/subtitle/Subtitle';
 import Stats from '../components/stats/Stats';
 import Advantage from '../components/advantage/Advantage';
+import Testimonials from '../components/testimonials/Testimonials';
+import Faq from '../components/faq/Faq';
+import Blog from '../components/blog/Blogs';
 
 
 const Home = () => {
@@ -21,7 +24,7 @@ const Home = () => {
                         <Subtitle label='New' text="AI Update for January 2025"  />
 
                         {/* Title */}
-                        <div class="mb-6">
+                        <div className="mb-6">
                             <Title size='text-[2.5rem] lg:text-7xl'> Your go-to app for mastering your <span> Finances</span> </Title>
                         </div>
                         
@@ -148,6 +151,14 @@ const Home = () => {
          {/* Advantage */}
          <Advantage />
 
+         {/* Testimonials */}
+         <Testimonials />
+
+         {/* Faq */}
+         <Faq />
+
+         {/* Blogs */}
+         <Blog />
        </>
     );
 };

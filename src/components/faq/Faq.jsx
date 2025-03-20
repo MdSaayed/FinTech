@@ -43,12 +43,12 @@ const Faq = () => {
     return (
         <section className="faq-section bg-lightGrayishWhite py-12">
             <div className="container mx-auto">
-                <div className="bg-white rounded-3xl p-8 md:p-20">
+                <div className="bg-white rounded-3xl px-4 py-10 md:p-20">
                     {/* Subtitle */}
                     <Subtitle text="Frequently questions" align="justify-center" />
 
                     {/* Title */}
-                    <Title>
+                    <Title align='justify-center' className='text-center'>
                         Frequently ask <span>questions</span>
                     </Title>
 
@@ -60,7 +60,7 @@ const Faq = () => {
 
                     {/* Grid */}
                     <div className="mt-12 max-w-4xl mx-auto">
-                        <div className="faqs space-y-6">
+                        <div className="faqs md:space-y-3 lg:space-y-6">
                             {faqs.map((faq, index) => (
                                 <div
                                     key={index}

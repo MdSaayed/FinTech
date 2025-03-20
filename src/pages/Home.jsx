@@ -10,6 +10,7 @@ import Advantage from '../components/advantage/Advantage';
 import Testimonials from '../components/testimonials/Testimonials';
 import Faq from '../components/faq/Faq';
 import Blog from '../components/blog/Blogs';
+import Pricing from '../components/pricing/Pricing';
 
 
 const Home = () => {
@@ -55,7 +56,7 @@ const Home = () => {
                 <Subtitle text={'Our Best Features'} align = "justify-center" className='bg-white'/>
 
                 {/* Title */}
-                <Title className='max-w-[664px] text-center'> Unlock the <span>full potential of</span> your organization's data! </Title>
+                <Title className='max-w-[664px] text-center'> Unlock the <span> full potential of  </span> your organization's data! </Title>
 
                 {/* Description */}
                 <Description text={'The tools and tricks that today’s teams need to help their companies thrive.'} align='justify-center' className='max-w-[30rem]' />
@@ -159,6 +160,9 @@ const Home = () => {
 
          {/* Blogs */}
          <Blog />
+
+         {/* Pricing */}
+         <Pricing />
        </>
     );
 };

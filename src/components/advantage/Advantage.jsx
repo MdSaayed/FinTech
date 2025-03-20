@@ -32,7 +32,7 @@ const Advantage = () => {
                 <Subtitle align="justify-center" className="bg-white" text="Our Benefits" />
 
                 {/* Title */}
-                <Title>Experience the Advantage</Title>
+                <Title className='text-center'>Experience the Advantage</Title>
 
                 {/* Description */}
                 <Description 

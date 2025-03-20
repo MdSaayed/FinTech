@@ -7,3 +7,5 @@
 #1B1B1B --> bg-neutral-900
 #4C4A54 --> text-gray-700
 #976EF1 --> bg-purple-500
+#F9FAFB --> gray-50
+#F3F4F6 --> gray-100

@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const Title = ({
   level=1,
   children,
-  size="text-[2.5rem] lg:text-[3.5rem]",
+  size="text-[2rem] lg:text-[2.5rem] lg:text-[3.5rem]",
   align="justify-center",
   className='',
 }) => {

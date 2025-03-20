@@ -52,7 +52,7 @@ const Advantage = () => {
                     </div>
 
                     {/* Dynamic Tabs */}
-                    <div className="col-span-12 xl:col-span-7 space-y-12 p-2 md:p-6 bg-white">
+                    <div className="col-span-12 xl:col-span-7 space-y-12 md:p-6 bg-white">
                         {tabs.map((tab, i) => (
                             <TabItem 
                                 key={i} 

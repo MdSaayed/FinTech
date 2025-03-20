@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-color:#F3F4F6;
+}
+
+.font-sans{
+    font-family: "Instrument Sans", sans-serif;
+}
+
+.font-inter{
+    font-family: "Inter", sans-serif;
+}
+
+.font-roboto{
+    font-family: "Roboto", sans-serif;
+}
+
+.font-geist{
+    font-family: "Geist", sans-serif;
+}
+
+.swiper-wrapper {
+    transition-timing-function: linear !important;
+    display: flex;
+    align-items: center;
+}

@@ -16,3 +16,8 @@
     @apply px-5;
   }
 }
+
+.section-padding {
+  @apply py-12 ; 
+}
+

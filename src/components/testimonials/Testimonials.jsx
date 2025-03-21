@@ -19,8 +19,14 @@ const Testimonials = () => {
 
                 {/* Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 items-center gap-12 mt-16">
-                    <div className='mx-auto'>
+                    <div className='mx-auto relative'>
                         <img src="/assets/imgs/global/man-with-laptop.png" alt="Man With Laptop" />
+
+                        {/* Play Button */}
+                        <div className="flex items-center gap-3 text-white absolute bottom-8 right-5">
+                            <span>Customer Stories</span>
+                            <img className='cursor-pointer' src="/assets/icons/play-button.svg" alt="" />
+                        </div>
                     </div>
                     <div className="lg:col-span-2 bg-white rounded-3xl p-8 h-full">
                         <img className='mb-12' src="/assets/icons/quote.svg" alt="" />

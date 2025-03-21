@@ -11,6 +11,7 @@ import Testimonials from '../components/testimonials/Testimonials';
 import Faq from '../components/faq/Faq';
 import Blog from '../components/blog/Blogs';
 import Pricing from '../components/pricing/Pricing';
+import Cta from '../components/cta/Cta';
 
 
 const Home = () => {
@@ -158,11 +159,15 @@ const Home = () => {
          {/* Faq */}
          <Faq />
 
+         {/* Pricing */}
+         <Pricing />
+         
          {/* Blogs */}
          <Blog />
 
-         {/* Pricing */}
-         <Pricing />
+         {/* Cta */}
+         <Cta />
+
        </>
     );
 };

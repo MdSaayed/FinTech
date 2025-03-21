@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Subtitle from '../subtitle/Subtitle';
 import Title from '../title/Title';
 import Description from '../description/Description';
 import { Link } from 'react-router-dom';
+import VideoPopup from '../modal/VideoPopup';
 
 const Testimonials = () => {
+    const [showPopup, setShowPopup] = useState(false);
+
     return (
         <section>
             <div className="container py-24">
@@ -25,8 +28,11 @@ const Testimonials = () => {
                         {/* Play Button */}
                         <div className="flex items-center gap-3 text-white absolute bottom-8 right-5">
                             <span>Customer Stories</span>
-                            <img className='cursor-pointer' src="/assets/icons/play-button.svg" alt="" />
+                            <img  onClick={() => setShowPopup(true)} className='cursor-pointer' src="/assets/icons/play-button.svg" alt="" />
                         </div>
+
+                        {/* Showing Popup */}
+                        <VideoPopup showPopup={showPopup} onClose={() => setShowPopup(false)} videoLink="https://www.w3schools.com/html/mov_bbb.mp4"  />
                     </div>
                     <div className="lg:col-span-2 bg-white rounded-3xl p-8 h-full">
                         <img className='mb-12' src="/assets/icons/quote.svg" alt="" />

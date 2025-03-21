@@ -1,39 +1,55 @@
-import React, { useState } from "react";
-import Modal from "react-modal";
+import { IoCloseOutline } from "react-icons/io5";
+import PropTypes from "prop-types";
+import { useEffect } from "react";
 
-Modal.setAppElement("#root"); // Set the root element for accessibility
+const VideoPopup = ({ showPopup, onClose, videoLink }) => {
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    };
+    if (showPopup) {
+      document.addEventListener("keydown", handleKeyDown);
+    }
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [showPopup, onClose]);
 
-const VideoPopup = () => {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [video,setVideo] = useState();
-
-  const openModal = () => setModalIsOpen(true);
-  const closeModal = () => setModalIsOpen(false);
+  if (!showPopup) return null;
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <button onClick={openModal} className="px-4 py-2">
-        Play Video
-      </button>
+    <div
+      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div className="relative rounded-md shadow-lg max-w-lg w-full bg-white m-4">
+        
+        {/* Close Button */}
+        <button
+          className="absolute -top-8 right-0 md:-top-3 md:-right-3 cursor-pointer text-neutral-700 w-6 h-6 bg-white rounded-full flex items-center justify-center z-50"
+          onClick={onClose}
+          aria-label="Close video"
+        >
+          <IoCloseOutline className="w-6 h-6" />
+        </button>
 
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
-        overlayClassName="fixed inset-0 bg-black bg-opacity-50"
-      >
-        <div className="bg-white rounded-lg p-4 max-w-2xl w-full relative">
-          <button onClick={closeModal} className="absolute top-2 right-2 text-gray-600 text-xl">
-            ✖
-          </button>
-          <video controls autoPlay className="w-full rounded-md">
-            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </Modal>
+        {/* Video Player */}
+        <video controls autoPlay className="w-full rounded-md">
+          <source src={videoLink || "/default-video.mp4"} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </div>
   );
+};
+
+VideoPopup.propTypes = {
+  showPopup: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  videoLink: PropTypes.string,
 };
 
 export default VideoPopup;

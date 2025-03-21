@@ -5,14 +5,16 @@ import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
     return (
-        <footer className="bg-white border-t border-gray-200">
-            <div className="container mx-auto px-4 md:px-10 py-10">
+        <footer className="bg-white">
+            <div className="container">
                 {/* Top Section */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 xl:grid-cols-6 gap-y-16 gap-x-20 text-gray-800">
                     {/* Left Section - Company Info */}
                     <div className="lg:col-span-2">
                         <div className="flex items-center space-x-2">
-                            <img src="/assets/imgs/global/logo.svg" alt="UIAppX Logo" className="h-8" />
+                            <Link to={'/'}>
+                                <img src="/assets/imgs/global/logo.svg" alt="UIAppX Logo" className="h-8" />
+                            </Link>
                         </div>
                         <p className="mt-6 text-base text-gray-700">
                             Got questions? Just hit us up with a click! We're here to help you out with anything you need.
@@ -83,12 +85,12 @@ const Footer = () => {
 
                 {/* Bottom Section */}
                 <div className="flex flex-col md:flex-row justify-between items-center border-t border-gray-200 mt-12 pt-6 text-sm text-gray-600">
-                    <p className="text-base text-gray-700">
-                        Copyright Designed by <Link to="#" className="text-purple-600 hover:underline font-geist text-base text-gray-700">UiBazar</Link> and Powered by <Link to="#" className="text-purple-600 hover:underline font-geist text-base text-gray-700">React</Link>
+                    <p className="text-center text-base text-gray-700">
+                        Copyright Designed by <Link to="https://www.uibazar.com" className="text-purple-600 hover:underline font-geist text-base">UiBazar</Link> and Powered by <Link to="#" className="text-purple-600 hover:underline font-geist text-base">React</Link>
                     </p>
                     <div className="flex space-x-4 mt-4 md:mt-0">
-                        <Link to="#"><img src="/assets/icons/google-play.svg" alt="Google Play" className="h-10 w-auto" /></Link>
-                        <Link to="#"><img src="/assets/icons/apple-store.svg" alt="App Store" className="h-10 w-auto" /></Link>
+                        <Link to="https://play.google.com/store"><img src="/assets/icons/google-play.svg" alt="Google Play" className="h-10 w-auto" /></Link>
+                        <Link to="https://www.apple.com/app-store"><img src="/assets/icons/apple-store.svg" alt="App Store" className="h-10 w-auto" /></Link>
                     </div>
                 </div>
             </div>

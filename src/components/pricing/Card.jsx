@@ -7,13 +7,13 @@ const Card = ({ plan, packageType }) => {
     const selectedPackage = packages?.[packageType]; // Fix: Correctly access the package
 
     return (
-        <div className={`rounded-2xl py-6 transition-all duration-300 group 
+        <div className={`rounded-2xl py-8 transition-all duration-300 group 
             ${featuredCard ? 'bg-gray-900 text-white' : 'bg-white text-gray-700'}
             hover:bg-gray-900 hover:text-white`}>
 
             {/* Card Header */}
             <div className="px-8 pb-0">
-                <span className="font-geist font-normal text-base leading-snug">{name}</span>
+                <span className={`${featuredCard ? 'text-white':'text-purple-600'} text-purple-600 group-hover:text-white font-geist font-normal text-base leading-snug`}>{name}</span>
                 <p className="text-3xl font-geist font-medium py-2">{selectedPackage?.price}</p>
                 <p>{description}</p>
 

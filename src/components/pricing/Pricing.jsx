@@ -104,11 +104,11 @@ const Pricing = () => {
             {/* Filters */}
             <div className="flex flex-wrap items-center justify-center mb-10 mt-8 gap-2">
                 <button 
-                    className={`px-4 py-3 text-gray-700 font-normal font-geist text-base rounded-md ${packageType == 'monthly' && 'bg-white shadow-lg'}`} 
+                    className={`px-4 py-2 text-gray-700 font-normal font-geist text-base rounded-md ${packageType == 'monthly' && 'bg-white shadow-lg'}`} 
                     onClick={()=> setPackageType('monthly')}>Monthly billing</button>
                 <button 
-                    className={`px-4 py-3 text-gray-700 font-normal font-geist text-base rounded-md ${packageType == 'yearly' && 'bg-white shadow-lg'}`} 
-                    onClick={()=> setPackageType('yearly')}>Annual billing [Save 20%]</button>
+                    className={`px-4 py-2 text-gray-700 font-normal font-geist text-base rounded-md ${packageType == 'yearly' && 'bg-white shadow-lg'}`} 
+                    onClick={()=> setPackageType('yearly')}>Annual billing <span className="text-purple-600">[Save 20%]</span></button>
             </div>
 
             {/* Grid */}

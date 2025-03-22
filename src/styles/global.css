@@ -20,4 +20,7 @@
 .section-padding {
   @apply py-12 ; 
 }
+.section-padding-0 {
+  @apply py-0 ; 
+}
 

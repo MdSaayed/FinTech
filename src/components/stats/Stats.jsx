@@ -1,18 +1,39 @@
-import PropTypes from 'prop-types';
-import CountUp from 'react-countup';
+import { useState, useEffect, useRef } from "react";
+import PropTypes from "prop-types";
+import CountUp from "react-countup";
 
 export default function Stats() {
   const statsData = [
-    { value: 10000, suffix: 'K+', label: 'Users Worldwide' },
-    { value: 99, suffix: '%', label: 'Customer Satisfied' },
-    { value: 50, suffix: '+', label: 'Seamless Integration' },
-    { value: 1, prefix: '$', suffix: 'B+', label: 'Assets Managed' }
+    { value: 10000, suffix: "K+", label: "Users Worldwide" },
+    { value: 99, suffix: "%", label: "Customer Satisfied" },
+    { value: 50, suffix: "+", label: "Seamless Integration" },
+    { value: 1, prefix: "$", suffix: "B+", label: "Assets Managed" },
   ];
 
+  const [inView, setInView] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect(); // Stop observing once it becomes visible
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section>
+    <section ref={sectionRef}>
       <div className="container section-padding">
-        {/* Grid Wrapper - Outer Border Applied Here */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 border border-gray-300">
           {statsData.map((stat, index) => (
             <div
@@ -21,11 +42,24 @@ export default function Stats() {
             >
               {/* Animated Number Count */}
               <h2 className="text-4xl font-geist font-semibold text-slate-900">
-                <CountUp start={0} end={stat.value} duration={2.5} separator="," suffix={stat.suffix} prefix={stat.prefix} />
+                {inView ? (
+                  <CountUp
+                    start={0}
+                    end={stat.value}
+                    duration={2.5}
+                    separator=","
+                    suffix={stat.suffix}
+                    prefix={stat.prefix}
+                  />
+                ) : (
+                  "0"
+                )}
               </h2>
-              
+
               {/* Label Text */}
-              <p className="text-gray-700 font-geist text-base mt-3">{stat.label}</p>
+              <p className="text-gray-700 font-geist text-base mt-3">
+                {stat.label}
+              </p>
             </div>
           ))}
         </div>

@@ -36,7 +36,7 @@ const Home = () => {
 
                         {/* Buttons */}
                         <div className="flex gap-6 flex-wrap mt-12">
-                            <Button text="Get Started for Free" to='' icon={true} iconComponent={<FaApple />} />
+                            <Button text="Get Started for Free" to='' icon={false} iconComponent={<FaApple />} />
                             <Button text="Get Started for Free" to='' icon={true} iconComponent={<FaApple />} variant="secondary" />
                         </div>
                     </div>

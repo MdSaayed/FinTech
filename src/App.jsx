@@ -6,6 +6,7 @@ import Contact from "./pages/Contact";// Import page components
 import NotFound from "./pages/NotFound"; // 404 Page
 import MainLayout from "./layouts/MainLayout";
 import Features from "./pages/Features";
+import Pricing from "./pages/Pricing";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route index element={<Home />} />     {/* Home Page */}
         <Route path="about" element={<About />} />  {/* About Page */}
         <Route path="features" element={<Features />} />  {/* Features Page */}
+        <Route path="pricing" element={<Pricing />} />  {/* Pricing Page */}
         <Route path="contact" element={<Contact />} />  {/* Contact Page */}
         <Route path="*" element={<NotFound />} />  {/* 404 Page */}
       </Route>

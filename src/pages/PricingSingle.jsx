@@ -47,7 +47,7 @@ const PricingSingle = () => {
               <section className="">
                 <div className="container py-10 lg:py-24">
                   <div className="bg-white rounded-2xl p-5 md:p-10"> 
-                      <div className="flex flex-col lg:flex-row justify-between gap-8 ">
+                      <div className="flex flex-col lg:flex-row justify-between gap-y-12 gap-x-8 ">
                           <div className="">
                             <h1 className="text-gray-900 text-left text-3xl font-geist font-bold">{pricingData?.name}</h1>
                             <div className="mt-8">

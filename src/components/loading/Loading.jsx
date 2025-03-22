@@ -2,7 +2,7 @@ import React from "react";
 import Lottie from "lottie-react";
 import { useLoading } from "../../context/LoadingContext";
 
-const LoadingAnimation = () => {
+const Loading = () => {
   const { isLoading, animationData } = useLoading();
 
   if (!isLoading || !animationData) return null;
@@ -16,4 +16,4 @@ const LoadingAnimation = () => {
   );
 };
 
-export default LoadingAnimation;
+export default Loading;

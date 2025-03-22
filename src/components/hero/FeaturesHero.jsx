@@ -57,7 +57,7 @@ const FeaturesHero = () => {
   return (
     <section>
         <div className="container section-padding-0 relative">      
-            <div id="mouse-area" class="bg-white rounded-3xl px-2 py-28 relative">
+            <div id="mouse-area" className="bg-white rounded-3xl px-2 py-28 relative">
                 {/* Title */}
                 <Title align="justify-center" size='text-[2.5rem] lg:text-7xl' className="text-gray-900 text-center max-w-3xl">Drop your finance data right into your <span> sales funnel!</span></Title>
 

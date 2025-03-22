@@ -3,7 +3,7 @@ import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 
 import ErrorMessage from './../errorMessage/ErrorMessage';
-import LoadingAnimation from './../loadingAnimation/LoadingAnimation';
+import LoadingAnimation from '../loading/Loading';
 import Title from './../title/Title';
 import Subtitle from './../subtitle/Subtitle';
 import Description from './../description/Description';

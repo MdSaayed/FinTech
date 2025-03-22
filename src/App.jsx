@@ -1,28 +1,9 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";      // Import page components
-import About from "./pages/About";    // Import page components
-import Contact from "./pages/Contact";// Import page components
-import NotFound from "./pages/NotFound"; // 404 Page
-import MainLayout from "./layouts/MainLayout";
-import Features from "./pages/Features";
-import Pricing from "./pages/Pricing";
+import router from "./routes/AppRoutes";
+import { RouterProvider } from "react-router-dom";
 
 const App = () => {
-  return (
-    <Routes>
-      {/* Wrap all routes in the Layout */}
-      <Route path="/" element={<MainLayout />}>
-        {/* Define child routes */}
-        <Route index element={<Home />} />     {/* Home Page */}
-        <Route path="about" element={<About />} />  {/* About Page */}
-        <Route path="features" element={<Features />} />  {/* Features Page */}
-        <Route path="pricing" element={<Pricing />} />  {/* Pricing Page */}
-        <Route path="contact" element={<Contact />} />  {/* Contact Page */}
-        <Route path="*" element={<NotFound />} />  {/* 404 Page */}
-      </Route>
-    </Routes>
-  );
-};
+  return <RouterProvider router={router} />;
+}
 
 export default App;

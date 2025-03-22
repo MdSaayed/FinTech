@@ -1,13 +1,10 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { FaApple } from "react-icons/fa";
 import Description from "../description/Description";
 import Title from "../title/Title";
 import Button from "../button/Button";
-import { FaApple } from "react-icons/fa";
-
 
 const FeaturesHero = () => {
-  // State for left and right cursor positions
   const [cursorLeft, setCursorLeft] = useState({ x: 50, y: 100 });
   const [cursorRight, setCursorRight] = useState({ x: 500, y: 200 });
 
@@ -15,78 +12,92 @@ const FeaturesHero = () => {
     const section = document.getElementById("mouse-area");
     if (!section) return;
 
-    const updateSectionRect = () => section.getBoundingClientRect();
+    const sectionRect = section.getBoundingClientRect();
 
-    const moveCursorLeft = () => {
-      const sectionRect = updateSectionRect();
-      setCursorLeft(prev => ({
-        x: Math.min(Math.max(prev.x + (Math.random() * 600 - 300), sectionRect.left + 20), sectionRect.left + sectionRect.width / 2 - 50),
-        y: Math.min(Math.max(prev.y + (Math.random() * 600 - 300), sectionRect.top + 20), sectionRect.bottom - 50),
-      }));
+    // Instantly move the cursors on mount
+    setCursorLeft({
+      x: sectionRect.left + 50,
+      y: sectionRect.top + 100,
+    });
+    setCursorRight({
+      x: sectionRect.right - 100,
+      y: sectionRect.top + 200,
+    });
+
+    const moveCursor = (setCursor) => {
+      const newX = Math.min(Math.max(Math.random() * sectionRect.width, sectionRect.left + 20), sectionRect.right - 50);
+      const newY = Math.min(Math.max(Math.random() * sectionRect.height, sectionRect.top + 20), sectionRect.bottom - 50);
+
+      setCursor({ x: newX, y: newY });
+
+      // Set random delay for next movement (3s to 8s)
+      const nextMoveDelay = Math.random() * 5000 + 3000;
+      setTimeout(() => {
+        moveCursor(setCursor);
+      }, nextMoveDelay);
     };
 
-    const moveCursorRight = () => {
-      const sectionRect = updateSectionRect();
-      setCursorRight(prev => ({
-        x: Math.min(Math.max(prev.x + (Math.random() * 600 - 300), sectionRect.left + sectionRect.width / 2 + 50), sectionRect.right - 50),
-        y: Math.min(Math.max(prev.y + (Math.random() * 600 - 300), sectionRect.top + 20), sectionRect.bottom - 50),
-      }));
-    };
+    // Start movement with different delays
+    moveCursor(setCursorLeft);
+    setTimeout(() => {
+      moveCursor(setCursorRight);
+    }, Math.random() * 2000 + 1000); // Right cursor starts later
 
-    let leftInterval, rightInterval;
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        leftInterval = setInterval(moveCursorLeft, Math.random() * 5000 + 2000);
-        setTimeout(() => {
-          rightInterval = setInterval(moveCursorRight, Math.random() * 5000 + 2500);
-        }, Math.random() * 2000 + 1000); // Different delay for each cursor
-      } else {
-        clearInterval(leftInterval);
-        clearInterval(rightInterval);
-      }
-    }, { threshold: 0.5 });
-
-    observer.observe(section);
-    return () => {
-      observer.disconnect();
-      clearInterval(leftInterval);
-      clearInterval(rightInterval);
-    };
+    return () => {};
   }, []);
+  
 
   return (
-    <section>
-        <div className="container section-padding-0 relative">      
-            <div id="mouse-area" className="bg-white rounded-3xl px-2 py-28 relative -z-40">
-                {/* Title */}
-                <Title align="justify-center" size='text-[2.5rem] lg:text-7xl' className="text-gray-900 text-center max-w-3xl">Drop your finance data right into your <span> sales funnel!</span></Title>
+      <section>
+        <div className="container section-padding-0 relative">
+          <div id="mouse-area" className="bg-white rounded-3xl px-2 py-28 relative overflow-hidden">
+            {/* Title */}
+            <Title align="justify-center" size="text-[2.5rem] lg:text-[4.1rem]" className="text-gray-900 text-center max-w-[800px] z-30">
+              Drop your finance data right into your <span>sales funnel!</span>
+            </Title>
 
-                {/* Description */}
-                <Description text="Streamline your workflow, manage projects, and empower your team with AirTask  the all-in-one task management solution." className="max-w-xl" />
+            {/* Description */}
+            <Description
+              text="Streamline your workflow, manage projects, and empower your team with AirTask, the all-in-one task management solution."
+              className="max-w-xl z-30"
+            />
 
-                {/* Buttons */}
-                <div className="flex justify-center gap-6 flex-wrap mt-12">
-                    <Button text="Get Started for Free" to='' icon={false} iconComponent={<FaApple />} />
-                    <Button text="Download in iso" to='' icon={true} iconComponent={<FaApple />} variant="secondary" />
-                </div>
-
-                {/* Animated Cursors, Ensuring They Stay Inside Container */}
-                <div className="absolute transition-all duration-[2000ms] ease-in-out z-20"
-                    style={{ left: `${cursorLeft.x}px`, top: `${cursorLeft.y}px` }}>
-                        <img src="/assets/icons/mouse-1.svg" alt="" />
-                </div>
-                <div className="absolute transition-all duration-[2500ms] ease-in-out z-20"
-                    style={{ left: `${cursorRight.x}px`, top: `${cursorRight.y}px` }}>
-                        <img src="/assets/icons/mouse-2.svg" alt="" />
-                </div>
+            {/* Buttons */}
+            <div className="flex justify-center gap-6 flex-wrap mt-12 z-30">
+              <Button text="Get Started for Free" to="" icon={false} iconComponent={<FaApple />} />
+              <Button text="Download in iOS" to="" icon={true} iconComponent={<FaApple />} variant="secondary" />
             </div>
-            {/* Section BG */}
-            <div>
-              <img className="absolute -top-24 left-16 lg:top-28 lg:left-20 z-10" src="/assets/imgs/hero/hero-bg-1.png" alt="Hero Bg One" />
-              <img className="absolute right-0 -bottom-20 lg:right-20 lg:bottom-4 z-10" src="/assets/imgs/hero/hero-bg-2.png" alt="Hero Bg Two" />
+
+            {/* Animated Cursors */}
+            <div
+              className="absolute transition-all duration-[5000ms] ease-in-out z-20"
+              style={{ left: `${cursorLeft.x}px`, top: `${cursorLeft.y}px` }}
+            >
+              <img src="/assets/icons/mouse-1.svg" alt="" />
             </div>
-       </div>
-    </section>
+            <div
+              className="absolute transition-all duration-[4500ms] ease-in-out z-20"
+              style={{ left: `${cursorRight.x}px`, top: `${cursorRight.y}px` }}
+            >
+              <img src="/assets/icons/mouse-2.svg" alt="" />
+            </div>
+            
+            {/* Background Images */}
+            <div className=" ">
+              <img
+                className="absolute -left-10 -top-20 xl:left-0 xl:top-10 z-10"
+                src="/assets/imgs/hero/hero-bg-1.png"
+                alt="Hero Bg One"
+              />
+              <img
+                className="absolute -right-10 lg:right-0 -bottom-20  lg:bottom-4 z-10"
+                src="/assets/imgs/hero/hero-bg-2.png"
+                alt="Hero Bg Two"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
   );
 };
 

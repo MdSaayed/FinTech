@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Cta = () => {
     return (
-        <section className="">
+        <section>
             <div className="container ">
                 <div className="w-full bg-neutral-900 py-20 relative overflow-hidden rounded-2xl">
                 {/* Background Elements */}
@@ -14,7 +14,7 @@ const Cta = () => {
                 {/* Content Wrapper */}
                 <div className="relative z-10 text-center px-4">
                     <Title className="max-w-[660px] text-white mx-auto">
-                        Simple and fun way to see our <span className="text-[#CAEF7D]">growth progress!</span>
+                        Simple and fun way to see our <span className="text-lime-300">growth progress!</span>
                     </Title>
                     <Description text="Don't miss out on the excitement! Stay tuned for all the thrilling events we have lined up just for you!" className="text-white max-w-[540px] mx-auto" />
                     

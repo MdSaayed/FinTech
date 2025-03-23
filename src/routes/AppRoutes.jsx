@@ -14,6 +14,7 @@ const Pricing = lazy(() => import("../pages/Pricing"));
 const PricingSingle = lazy(() => import("../pages/PricingSingle"));
 const Contact = lazy(() => import("../pages/Contact"));
 import NotFound from './../pages/NotFound';
+import licenses from "../pages/licenses";
 
 // ✅ Define routes
 const router = createBrowserRouter([
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
       { path: "pricing", element: <LazyLoad component={Pricing} /> },
       { path: "pricing/:id", element: <LazyLoad component={PricingSingle} />, loader: singlePricingLoader },
       { path: "contact", element: <LazyLoad component={Contact} /> },
+      { path: "licenses", element: <LazyLoad component={licenses} /> },
     ],
   },
   {

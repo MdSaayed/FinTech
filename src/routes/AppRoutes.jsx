@@ -2,7 +2,7 @@ import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import LazyLoad from "../components/lazyLoad/LazyLoad";
 import MainLayout from "../layouts/MainLayout";
-import { blogLoader, singlePricingLoader, singlePostLoader } from "./Loader";
+import { singlePostLoader, blogLoader, singlePricingLoader } from "./Loader";
 
 // ✅ Lazy load pages for better performance
 const Home = lazy(() => import("../pages/Home"));
@@ -13,9 +13,9 @@ const BlogSingle = lazy(() => import("../pages/BlogSingle"));
 const Pricing = lazy(() => import("../pages/Pricing"));
 const PricingSingle = lazy(() => import("../pages/PricingSingle"));
 const Contact = lazy(() => import("../pages/Contact"));
-const NotFound = lazy(() => import("../pages/NotFound"));
+import NotFound from './../pages/NotFound';
 
-// ✅ Define routes with LazyLoad HOC
+// ✅ Define routes
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,25 +24,16 @@ const router = createBrowserRouter([
       { path: "", element: <LazyLoad component={Home} /> },
       { path: "about", element: <LazyLoad component={About} /> },
       { path: "features", element: <LazyLoad component={Features} /> },
-      { 
-        path: "blog", 
-        element: <LazyLoad component={Blog} /> ,
-        loader: blogLoader, //Fetch Blog
-      },
-      {
-        path: "blog/:id",
-        element: <LazyLoad component={BlogSingle} />,
-        loader: singlePostLoader,  // Load the post by ID
-      },
+      { path: "blog", element: <LazyLoad component={Blog} />, loader: blogLoader },
+      { path: "blog/:id", element: <LazyLoad component={BlogSingle} />, loader: singlePostLoader },
       { path: "pricing", element: <LazyLoad component={Pricing} /> },
-      {
-        path: "pricing/:id",
-        element: <LazyLoad component={PricingSingle} />,
-        loader: singlePricingLoader, // Fetch pricing data
-      },
+      { path: "pricing/:id", element: <LazyLoad component={PricingSingle} />, loader: singlePricingLoader },
       { path: "contact", element: <LazyLoad component={Contact} /> },
-      { path: "*", element: <LazyLoad component={NotFound} /> }, // Catch-all 404 route
     ],
+  },
+  {
+    path: "*",
+    element: <NotFound />, // ✅ Shows ErrorPage without Header/Footer
   },
 ]);
 

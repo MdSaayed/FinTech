@@ -2,13 +2,14 @@ import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import LazyLoad from "../components/lazyLoad/LazyLoad";
 import MainLayout from "../layouts/MainLayout";
-import { blogLoader, LoadSinglePricingData } from "./Loader";
+import { blogLoader, LoadSinglePricingData, singlePostLoader } from "./Loader";
 
 // ✅ Lazy load pages for better performance
 const Home = lazy(() => import("../pages/Home"));
 const About = lazy(() => import("../pages/About"));
 const Features = lazy(() => import("../pages/Features"));
 const Blog = lazy(() => import("../pages/Blog"));
+const BlogSingle = lazy(() => import("../pages/BlogSingle"));
 const Pricing = lazy(() => import("../pages/Pricing"));
 const PricingSingle = lazy(() => import("../pages/PricingSingle"));
 const Contact = lazy(() => import("../pages/Contact"));
@@ -27,6 +28,11 @@ const router = createBrowserRouter([
         path: "blog", 
         element: <LazyLoad component={Blog} /> ,
         loader: blogLoader, //Fetch Blog
+      },
+      {
+        path: "blog/:id",
+        element: <LazyLoad component={BlogSingle} />,
+        loader: singlePostLoader,  // Load the post by ID
       },
       { path: "pricing", element: <LazyLoad component={Pricing} /> },
       {

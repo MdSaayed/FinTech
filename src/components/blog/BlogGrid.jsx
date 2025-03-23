@@ -1,13 +1,31 @@
-import React  from 'react';
+import React, { useEffect, useState } from 'react';
 import Title from '../title/Title';
 import Subtitle from '../subtitle/Subtitle';
 import Description from '../description/Description';
 import BlogCard from './BlogCard';
-import { useLoaderData } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { blogLoader } from '../../routes/Loader.js'; 
 
-const BlogGrid = ({postLimit = 3 }) => {
-    const blogs = useLoaderData();
+const BlogGrid = ({ postLimit = 3 }) => {
+    const [blogs, setBlogs] = useState([]);  // Initialize with an empty array
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const fetchBlogs = async () => {
+            try {
+                const data = await blogLoader();  // Ensure blogLoader is returning a Promise of an array
+                setBlogs(data);
+            } catch (err) {
+                setError("Failed to load blogs");
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchBlogs();
+    }, []);  // Empty dependency array ensures this effect runs only once when the component mounts
+
 
     return (
         <section>

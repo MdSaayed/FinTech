@@ -39,7 +39,7 @@ const Blog = () => {
                                     />
                                 </Link>
                                 <div className="space-y-4 mt-5">
-                                    <h2 className="text-2xl font-semibold text-slate-900 leading-snug">
+                                    <h2 className="text-2xl font-geist font-semibold text-slate-900 leading-snug">
                                         <Link to={`/blog/${blog?.id}`}>
                                             {blog?.title}
                                         </Link>

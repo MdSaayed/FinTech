@@ -12,6 +12,33 @@ export const fetchData = async (url) => {
     }
 };
 
+
+// Loader for Blog Data
+export async function blogLoader() {
+    // Get API URL from environment variables (Edit .env file to change)
+    const API_URL = import.meta.env.VITE_BLOGS_API_URL;
+
+    try {
+        if (API_URL) {
+            const response = await fetch(API_URL);
+            if (!response.ok) throw new Error("API Fetch Failed");
+            return await response.json();
+        }
+    } catch (error) {
+        console.warn("API fetch failed, loading demo data instead.", error);
+    }
+
+    // Fallback: Load local JSON data if API is unavailable
+    const response = await fetch("/data/blogs.json");
+    return await response.json();
+}
+
+
+
+
+
+
+
 // Loader for Pricing Details
 export const LoadSinglePricingData = async ({ params }) => {
     const planId = String(params.id); // Convert URL param to string
@@ -24,6 +51,10 @@ export const LoadSinglePricingData = async ({ params }) => {
 
     return selectedPlan;
 };
+
+
+
+  
 
 // Loader for Blog Details
 export const loadSingleBlogData = async ({ params }) => {

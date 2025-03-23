@@ -8,7 +8,7 @@ import Subtitle from '../components/subtitle/Subtitle';
 import Advantage from '../components/advantage/Advantage';
 import Testimonials from '../components/testimonials/Testimonials';
 import Faq from '../components/faq/Faq';
-import Blog from '../components/blog/Blogs';
+import Blog from '../components/blog/BlogGrid';
 import Pricing from '../components/pricing/Pricing';
 import Cta from '../components/cta/Cta';
 import HowItWorks from '../components/howItWorks/HowItWorks';

@@ -62,7 +62,7 @@ const PricingSingle = () => {
                           </div>
           
                           <div className="order-first lg:-order-none max-w-md">
-                            <div class="md:min-w-72 gray-50 rounded-lg p-8 bg-gray-50 border-gray-100 shadow">
+                            <div className="md:min-w-72 gray-50 rounded-lg p-8 bg-gray-50 border-gray-100 shadow">
                               <span className="text-lg text-gray-800 font-geist font-normal">Get Your Plan Today</span>
                               <h3 className="text-4xl text-primary font-semibold my-4">
                                 $ {isMonthly ? monthlyPrice.replace(/[^0-9]/g, "") : yearlyPrice.replace(/[^0-9]/g, "")} USD

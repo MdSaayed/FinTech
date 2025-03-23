@@ -9,7 +9,7 @@ import {teamMembers} from "../data/team";
 import Advantage from './../components/advantage/Advantage';
 import Testimonials from './../components/testimonials/Testimonials';
 import Faq from './../components/faq/Faq';
-import Blog from './../components/blog/Blogs';
+import Blog from '../components/blog/BlogGrid';
 import Cta from './../components/cta/Cta';
 
 

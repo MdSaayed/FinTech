@@ -1,18 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React  from 'react';
 import Title from '../title/Title';
 import Subtitle from '../subtitle/Subtitle';
 import Description from '../description/Description';
 import BlogCard from './BlogCard';
-import { blogData } from '../../data/blogs';
+import { useLoaderData } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-const Blog = () => {
-    const [blogs, setBlogs] = useState([]);
-
-    // Log to check the structure of blogData
-    useEffect(() => {
-        console.log(blogData); // Ensure blogData is an array
-        setBlogs(blogData || []); // Set the blogs to an empty array if blogData is undefined or null
-    }, []);
+const BlogGrid = ({postLimit = 3 }) => {
+    const blogs = useLoaderData();
 
     return (
         <section>
@@ -30,7 +25,7 @@ const Blog = () => {
 
                 {/* Blog Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mt-20">
-                    {blogs?.map((blog, idx) => (
+                    {blogs?.slice(0, postLimit)?.map((blog, idx) => (
                         <BlogCard key={idx} blog={blog} />
                     ))}
                 </div>
@@ -39,4 +34,10 @@ const Blog = () => {
     );
 };
 
-export default Blog;
+// Set default post limit and validate prop
+BlogGrid.propTypes = {
+    postLimit: PropTypes.number, // Client can pass number of posts to show
+};
+ 
+
+export default BlogGrid;

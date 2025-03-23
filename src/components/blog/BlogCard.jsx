@@ -6,38 +6,51 @@ const BlogCard = ({ blog }) => {
     const { image, title, excerpt, id } = blog;
 
     return (
-        <div className='px-4 py-6 rounded-lg bg-white'>
-            <div className='w-full max-h-72 overflow-hidden rounded-lg mb-5'>
-                <img className='w-full h-full object-cover' src={image} alt={title} />
+        <article className="px-4 py-6 rounded-2xl bg-white">
+                {/* Blog Image with Link */}
+            <div className='w-full max-h-72 overflow-hidden rounded-3xl mb-5'>
+                <Link to={`/blog/${id}`}> {/* Change URL structure if needed */}
+                    <img 
+                        className='w-full h-full object-cover transition-transform duration-300 hover:scale-[1.02] rounded-3xl' 
+                        src={image} 
+                        alt={title} 
+                    />
+                </Link>
             </div>
             
             <div>
-                <h2 className='text-xl font-geist text-slate-900 font-medium leading-snug'>{title}</h2>
+                {/* Blog Title with Link */}
+                <Link to={`/blog/${id}`}> {/* Change route if needed */}
+                    <h2 className='text-xl font-geist text-slate-900 font-medium leading-snug'>{title}</h2>
+                </Link>
+
+                {/* Blog Excerpt */}
                 <p className='mt-4 mb-6'>{excerpt}</p>
 
+                {/* Read More Link */}
                 <div className="flex items-center gap-3 cursor-pointer group">
-                    <Link className="text-purple-600 text-base font-normal leading-snug" to={`/blog/${id}`}>
+                    <Link to={`/blog/${id}`} className="text-purple-600 text-base font-normal leading-snug">
                         Read More
                     </Link>
                     <img 
                         src="/assets/icons/arrow-up-right.svg" 
-                        alt="Arrow"
+                        alt="Arrow Icon" /* Change icon if needed */
                         className="transition-transform duration-300 group-hover:rotate-45"
                     />
                 </div>
             </div>
-        </div>
+        </article>
     );
 };
 
 // Prop validation
 BlogCard.propTypes = {
     blog: PropTypes.shape({
-        image: PropTypes.string.isRequired,  // Image should be a string (URL)
-        title: PropTypes.string.isRequired,  // Title should be a string
-        excerpt: PropTypes.string.isRequired, // Content should be a string
-        id: PropTypes.string.isRequired,      // ID should be a string (use string or number, depending on your data type)
-    }).isRequired, // blog prop itself is required
+        image: PropTypes.string.isRequired,  // Change to 'optional' if image is not always available
+        title: PropTypes.string.isRequired,  // Change validation if title format differs
+        excerpt: PropTypes.string.isRequired, // Adjust if using different content structure
+        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,  // Supports string & number IDs
+    }).isRequired,
 };
 
 export default BlogCard;

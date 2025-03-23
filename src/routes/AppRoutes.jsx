@@ -2,7 +2,7 @@ import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import LazyLoad from "../components/lazyLoad/LazyLoad";
 import MainLayout from "../layouts/MainLayout";
-import { blogLoader, LoadSinglePricingData, singlePostLoader } from "./Loader";
+import { blogLoader, singlePricingLoader, singlePostLoader } from "./Loader";
 
 // ✅ Lazy load pages for better performance
 const Home = lazy(() => import("../pages/Home"));
@@ -38,7 +38,7 @@ const router = createBrowserRouter([
       {
         path: "pricing/:id",
         element: <LazyLoad component={PricingSingle} />,
-        loader: LoadSinglePricingData, // Fetch pricing data
+        loader: singlePricingLoader, // Fetch pricing data
       },
       { path: "contact", element: <LazyLoad component={Contact} /> },
       { path: "*", element: <LazyLoad component={NotFound} /> }, // Catch-all 404 route

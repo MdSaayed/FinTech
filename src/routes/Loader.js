@@ -1,17 +1,3 @@
-import { planData } from "../data/plans"; // Import the data correctly
-
-
-// loaders.js
-export const fetchData = async (url) => {
-    try {
-        const res = await fetch(url);
-        if (!res.ok) throw new Error(`Failed to fetch data from ${url}`);
-        return await res.json();
-    } catch (error) {
-        throw new Error(error.message || "Something went wrong");
-    }
-};
-
 
 // Loader for Blog Data
 export async function blogLoader() {
@@ -89,20 +75,122 @@ export async function singlePostLoader({ params }) {
 }
 
 
+// Loader for Team Member Data
+export async function teamMemberLoader() {
+    // Get API URL from environment variables (Edit .env file to change)
+    const API_URL = import.meta.env.VITE_TEAM_API_URL;
 
+    try {
+        if (API_URL) {
+            const response = await fetch(API_URL);
+            if (!response.ok) throw new Error("API Fetch Failed");
+            return await response.json();
+        }
+    } catch (error) {
+        console.warn("API fetch failed, loading demo data instead.", error);
+    }
+
+    // Fallback: Load local JSON data if API is unavailable
+    const response = await fetch("/data/team.json");
+    return await response.json();
+}
+
+
+// Loader for Faq Data
+export async function faqLoader() {
+    // Get API URL from environment variables (Edit .env file to change)
+    const API_URL = import.meta.env.VITE_FAQ_API_URL;
+
+    try {
+        if (API_URL) {
+            const response = await fetch(API_URL);
+            if (!response.ok) throw new Error("API Fetch Failed");
+            return await response.json();
+        }
+    } catch (error) {
+       // Fail silently without console warnings
+    }
+
+    // Fallback: Load local JSON data if API is unavailable
+    const response = await fetch("/data/faqs.json");
+    return await response.json();
+}
+
+
+// Loader for Pricing Data
+export async function pricingLoader() {
+    // Get API URL from environment variables (Edit .env file to change)
+    const API_URL = import.meta.env.VITE_PRICING_API_URL;
+
+    try {
+        if (API_URL) {
+            const response = await fetch(API_URL);
+            if (!response.ok) throw new Error("API Fetch Failed");
+            return await response.json();
+        }
+    } catch (error) {
+        // Fail silently without console warnings
+    }
+
+    // Fallback: Load local JSON data if API is unavailable
+    const response = await fetch("/data/pricing.json");
+    return await response.json();
+}
 
 
 // Loader for Pricing Single
-export const LoadSinglePricingData = async ({ params }) => {
-    const planId = String(params.id); // Convert URL param to string
+export async function singlePricingLoader({ params }) {
+    const API_URL = import.meta.env.VITE_PRICING_API_URL;
 
-    console.log("URL Param as String:", planId); // Debugging output
+    try {
+        if (API_URL) {
+            // Fetch the pricing data from the API
+            const response = await fetch(`${API_URL}`);
 
-    const selectedPlan = planData.find((plan, index) => String(index) === planId); // Convert index to string
+            if (!response.ok) throw new Error("API Fetch Failed");
 
-    if (!selectedPlan) throw new Response("Plan not found", { status: 404 });
+            // Check if the response is JSON
+            const contentType = response.headers.get("Content-Type");
+            if (contentType && contentType.includes("application/json")) {
+                const pricingData = await response.json();
+                const plan = pricingData.find(plan => plan.id === parseInt(params.id));
 
-    return selectedPlan;
-};
+                if (plan) {
+                    return plan; // Return the matching pricing plan
+                } else {
+                    throw new Error("Plan not found");
+                }
+            } else {
+                throw new Error("Expected JSON, but got something else.");
+            }
+        }
+    } catch (error) {
+        // Fail silently without console warnings
+    }
+
+    // Fallback: Load local JSON data if API is unavailable
+    try {
+        const localFile = `/data/pricing.json`;
+        console.log(`Fetching local data from: ${localFile}`); // Debugging log
+
+        const response = await fetch(localFile);
+        if (!response.ok) throw new Error("Local fetch failed");
+
+        const data = await response.json();
+        const plan = data.find(plan => plan.id === parseInt(params.id));
+
+        if (plan) {
+            return plan; // Return the matching pricing plan
+        } else {
+            throw new Error("Plan not found");
+        }
+    } catch (error) {
+        console.error("Failed to load demo data:", error);
+    }
+
+    // Return error message if both API and fallback fail
+    return { error: "Plan not found" };
+}
+
 
 

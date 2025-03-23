@@ -3,17 +3,30 @@ import Card from "./Card";
 import Subtitle from "../subtitle/Subtitle";
 import Title from "../title/Title";
 import Description from "../description/Description";
-import {planData} from "../../data/plans";
+import { pricingLoader } from '../../routes/Loader.js';
 
   
 
 const Pricing = () => {
     const [plans,setPlans]=useState([]);
     const [packageType,setPackageType] = useState('monthly');
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-    useEffect(()=>{
-      setPlans(planData);
-    },[]);
+    useEffect(() => {
+        const fetchPricingData = async () => {
+            try {
+                const data = await pricingLoader();  // Ensure blogLoader is returning a Promise of an array
+                setPlans(data);
+            } catch (err) {
+                setError("Failed to load Team data");
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchPricingData();
+    }, []);  // Empty dependency array ensures this effect runs only once when the component mounts
 
   return (
     <section>

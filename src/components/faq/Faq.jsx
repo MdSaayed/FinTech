@@ -7,29 +7,33 @@ import LoadingAnimation from '../loading/Loading';
 import Title from './../title/Title';
 import Subtitle from './../subtitle/Subtitle';
 import Description from './../description/Description';
-import { faqData } from '../../data/faq';
+import { faqLoader } from '../../routes/Loader.js';
 import { useLoading } from '../../context/LoadingContext';
 
 const Faq = () => {
     // State for FAQ data (preloaded)
     const [faqs, setFaqs] = useState([]);
     const { isLoading, startLoading, stopLoading } = useLoading();
-    const [error, setError] = useState("");
     const [openIndex, setOpenIndex] = useState(null);
+    // Simulate a loading effect    const [member,setMember]=useState();
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-    // Simulate a loading effect
     useEffect(() => {
-        startLoading();
-        setTimeout(() => {
+        const fetchFaq = async () => {
             try {
-                setFaqs(faqData); // Load pre-existing data
-                stopLoading();
+                const data = await faqLoader();  // Ensure blogLoader is returning a Promise of an array
+                setFaqs(data);
             } catch (err) {
-                setError("Failed to load FAQs.");
-                stopLoading();
+                setError("Failed to load Team data");
+            } finally {
+                setLoading(false);
             }
-        }, 100); // Simulated delay
-    }, []);
+        };
+
+        fetchFaq();
+    }, []);  // Empty dependency array ensures this effect runs only once when the component mounts
+
 
     // Toggle FAQ item
     const toggleFAQ = (index) => {
@@ -61,7 +65,7 @@ const Faq = () => {
                     {/* Grid */}
                     <div className="mt-12 max-w-4xl mx-auto">
                         <div className="faqs md:space-y-3 lg:space-y-6">
-                            {faqs.map((faq, index) => (
+                            {faqs?.map((faq, index) => (
                                 <div
                                     key={index}
                                     className={`faq-item px-4 py-5 rounded-md ${
@@ -75,7 +79,7 @@ const Faq = () => {
                                         aria-controls={`faq-answer-${index}`}
                                     >
                                         <span className="text-lg font-medium text-neutral-900 leading-normal mr-2">
-                                            {faq.question}
+                                            {faq?.question}
                                         </span>
 
                                         {/* Animated Icon */}
@@ -101,7 +105,7 @@ const Faq = () => {
                                         className="overflow-hidden pr-4 md:pr-10 lg:pr-12 mt-4"
                                     >
                                         <div className="text-gray-700 max-w-[600px] font-normal leading-normal text-base">
-                                            <p>{faq.answer}</p>
+                                            <p>{faq?.answer}</p>
                                         </div>
                                     </motion.div>
                                 </div>

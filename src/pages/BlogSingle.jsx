@@ -10,7 +10,7 @@ const BlogSingle = () => {
 
     return (
         <>
-            {/* Blog Details */}
+            {/* Blog Single */}
             <section>
                 <div className="container">
                     <div className="bg-white rounded-2xl py-16 px-2 md:px-16 lg:px-28">

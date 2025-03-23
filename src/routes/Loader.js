@@ -92,7 +92,7 @@ export async function singlePostLoader({ params }) {
 
 
 
-// Loader for Pricing Details
+// Loader for Pricing Single
 export const LoadSinglePricingData = async ({ params }) => {
     const planId = String(params.id); // Convert URL param to string
 

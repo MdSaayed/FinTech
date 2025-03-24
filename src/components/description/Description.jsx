@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Description = ({ text="", align="justify-center", textAlign = "text-center", className="" }) => {
+const Description = ({ text="", align='justify-center', className="" }) => {
   return (
     <div className={`flex mt-5 ${align}`}>
-      <p className={`text-gray-700 text-lg font-geist tracking-[0.6] ${textAlign} ${className}`}>
+      <p className={`text-gray-700 text-lg text-center font-geist tracking-[0.6] ${className}`}>
         {text}
       </p>
     </div>

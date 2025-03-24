@@ -17,10 +17,10 @@ const Card = ({ plan, packageType }) => {
                 <p className="text-3xl font-geist font-medium py-2">{selectedPackage?.price}</p>
                 <p>{description}</p>
 
-                <button className={`mt-11 w-full py-3 rounded-3xl font-geist font-normal text-gray-700 
+                <button className={`mt-11 w-full py-2 md:py-3 rounded-3xl font-geist font-normal text-gray-700 
                     transition-all duration-300 
-                    ${featuredCard ? 'bg-white' : 'bg-gray-100'} 
-                    group-hover:bg-white group-hover:text-gray-900`}>
+                    ${featuredCard ? 'bg-purple-600 text-white' : 'bg-gray-100'} 
+                    group-hover:bg-purple-600 group-hover:text-white`}>
                     Free-14 Day Trial
                 </button>
             </div>

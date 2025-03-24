@@ -8,7 +8,7 @@ const licenses = () => {
         <>
             {/* Instructions Section */}
             <section className='bg-lightGrayishWhite'>
-                <div className="container py-16">
+                <div className="container">
                     <Title align='justify-start'>Instructions</Title>
 
                     <p className='text-gray-600 font-normal text-lg max-w-3xl mt-12'>

@@ -2,11 +2,17 @@
 
 // Fetch fallback function
 export const fetchWithFallback = async (url, fallbackFile) => {
-    console.log(url);
+    const isDevMode = import.meta.env.MODE === 'development'; // Checks if it's in development mode
+
     try {
         // If no API URL is set, directly load fallback
         if (!url || url.includes("example.com")) {
-            console.info(`ℹ️ No valid API URL provided. Loading fallback: ${fallbackFile}`);
+
+            // Only show info message in development mode
+            if (isDevMode) {
+                console.info(`ℹ️ No valid API URL provided. Loading fallback: ${fallbackFile}`);
+            }
+
             return await fetch(fallbackFile).then(res => res.json());
         }
 
@@ -15,7 +21,9 @@ export const fetchWithFallback = async (url, fallbackFile) => {
 
         return await response.json();
     } catch (error) {
-        console.warn(`⚠️ API fetch failed for ${url}: ${error.message}. Using fallback data.`);
+        if (isDevMode) {
+             console.warn(`⚠️ API fetch failed for ${url}: ${error.message}. Using fallback data.`);
+        }
 
         try {
             const fallbackResponse = await fetch(fallbackFile);
@@ -23,10 +31,13 @@ export const fetchWithFallback = async (url, fallbackFile) => {
 
             return await fallbackResponse.json();
         } catch (fallbackError) {
-            console.error(`❌ Both API and fallback failed for URL: ${url || 'undefined URL'}.
-                Error Details: 
-                - API Error: ${error.message}
-                - Fallback Error: ${fallbackError.message}`);
+            
+            if (isDevMode) {
+                console.error(`❌ Both API and fallback failed for URL: ${url || 'undefined URL'}.
+                    Error Details: 
+                    - API Error: ${error.message}
+                    - Fallback Error: ${fallbackError.message}`);
+            }
             
             return []; // Prevents breaking the UI
         }

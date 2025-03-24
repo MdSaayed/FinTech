@@ -16,6 +16,7 @@ const Contact = lazy(() => import("../pages/Contact"));
 import NotFound from './../pages/NotFound';
 import licenses from "../pages/licenses";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
+import TermsOfServices from "../pages/TermsOfServices";
 
 // ✅ Define routes
 const router = createBrowserRouter([
@@ -32,7 +33,8 @@ const router = createBrowserRouter([
       { path: "pricing/:id", element: <LazyLoad component={PricingSingle} />, loader: singlePricingLoader },
       { path: "contact", element: <LazyLoad component={Contact} /> },
       { path: "licenses", element: <LazyLoad component={licenses} /> },
-      { path: "privacy-policy", element: <LazyLoad component={PrivacyPolicy} /> }
+      { path: "privacy-policy", element: <LazyLoad component={PrivacyPolicy} /> },
+      { path: "terms-and-conditions", element: <LazyLoad component={TermsOfServices} /> }
     ],
   },
   {

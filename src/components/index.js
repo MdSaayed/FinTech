@@ -13,6 +13,7 @@ export { default as Footer } from './footer/Footer';
 export { default as Header } from './header/Header';
 export { default as FeaturesHero } from './hero/FeaturesHero';
 export { default as HowItWorks } from './howItWorks/HowItWorks';
+export { default as StepCard } from './howItWorks/StepCard';
 export { default as LazyLoad } from './lazyLoad/LazyLoad';
 export { default as Loading } from './loading/Loading';
 export { default as VideoPopup } from './modal/VideoPopup';

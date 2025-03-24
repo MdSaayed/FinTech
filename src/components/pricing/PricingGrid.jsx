@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import Card from "./Card";
-import Subtitle from "../subtitle/Subtitle";
-import Title from "../title/Title";
-import Description from "../description/Description";
+import Card from "./Card.jsx";
+import Subtitle from "../subtitle/Subtitle.jsx";
+import Title from "../title/Title.jsx";
+import Description from "../description/Description.jsx";
 import { pricingLoader } from '../../routes/Loader.js';
 
   
 
-const Pricing = () => {
+const PricingGrid = () => {
     const [plans,setPlans]=useState([]);
     const [packageType,setPackageType] = useState('monthly');
     const [loading, setLoading] = useState(true);
@@ -61,4 +61,4 @@ const Pricing = () => {
   );
 };
 
-export default Pricing;
+export default PricingGrid;

@@ -1,47 +1,38 @@
-import React, { useEffect, useState } from 'react';
-import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect, useCallback } from 'react';
+import { faqLoader } from '../../routes/Loader.js'; // Ensure Loader Function Exists
+import { ErrorMessage, Description, Loading,  Title, Subtitle, FaqItem } from '../../components';
 
-import ErrorMessage from './../errorMessage/ErrorMessage';
-import LoadingAnimation from '../loading/Loading';
-import Title from './../title/Title';
-import Subtitle from './../subtitle/Subtitle';
-import Description from './../description/Description';
-import { faqLoader } from '../../routes/Loader.js';
-import { useLoading } from '../../context/LoadingContext';
-
+// Faq Component
 const Faq = () => {
-    // State for FAQ data (preloaded)
+    // State For Faq Data
     const [faqs, setFaqs] = useState([]);
-    const { isLoading, startLoading, stopLoading } = useLoading();
-    const [openIndex, setOpenIndex] = useState(null);
-    // Simulate a loading effect    const [member,setMember]=useState();
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [openIndex, setOpenIndex] = useState(null); // State For Opened Faq
+    const [loading, setLoading] = useState(true); // Loading State
+    const [error, setError] = useState(null); // Error Handling State
+
+    // Fetch Faq Data
+    const fetchFaq = useCallback(async () => {
+        try {
+            const data = await faqLoader(); // Ensure faqLoader Is Returning A Promise
+            setFaqs(data); // Set Faq Data
+        } catch (err) {
+            setError("Failed To Load Faq Data"); // Error Handling
+        } finally {
+            setLoading(false); // Stop Loading
+        }
+    }, []);
 
     useEffect(() => {
-        const fetchFaq = async () => {
-            try {
-                const data = await faqLoader();  // Ensure blogLoader is returning a Promise of an array
-                setFaqs(data);
-            } catch (err) {
-                setError("Failed to load Team data");
-            } finally {
-                setLoading(false);
-            }
-        };
+        fetchFaq(); // Fetch Faq Data On Component Mount
+    }, [fetchFaq]);
 
-        fetchFaq();
-    }, []);  // Empty dependency array ensures this effect runs only once when the component mounts
-
-
-    // Toggle FAQ item
+    // Toggle Faq Item
     const toggleFAQ = (index) => {
         setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
     };
 
-    // Loading and error management
-    if (isLoading) return <LoadingAnimation />;
+    // If Loading Or Error, Show Respective Component
+    if (loading) return <Loading />;
     if (error) return <ErrorMessage error={error} />;
 
     return (
@@ -49,11 +40,11 @@ const Faq = () => {
             <div className="container mx-auto">
                 <div className="bg-white rounded-3xl px-4 py-10 md:p-20">
                     {/* Subtitle */}
-                    <Subtitle text="Frequently questions" align="justify-center" />
+                    <Subtitle text="Frequently Asked Questions" align="justify-center" className='bg-purple-100' />
 
                     {/* Title */}
                     <Title align='justify-center' className='text-center'>
-                        Frequently ask <span>questions</span>
+                        Frequently Ask <span>Questions</span>
                     </Title>
 
                     {/* Description */}
@@ -62,54 +53,22 @@ const Faq = () => {
                         className="max-w-[600px]"
                     />
 
-                    {/* Grid */}
+                    {/* Faq List Grid */}
                     <div className="mt-12 max-w-4xl mx-auto">
                         <div className="faqs md:space-y-3 lg:space-y-6">
-                            {faqs?.map((faq, index) => (
-                                <div
-                                    key={index}
-                                    className={`faq-item px-4 py-5 rounded-md ${
-                                        openIndex === index ? 'bg-softWhite' : ''
-                                    }`}
-                                >
-                                    <button
-                                        onClick={() => toggleFAQ(index)}
-                                        className="w-full flex justify-between items-center text-left focus:outline-none"
-                                        aria-expanded={openIndex === index} // Accessibility improvement
-                                        aria-controls={`faq-answer-${index}`}
-                                    >
-                                        <span className="text-lg font-medium text-neutral-900 leading-normal mr-2">
-                                            {faq?.question}
-                                        </span>
-
-                                        {/* Animated Icon */}
-                                        <motion.span
-                                            className="flex items-center justify-center w-8 h-8 rounded-full"
-                                            animate={{ rotate: openIndex === index ? 180 : 0 }} 
-                                            transition={{ duration: 0.3 }}
-                                        >
-                                            {openIndex === index ? (
-                                                <AiOutlineMinus className="text-purple-500 rounded-full p-1 text-3xl font-semibold shadow" />
-                                            ) : (
-                                                <AiOutlinePlus className="text-purple-500 rounded-full p-1 text-3xl font-semibold shadow" />
-                                            )}
-                                        </motion.span>
-                                    </button>
-
-                                    {/* Animated FAQ Answer */}
-                                    <motion.div
-                                        id={`faq-answer-${index}`} // Accessibility improvement
-                                        initial={{ height: 0, opacity: 0 }}
-                                        animate={openIndex === index ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
-                                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                                        className="overflow-hidden pr-4 md:pr-10 lg:pr-12 mt-4"
-                                    >
-                                        <div className="text-gray-700 max-w-[600px] font-normal leading-normal text-base">
-                                            <p>{faq?.answer}</p>
-                                        </div>
-                                    </motion.div>
-                                </div>
-                            ))}
+                            {faqs?.map((faq, index) => {
+                                const { question, answer } = faq;
+                                return (
+                                    <FaqItem
+                                        key={index}
+                                        question={question}
+                                        answer={answer}
+                                        index={index}
+                                        openIndex={openIndex}
+                                        toggleFAQ={toggleFAQ}
+                                    />
+                                );
+                            })}
                         </div>
                     </div>
                 </div>
@@ -117,5 +76,7 @@ const Faq = () => {
         </section>
     );
 };
+
+
 
 export default Faq;

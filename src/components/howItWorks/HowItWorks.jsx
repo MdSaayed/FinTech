@@ -1,8 +1,5 @@
 import React from 'react';
-import Subtitle from '../subtitle/Subtitle';
-import Title from '../title/Title';
-import Description from '../description/Description';
-import StepCard from './StepCard'; // Import StepCard
+import { Title, Description,  Subtitle, StepCard   } from '../../components';
 
 const HowItWorks = () => (
     <section>

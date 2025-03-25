@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'; // Import PropTypes for prop validation
 // Image for the arrow icon
 import ArrowUpRight from '/assets/icons/arrow-up-right.svg';
 
-const BlogCard = ({ blog }) => {
+const BlogHighlight = ({ blog }) => {
     const { image, title, excerpt, id } = blog; // Destructure blog data
 
     return (
@@ -47,7 +47,7 @@ const BlogCard = ({ blog }) => {
 };
 
 // Prop validation to ensure that the right data is passed to the component
-BlogCard.propTypes = {
+BlogHighlight.propTypes = {
     blog: PropTypes.shape({
         image: PropTypes.string.isRequired,  // Ensure image is a string and required
         title: PropTypes.string.isRequired,  // Ensure title is a string and required
@@ -56,4 +56,4 @@ BlogCard.propTypes = {
     }).isRequired, // Ensure blog prop is required
 };
 
-export default BlogCard;
+export default BlogHighlight;

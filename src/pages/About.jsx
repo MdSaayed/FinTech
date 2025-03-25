@@ -1,5 +1,5 @@
 import React from 'react';
-import {Brands,Advantage,Testimonials,Faq,BlogGrid,Team,AboutHero} from '../components';
+import {Brands,Advantage,Testimonials,Faq,BlogFeatured,Team,AboutHero} from '../components';
 
 
 const About = () => {
@@ -24,7 +24,7 @@ const About = () => {
             <Faq/>
 
             {/* Blog */}
-            <BlogGrid/>
+            <BlogFeatured/>
         </>
     );
 };

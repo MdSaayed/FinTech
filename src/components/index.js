@@ -1,7 +1,9 @@
 export { default as Advantage } from './advantage/Advantage';
 export { default as TabItem } from './advantage/TabItem';
+export { default as BlogFeatured } from './blog/BlogFeatured';
+export { default as BlogHighlight } from './blog/BlogHighlight';
+export { default as BlogGridItem } from './blog/BlogGridItem';
 export { default as BlogGrid } from './blog/BlogGrid';
-export { default as BlogCard } from './blog/BlogCard';
 export { default as Brands } from './brands/Brands';
 export { default as Button } from './button/Button';
 export { default as ComparePlans } from './comparePlans/ComparePlans';

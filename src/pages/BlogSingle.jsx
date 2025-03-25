@@ -1,7 +1,7 @@
 import React from 'react';
 import Title from './../components/title/Title';
 import { useLoaderData } from 'react-router-dom';
-import BlogGrid from '../components/blog/BlogGrid';
+import BlogFeatured from '../components/blog/BlogFeatured';
 import Cta from './../components/cta/Cta';
 
 const BlogSingle = () => {
@@ -47,7 +47,7 @@ const BlogSingle = () => {
             </section>
 
             {/* Blog */}
-            <BlogGrid />
+            <BlogFeatured />
 
             {/* Cta */}
             <Cta />

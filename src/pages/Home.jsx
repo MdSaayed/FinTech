@@ -1,5 +1,5 @@
 import React from 'react';
-import { Advantage, Testimonials, Faq, BlogGrid, PricingGrid, Cta, HowItWorks, Brands, HomeHero,FeatureGrid } from '../components';
+import { Advantage, Testimonials, Faq, BlogFeatured, PricingGrid, Cta, HowItWorks, Brands, HomeHero,FeatureGrid } from '../components';
 
 
 const Home = () => {
@@ -30,7 +30,7 @@ const Home = () => {
          <PricingGrid />
          
          {/* Blogs */}
-         <BlogGrid />
+         <BlogFeatured />
 
          {/* Cta */}
          <Cta />

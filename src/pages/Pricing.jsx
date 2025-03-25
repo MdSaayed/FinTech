@@ -1,14 +1,11 @@
 import React from 'react';
-import Faq from './../components/faq/Faq';
-import Cta from './../components/cta/Cta';
-import PricingCard from './../components/pricing/Pricing';
-import ComparePlans from '../components/comparePlans/ComparePlans';
+import {Faq, Cta, PricingGrid, ComparePlans } from "../components";
 
 const Pricing = () => {
     return (
         <>
             {/* Pricing */}
-            <PricingCard />
+            <PricingGrid />
 
             {/* Compare Plans */}
             <ComparePlans />

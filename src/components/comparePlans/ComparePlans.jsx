@@ -1,13 +1,14 @@
-import { BrowserRouter as Router, Route, Routes, NavLink } from "react-router-dom";
+import React from 'react';
+import { Table } from './Table';
 
-// Plan options available
+// Plan options available for comparison (could be fetched from an API in the future)
 const plans = [
   { name: "Basic Plan", key: "basic" },
   { name: "Premium Plan", key: "premium" },
   { name: "Enterprise Plan", key: "enterprise" },
 ];
 
-// Feature list with categories and exclusions
+// List of features with categories and exclusions, ideal for use in comparing plans
 const features = [
   { category: "Analytics", name: "Data enhancement strategies" },
   { category: "Analytics", name: "Customer behavior insights" },
@@ -24,47 +25,16 @@ const features = [
   { category: "Support", name: "Expedited customer service", excluded: ["basic"] },
 ];
 
-const ComparePlans = ({ plan }) => {
+const ComparePlans = () => {
   return (
     <section className="overflow-x-auto">
       <div className="container mx-auto px-4">
-        {/* Page Title */}
-        <h2 className="text-5xl font-medium font-geist text-center mb-16 text-slate-900">Compare Plans</h2>
-        
-        {/* Responsive Table Wrapper */}
-        <div className="w-full overflow-x-auto scrollbar-thin scrollbar-thumb-purple-700 scrollbar-track-gray-200 rounded-2xl">
-          <table className="min-w-[700px] w-full border-collapse border-purple-100 rounded-2xl text-gray-700">
-            {/* Table Header */}
-            <thead>
-              <tr className="bg-purple-600 text-left">
-                <th className="py-4 px-10 text-white font-geist font-medium">Feature</th>
-                <th className="py-4 px-10 text-center text-white font-geist font-medium">Basic</th>
-                <th className="py-4 px-10 text-center text-white font-geist font-medium">Premium</th>
-                <th className="py-4 px-10 text-center text-white font-geist font-medium">Enterprise</th>
-              </tr>
-            </thead>
-            
-            {/* Table Body */}
-            <tbody>
-              {features?.map(({ category, name, excluded, details }, index) => (
-                <tr key={index} className="border-t bg-gray-50 text-gray-700 text-lg font-normal leading-normal font-inter">
-                  <td className="px-10 py-4 font-normal">{name}</td>
-                  {["basic", "premium", "enterprise"].map((p) => (
-                    <td key={p} className="px-10 py-4 text-center">
-                      {details ? (
-                        details[p] // Display custom details if available
-                      ) : excluded?.includes(p) ? (
-                        <img src="/assets/icons/close.svg" className="mx-auto" alt="Not Included" />
-                      ) : (
-                        <img src="/assets/icons/check.svg" className="mx-auto" alt="Included" />
-                      )}
-                    </td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        {/* Page Title - Clear heading for screen readers and search engines */}
+        <h2 className="text-5xl font-medium font-geist text-center mb-16 text-slate-900">
+          Compare Plans
+        </h2>
+        {/* Table Component Rendering the Features Comparison */}
+        <Table plans={plans} features={features} />
       </div>
     </section>
   );

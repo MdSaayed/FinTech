@@ -5,6 +5,7 @@ export { default as BlogHighlight } from './blog/BlogHighlight';
 export { default as BlogGridItem } from './blog/BlogGridItem';
 export { default as BlogGrid } from './blog/BlogGrid';
 export { default as Brands } from './brands/Brands';
+export { default as LogoCard } from './brands/LogoCard';
 export { default as Button } from './button/Button';
 export { default as ComparePlans } from './comparePlans/ComparePlans';
 export { default as Cta } from './cta/Cta';
@@ -35,5 +36,7 @@ export { default as Subtitle } from './subtitle/Subtitle';
 export { default as Team } from './team/Team';
 export { default as TeamCard } from './team/TeamCard';
 export { default as Testimonials } from './testimonials/Testimonials';
+export { default as TestimonialCard } from './testimonials/TestimonialCard';
+export { default as VideoSection } from './testimonials/VideoSection';
 export { default as Title } from './title/Title';
 

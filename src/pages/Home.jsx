@@ -6,7 +6,7 @@ const Home = () => {
     return (
        <>
          {/* Hero */}
-         <HomeHero />
+         <HomeHero /> 
 
          {/* Stats */}
          <Brands />

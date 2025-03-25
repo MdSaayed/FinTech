@@ -17,6 +17,7 @@ import NotFound from './../pages/NotFound';
 import licenses from "../pages/licenses";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import TermsOfServices from "../pages/TermsOfServices";
+import Success from "../pages/Success";
 
 // ✅ Define routes
 const router = createBrowserRouter([
@@ -34,7 +35,8 @@ const router = createBrowserRouter([
       { path: "contact", element: <LazyLoad component={Contact} /> },
       { path: "licenses", element: <LazyLoad component={licenses} /> },
       { path: "privacy-policy", element: <LazyLoad component={PrivacyPolicy} /> },
-      { path: "terms-and-conditions", element: <LazyLoad component={TermsOfServices} /> }
+      { path: "terms-and-conditions", element: <LazyLoad component={TermsOfServices} /> },
+      { path: "success", element: <LazyLoad component={Success} /> }
     ],
   },
   {

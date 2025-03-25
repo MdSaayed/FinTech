@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import Cta from '../components/cta/Cta';
-import Faq from './../components/faq/Faq';
 import { useLoaderData } from 'react-router-dom';
 import { useLoading } from '../context/LoadingContext';
-import Loading from '../components/loading/Loading';
 import Swal from 'sweetalert2';
+import {Cta, Faq, Loading} from "../components";
 
 
 const PricingSingle = () => {

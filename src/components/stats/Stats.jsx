@@ -1,8 +1,12 @@
 import { useState, useEffect, useRef } from "react";
-import PropTypes from "prop-types";
 import CountUp from "react-countup";
 
-const   Stats =() => {
+/**
+ * Stats Component
+ * Displays animated statistical data (e.g., user count, satisfaction percentage).
+ * The numbers animate only when the section becomes visible in the viewport.
+ */
+const Stats = () => {
   // Define statistics data with values, prefixes, suffixes, and labels
   const statsData = [
     { value: 10000, suffix: "K+", label: "Users Worldwide" },
@@ -13,31 +17,35 @@ const   Stats =() => {
 
   // State to track if the section is in view
   const [inView, setInView] = useState(false);
-  const sectionRef = useRef(null); // Reference for the section element
+  
+  // Reference to the section DOM element for intersection observation
+  const sectionRef = useRef(null);
 
   useEffect(() => {
-    // IntersectionObserver to detect when the section is in view
+    // IntersectionObserver callback to trigger when section is in view
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setInView(true); // Trigger animation when visible
-          observer.disconnect(); // Stop observing after triggering once
+          setInView(true); // Trigger animation when section becomes visible
+          observer.disconnect(); // Disconnect observer after triggering once to avoid redundant calls
         }
       },
       { threshold: 0.3 } // Trigger when 30% of the section is visible
     );
 
+    // Start observing the section element
     if (sectionRef.current) {
-      observer.observe(sectionRef.current); // Observe the section
+      observer.observe(sectionRef.current);
     }
 
-    return () => observer.disconnect(); // Cleanup observer on unmount
+    // Cleanup observer on unmount
+    return () => observer.disconnect();
   }, []);
 
   return (
     <section ref={sectionRef}>
       <div className="container section-padding">
-        {/* Grid layout with responsive columns and borders */}
+        {/* Stats Grid: Layout with responsive columns and borders */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 border-t border-b border-gray-300 divide-y sm:divide-y-0 sm:[&>:not(:nth-child(2n+1))]:border-l sm:[&>:not(:nth-child(2n+1))]:border-gray-300 sm:[&>:nth-child(n+3)]:border-t sm:[&>:nth-child(n+3)]:border-gray-300 md:divide-x md:divide-gray-300">
           {statsData.map((stat, index) => (
             <div
@@ -46,16 +54,23 @@ const   Stats =() => {
                 ${index % 4 === 0 ? "md:border-l-0" : ""}
               `}
             >
-              {/* Animated counter when section is in view */}
+              {/* Animated counter: Show animated numbers when section is in view */}
               <h2 className="text-4xl font-geist font-semibold text-slate-900">
                 {inView ? (
-                  <CountUp start={0} end={stat.value} duration={2.5} separator="," suffix={stat.suffix} prefix={stat.prefix} />
+                  <CountUp
+                    start={0}
+                    end={stat.value}
+                    duration={2.5}
+                    separator=","
+                    suffix={stat.suffix}
+                    prefix={stat.prefix}
+                  />
                 ) : (
-                  "0" // Display 0 before animation starts
+                  "0" // Display 0 initially before animation starts
                 )}
               </h2>
               <p className="text-gray-700 font-geist text-base mt-3">
-                {stat.label}
+                {stat.label} {/* Label for the statistic */}
               </p>
             </div>
           ))}
@@ -63,18 +78,6 @@ const   Stats =() => {
       </div>
     </section>
   );
-}
-
-// PropTypes validation for expected prop structure
-Stats.propTypes = {
-  stats: PropTypes.arrayOf(
-    PropTypes.shape({
-      value: PropTypes.number.isRequired, // Numeric value for counter
-      suffix: PropTypes.string, // Optional suffix for formatting
-      prefix: PropTypes.string, // Optional prefix for formatting
-      label: PropTypes.string.isRequired, // Label for each statistic
-    })
-  ),
 };
 
 export default Stats;

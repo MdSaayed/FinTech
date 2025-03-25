@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import useEmailJS from '../hooks/useEmailJS'; // Custom hook to handle email sending
 import { Cta, Faq, Title, Subtitle, ContactInfo, InputField } from "../components"; // Reusable components for layout and UI
 
+// Icons
+import PhoneIcon from "/assets/icons/phone-call.svg";
+import EmailIcon from "/assets/icons/email.svg";
+import LocationIcon from "/assets/icons/location.svg";
+
 const Contact = () => {
     // Initialize state for form data and error messages
     const [formData, setFormData] = useState({ name: "", company: "", email: "" });
@@ -92,17 +97,17 @@ const Contact = () => {
                             {/* Card layout for phone, email, and location */}
                             <div className="bg-slate-900 py-8 px-6 rounded-xl space-y-6 w-full">
                                 <ContactInfo
-                                    icon="/assets/icons/phone-call.svg"
+                                    icon={PhoneIcon}
                                     label="Phone Number"
                                     value="+123 456 789 012"
                                 />
                                 <ContactInfo
-                                    icon="/assets/icons/email.svg"
+                                    icon={EmailIcon}
                                     label="Email Address"
                                     value="airvest@gmail.com"
                                 />
                                 <ContactInfo
-                                    icon="/assets/icons/location.svg"
+                                    icon={LocationIcon}
                                     label="Location"
                                     value="Sunnyvale, CA"
                                 />

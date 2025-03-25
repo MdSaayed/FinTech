@@ -1,13 +1,21 @@
 import { useEffect, useState } from "react";
-import { FaApple } from "react-icons/fa";
-import Description from "../description/Description";
-import Title from "../title/Title";
-import Button from "../button/Button";
+import { FaApple } from "react-icons/fa"; // Importing Apple icon from react-icons
+import Description from "../description/Description"; // Reusable Description component
+import Title from "../title/Title"; // Reusable Title component
+import Button from "../button/Button"; // Reusable Button component
+
+// Importing images for background instead of using src paths directly
+import HeroBgOne from "/assets/imgs/hero/hero-bg-1.png";
+import HeroBgTwo from "/assets/imgs/hero/hero-bg-2.png";
+import MouseIcon1 from "/assets/icons/mouse-1.svg"; 
+import MouseIcon2 from "/assets/icons/mouse-2.svg"; 
 
 const FeaturesHero = () => {
+  // Declare state variables for the positions of the animated cursors
   const [cursorLeft, setCursorLeft] = useState({ x: 50, y: 100 });
   const [cursorRight, setCursorRight] = useState({ x: 500, y: 200 });
 
+  // useEffect to handle mouse movement animation and cursor position updates
   useEffect(() => {
     const section = document.getElementById("mouse-area");
     if (!section) return;
@@ -24,6 +32,7 @@ const FeaturesHero = () => {
       y: sectionRect.top + 200,
     });
 
+    // Function to move the cursor randomly within the section bounds
     const moveCursor = (setCursor) => {
       const newX = Math.min(Math.max(Math.random() * sectionRect.width, sectionRect.left + 20), sectionRect.right - 50);
       const newY = Math.min(Math.max(Math.random() * sectionRect.height, sectionRect.top + 20), sectionRect.bottom - 50);
@@ -37,67 +46,67 @@ const FeaturesHero = () => {
       }, nextMoveDelay);
     };
 
-    // Start movement with different delays
+    // Start movement with different delays for left and right cursors
     moveCursor(setCursorLeft);
     setTimeout(() => {
       moveCursor(setCursorRight);
     }, Math.random() * 2000 + 1000); // Right cursor starts later
 
     return () => {};
-  }, []);
-  
+  }, []); // Empty dependency array means this effect runs once when the component mounts
 
   return (
-      <section>
-        <div className="container section-padding-0 relative">
-          <div id="mouse-area" className="bg-white rounded-3xl px-2 py-28 relative overflow-hidden">
-            {/* Title */}
-            <Title align="justify-center" size="text-[2.5rem] lg:text-[4.1rem]" className="text-gray-900 text-center max-w-[800px] z-30">
-              Drop your finance data right into your <span>sales funnel!</span>
-            </Title>
+    <section>
+      <div className="container section-padding-0 relative">
+        <div id="mouse-area" className="bg-white rounded-3xl px-2 py-28 relative overflow-hidden">
+          
+          {/* Title */}
+          <Title align="justify-center" size="text-[2.5rem] lg:text-[4.1rem]" className="text-gray-900 text-center max-w-[800px] z-30">
+            Drop your finance data right into your <span>sales funnel!</span>
+          </Title>
 
-            {/* Description */}
-            <Description
-              text="Streamline your workflow, manage projects, and empower your team with AirTask, the all-in-one task management solution."
-              className="max-w-xl z-30"
+          {/* Description */}
+          <Description
+            text="Streamline your workflow, manage projects, and empower your team with AirTask, the all-in-one task management solution."
+            className="max-w-xl z-30"
+          />
+
+          {/* Buttons Section */}
+          <div className="flex justify-center flex-col md:flex-row gap-6 mt-12 z-30">
+            <Button text="Get Started for Free" to="/pricing" icon={false} iconComponent={<FaApple />} />
+            <Button text="Download in iOS" to="https://apps.apple.com"  icon={true} iconComponent={<FaApple />} variant="secondary" />
+          </div>
+
+          {/* Animated Cursors */}
+          <div
+            className="absolute transition-all duration-[5000ms] ease-in-out z-30"
+            style={{ left: `${cursorLeft.x}px`, top: `${cursorLeft.y}px` }}
+          >
+            <img src={MouseIcon1} alt="Mouse Icon 1" />
+          </div>
+          <div
+            className="absolute transition-all duration-[4500ms] ease-in-out z-30"
+            style={{ left: `${cursorRight.x}px`, top: `${cursorRight.y}px` }}
+          >
+            <img src={MouseIcon2} alt="Mouse Icon 2" />
+          </div>
+          
+          {/* Background Images */}
+          <div className="hidden md:block">
+            <img
+              className="absolute -left-10 -top-20 xl:left-0 xl:top-10 z-10"
+              src={HeroBgOne} // Use imported image
+              alt="Hero Bg One"
             />
-
-            {/* Buttons */}
-            <div className="flex justify-center gap-6 flex-wrap mt-12 z-30">
-              <Button text="Get Started for Free" to="" icon={false} iconComponent={<FaApple />} />
-              <Button text="Download in iOS" to="" icon={true} iconComponent={<FaApple />} variant="secondary" />
-            </div>
-
-            {/* Animated Cursors */}
-            <div
-              className="absolute transition-all duration-[5000ms] ease-in-out z-20"
-              style={{ left: `${cursorLeft.x}px`, top: `${cursorLeft.y}px` }}
-            >
-              <img src="/assets/icons/mouse-1.svg" alt="" />
-            </div>
-            <div
-              className="absolute transition-all duration-[4500ms] ease-in-out z-20"
-              style={{ left: `${cursorRight.x}px`, top: `${cursorRight.y}px` }}
-            >
-              <img src="/assets/icons/mouse-2.svg" alt="" />
-            </div>
-            
-            {/* Background Images */}
-            <div className=" ">
-              <img
-                className="absolute -left-10 -top-20 xl:left-0 xl:top-10 z-10"
-                src="/assets/imgs/hero/hero-bg-1.png"
-                alt="Hero Bg One"
-              />
-              <img
-                className="absolute -right-10 lg:right-0 -bottom-20  lg:bottom-4 z-10"
-                src="/assets/imgs/hero/hero-bg-2.png"
-                alt="Hero Bg Two"
-              />
-            </div>
+            <img
+              className="absolute -right-10 lg:right-0 -bottom-20 lg:bottom-4 z-10"
+              src={HeroBgTwo} // Use imported image
+              alt="Hero Bg Two"
+            />
           </div>
         </div>
-      </section>
+      </div>
+    </section>
   );
 };
 

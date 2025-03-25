@@ -1,6 +1,12 @@
 import React from 'react';
 import { Title, Description,  Subtitle, StepCard   } from '../../components';
 
+// Images
+import HowWorkIt1 from "/assets/imgs/how-it-works/how-it-works-1.png";
+import HowWorkIt2 from "/assets/imgs/how-it-works/how-it-works-2.png";
+import HowWorkIt3 from "/assets/imgs/how-it-works/how-it-works-3.png";
+import HowWorkIt4 from "/assets/imgs/how-it-works/how-it-works-4.png";
+
 const HowItWorks = () => (
     <section>
         <div className="container">
@@ -19,7 +25,7 @@ const HowItWorks = () => (
             <div className="grid grid-cols-1 sm:grid-cols-12 md:grid-cols-12 gap-6 mt-20">
                 {/* Step 1 */}
                 <StepCard
-                    imgSrc="/assets/imgs/how-it-works/how-it-works-1.png"
+                    imgSrc={HowWorkIt1}
                     title="Sign Up Today"
                     description="Kick off your financial exploration!"
                     colSpan="sm:col-span-12 md:col-span-6 lg:col-span-5"
@@ -27,7 +33,7 @@ const HowItWorks = () => (
 
                 {/* Step 2 */}
                 <StepCard
-                    imgSrc="/assets/imgs/how-it-works/how-it-works-2.png"
+                    imgSrc={HowWorkIt2}
                     title="Set Your Goals"
                     description="Share your aspirations and get a strategy!"
                     colSpan="sm:col-span-12 md:col-span-6 lg:col-span-7"
@@ -35,7 +41,7 @@ const HowItWorks = () => (
 
                 {/* Step 3 */}
                 <StepCard
-                    imgSrc="/assets/imgs/how-it-works/how-it-works-3.png"
+                    imgSrc={HowWorkIt3}
                     title="Track Your Progress"
                     description="Track your spending in real-time and reach your goals!"
                     colSpan="sm:col-span-12 md:col-span-6 lg:col-span-6"
@@ -43,7 +49,7 @@ const HowItWorks = () => (
 
                 {/* Step 4 */}
                 <StepCard
-                    imgSrc="/assets/imgs/how-it-works/how-it-works-4.png"
+                    imgSrc={HowWorkIt4}
                     title="Achieve Success"
                     description="Unlock your financial potential with expert advice!"
                     colSpan="sm:col-span-12 md:col-span-6 lg:col-span-6"

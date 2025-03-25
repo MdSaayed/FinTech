@@ -1,9 +1,5 @@
 import React from 'react';
-import Cta from '../components/cta/Cta';
-import Faq from '../components/faq/Faq';
-import FeaturesSection from '../components/howItWorks/HowItWorks';
-import Stats from '../components/stats/Stats';
-import FeaturesHero from '../components/hero/FeaturesHero';
+import {Cta, Faq, Stats, FeaturesHero, HowItWorks } from "../components";
 
 const Features = () => {
     return (
@@ -11,11 +7,11 @@ const Features = () => {
             {/* Hero */}
             <FeaturesHero/>
             
-            {/* Stats */}
+            {/* Stats */} 
             <Stats />
 
             {/* Features Section */}
-            <FeaturesSection />
+            <HowItWorks />
 
             {/* Faq Section */}
             <Faq />

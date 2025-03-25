@@ -1,58 +1,47 @@
-import React from 'react';
-import Title from './../components/title/Title';
-import { useLoaderData } from 'react-router-dom';
-import BlogFeatured from '../components/blog/BlogFeatured';
-import Cta from './../components/cta/Cta';
+import React from "react";
+import { useLoaderData } from "react-router-dom";
+import { Cta, BlogFeatured, Title } from "../components";
 
+/** BlogSingle Component Displays A Detailed View Of A Single Blog Post. */
 const BlogSingle = () => {
-    const {title,image,date,content,details_img} =useLoaderData( );
- 
+  const blog = useLoaderData(); // Fetch Blog Data Using useLoaderData Hook
 
-    return (
-        <>
-            {/* Blog Single */}
-            <section>
-                <div className="container">
-                    <div className="bg-white rounded-2xl py-16 px-2 md:px-16 lg:px-28">
-                        <div className="text-center space-y-6">
-                            {/* Post Author */}
-                            <span className='text-sm font-normal font-geist text-purple-600'>By Sarah Thompson</span>
+  const { title, image, date, content, details_img, author } = blog; // Destructure Blog Data
 
-                            {/* Post Title */}
-                            <Title level={1} className='max-w-3xl'>{title}</Title>
-
-                            {/* Post Date */}
-                            <span className='text-sm text-gray-600 font-geist'>{date}</span>
-
-                            {/* Post Thumbnail */}
-                            {
-                            (details_img || image) && (
-                                <div className='py-12'>
-                                    <img className='mx-auto max-w-full' src={details_img || image} alt={title} />
-                                </div>
-                            )
-                            }
-
-                            {/* Post Content */}
-                            {
-                                content && (
-                                    <div className="px-6 md:px-6 lg:px-12">
-                                        <p className="text-left text-gray-600 font-inter text-lg">{content}</p>
-                                    </div>
-                                )
-                            }
-                        </div>
-                    </div>
+  return (
+    <>
+      {/* Blog Single Section */}
+      <section>
+        <div className="container">
+          <div className="bg-white rounded-2xl py-16 px-2 md:px-16 lg:px-28">
+            <div className="text-center space-y-6">
+              {author && <span className="text-sm font-normal font-geist text-purple-600">{author}</span>} {/* Post Author */}
+              {title && <Title level={1} className="max-w-3xl">{title}</Title>} {/* Post Title */}
+              {date && <span className="text-sm text-gray-600 font-geist">{date}</span>} {/* Post Date */}
+              
+              {(details_img || image) && ( // Post Thumbnail, Checks If Image Exists
+                <div className="py-12">
+                  <img className="mx-auto max-w-full" src={details_img || image} alt={title} loading="lazy" />
                 </div>
-            </section>
+              )}
 
-            {/* Blog */}
-            <BlogFeatured />
+              {content && ( // Post Content
+                <div className="px-6 md:px-6 lg:px-12">
+                  <p className="text-left text-gray-600 font-inter text-lg">{content}</p>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Cta */}
-            <Cta />
-        </>
-    );
+      {/* Featured Blog Section */}
+      <BlogFeatured />
+
+      {/* Cta */}
+      <Cta /> 
+    </>
+  );
 };
 
 export default BlogSingle;

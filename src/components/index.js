@@ -21,6 +21,8 @@ export { default as HomeHero } from './hero/HomeHero';
 export { default as AboutHero } from './hero/AboutHero';
 export { default as HowItWorks } from './howItWorks/HowItWorks';
 export { default as StepCard } from './howItWorks/StepCard';
+export { default as InputField } from './input/InputField';
+export { default as ContactInfo } from './contactInfo/ContactInfo';
 export { default as LazyLoad } from './lazyLoad/LazyLoad';
 export { default as Loading } from './loading/Loading';
 export { default as VideoPopup } from './modal/VideoPopup';

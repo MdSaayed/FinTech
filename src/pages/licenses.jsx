@@ -7,7 +7,7 @@ import {InstructionsSection, IllustrationSection,IconographySection,PhotographyS
 const licenses = () => {
     return (
         <>
-             <InstructionsSection />
+            <InstructionsSection />
             <IllustrationSection />
             <IconographySection />
             <PhotographySection />

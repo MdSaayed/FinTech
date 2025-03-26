@@ -36,9 +36,9 @@ const router = createBrowserRouter([
       { path: "licenses", element: <LazyLoad component={licenses} /> },
       { path: "privacy-policy", element: <LazyLoad component={PrivacyPolicy} /> },
       { path: "terms-and-conditions", element: <LazyLoad component={TermsOfServices} /> },
-      { path: "success", element: <LazyLoad component={Success} /> }
     ],
   },
+  { path: "success", element: <LazyLoad component={Success} /> },
   {
     path: "*",
     element: <NotFound />, // ✅ Shows ErrorPage without Header/Footer

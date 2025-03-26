@@ -53,17 +53,17 @@ const PaymentPopup = ({ price, onClose }) => {
           <p className="text-center text-gray-500 text-sm mt-2">
             ⚠️ Payments are disabled in demo mode. No actual transactions will be processed.
           </p>
-
           <button
             className="w-full py-2 mt-4 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition"
             onClick={() => {
+              setLoading(true); // Set loading before starting the delay
               setTimeout(() => {
                 onClose();
                 navigate("/success");
               }, 1500); // Simulate processing delay
             }}
           >
-            Pay Now
+            {loading ? "Processing..." : "Pay Now"}
           </button>
         </div>
       </div>

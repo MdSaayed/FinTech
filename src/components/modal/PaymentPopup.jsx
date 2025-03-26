@@ -3,6 +3,8 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements, CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { useNavigate } from "react-router-dom";
 import { LiaStripe } from "react-icons/lia";
+import { IoCloseOutline } from "react-icons/io5";
+
 
 
 /**
@@ -39,7 +41,13 @@ const PaymentPopup = ({ price, onClose }) => {
       <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center">
         <div className="bg-white p-6 rounded-lg w-full sm:w-96 relative">
           <h2 className="text-2xl font-bold text-center mb-4">Complete Your Purchase</h2>
-          
+          {/* Close Button */}
+          <IoCloseOutline
+             className="absolute top-1 right-1 text-gray-700 cursor-pointer text-xl transform rotate-0 transition-transform duration-300 ease-in-out hover:rotate-[360deg]"
+             onClick={() => onClose()}
+          />
+
+          {/* Price */}
           <div className="mb-4 text-center">
             <p className="text-xl font-medium">Total: ${price}</p> 
           </div>
@@ -50,6 +58,7 @@ const PaymentPopup = ({ price, onClose }) => {
             <LiaStripe className="text-2xl"/>
           </div>
 
+          {/* Notice */}
           <p className="text-center text-gray-500 text-sm mt-2">
             ⚠️ Payments are disabled in demo mode. No actual transactions will be processed.
           </p>
@@ -142,13 +151,10 @@ const PaymentPopup = ({ price, onClose }) => {
         </form>
 
         {/* Close button */}
-        <button
-          className="absolute top-0 right-0 p-2 text-gray-500"
-          onClick={onClose}
-          aria-label="Close payment"
-        >
-          ×
-        </button>
+        <IoCloseOutline
+             className="absolute top-1 right-1 text-gray-700 cursor-pointer text-xl transform rotate-0 transition-transform duration-300 ease-in-out hover:rotate-[360deg]"
+             onClick={() => onClose()}
+          />
       </div>
     </div>
   );

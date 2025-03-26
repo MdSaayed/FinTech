@@ -1,33 +1,37 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types'; // Import PropTypes for prop validation
 import { blogLoader } from '../../routes/Loader.js'; // Import the loader to fetch blog data
+import { useLoading } from "../../context/LoadingContext"; // Import Loading Context To Manage Loading State
 import { BlogHighlight, Description, ErrorMessage, Loading, Subtitle, Title  } from '../index.js';
 
 
 const BlogFeatured = ({ postLimit = 3 }) => {
     const [blogs, setBlogs] = useState([]);  // State to hold blog data, initially empty
-    const [loading, setLoading] = useState(true);  // State to manage loading state
     const [error, setError] = useState(null);  // State to manage error handling
+    const { startLoading, stopLoading } = useLoading(); // Get Loading Context Methods
 
     useEffect(() => {
+        startLoading(); // Trigger Loading Animation When Data Fetch Starts
+
         // Function to fetch blogs from the blogLoader
         const fetchBlogs = async () => {
             try {
                 const data = await blogLoader();  // Fetch the data (ensure it returns a Promise)
                 const featuredBlogs = data.filter(blog => blog.featured);  // Filter blogs to show only featured ones
                 setBlogs(featuredBlogs);  // Store the filtered data in state
+                stopLoading(); // Stop Loading Animation After Data Is Fetched
             } catch (err) {
                 setError("Failed to load blogs");  // Set error message if fetching fails
             } finally {
-                setLoading(false);  // Set loading to false once fetching is complete
+                stopLoading(); // Stop Loading Animation In Case Of Error
             }
         };
 
         fetchBlogs();  // Call the function when the component mounts
     }, []);  // Empty dependency array ensures the effect runs only once on mount
 
+    
     // Show loading state or error if any
-    if (loading) return <Loading />;  // You can replace this with a custom loading component
     if (error) return <ErrorMessage />;  // Display error message if there's an error
 
     return (

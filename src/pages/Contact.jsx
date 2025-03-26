@@ -69,7 +69,7 @@ const Contact = () => {
                                     name="company"
                                     value={formData.company}
                                     onChange={handleChange}
-                                    placeholder="Ui Bazar"
+                                    placeholder="Acme Inc."
                                     error={errors.company}
                                 />
                                 
@@ -80,7 +80,7 @@ const Contact = () => {
                                     name="email"
                                     value={formData.email}
                                     onChange={handleChange}
-                                    placeholder="contact.uibazar@gmail.com"
+                                    placeholder="example@business.com"
                                     error={errors.email}
                                 />
                                 

@@ -1,33 +1,33 @@
 import PropTypes from "prop-types";
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState } from "react";
 
+// Create A New Context For Loading State
 const LoadingContext = createContext();
 
+// LoadingProvider Component To Provide Loading Context To The App
 export const LoadingProvider = ({ children }) => {
+  // State To Manage Loading Status
   const [isLoading, setIsLoading] = useState(false);
-  const [animationData, setAnimationData] = useState(null);
 
+  // Function To Start Loading (Set isLoading To True)
   const startLoading = () => setIsLoading(true);
+
+  // Function To Stop Loading (Set isLoading To False)
   const stopLoading = () => setIsLoading(false);
 
-  // Preload Lottie animation when the app loads
-  useEffect(() => {
-    fetch("/loader.json")
-      .then((res) => res.json())
-      .then((data) => setAnimationData(data))
-      .catch((err) => console.error("Error loading animation:", err));
-  }, []);
-
+  // Provide The Loading Context To Children Components
   return (
-    <LoadingContext.Provider value={{ isLoading, startLoading, stopLoading, animationData }}>
+    <LoadingContext.Provider value={{ isLoading, startLoading, stopLoading }}>
       {children}
     </LoadingContext.Provider>
   );
 };
 
-// PropTypes validation
+// PropTypes Validation To Ensure Proper Types Are Passed
 LoadingProvider.propTypes = {
-  children: PropTypes.node.isRequired,  // Validate that children is a valid React node
+  // Validate That Children Is A Valid React Node
+  children: PropTypes.node.isRequired,
 };
 
+// Custom Hook To Access Loading Context In Any Component
 export const useLoading = () => useContext(LoadingContext);

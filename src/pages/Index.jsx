@@ -1,7 +1,6 @@
 import React from 'react';
 import { Advantage, Testimonials, Faq, BlogFeatured, PricingGrid, Cta, HowItWorks, Brands, HomeHero,FeatureGrid } from '../components';
 
-
 const Index = () => {
     return (
        <>

@@ -37,66 +37,77 @@ const MobileMenu = ({ navItems, isMobileMenuOpen, setIsMobileMenuOpen, setIsPage
     }, [isMobileMenuOpen]);
 
     return (
-        <div className='block lg:hidden w-full py-6 relative'>
-            <div className='flex justify-between items-center'>
-                <Logo />
-                <Humbarger setIsMobileMenuOpen={setIsMobileMenuOpen} isMobileMenuOpen={isMobileMenuOpen} />
-            </div>
+        <div className="block lg:hidden w-full py-6 relative">
+    <div className="flex justify-between items-center">
+        <Logo />
+        <Humbarger setIsMobileMenuOpen={setIsMobileMenuOpen} isMobileMenuOpen={isMobileMenuOpen} />
+    </div>
 
-            {/* Mobile Menu */}
-            <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} absolute top-20 bg-white w-full h-screen z-50`}>
-                <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 font-geist">
-                    {navItems.map((item,idx) => {
-                        const isActive = location.pathname === item.link; // Check if the current path matches the item link
-                        return (
-                            <div key={idx}>
-                                <Link
-                                    to={item.link}
-                                    onClick={() => !item.dropdown && setIsMobileMenuOpen(false)}
-                                    className={`text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium ${isActive ? 'text-purple-600' : ''}`}
-                                >
-                                    <div className="flex justify-between items-center">
-                                        {item.text}
-                                        {item.dropdown && (
-                                            <button
-                                                onClick={() => setIsPagesDropdownOpen(!isPagesDropdownOpen)}
-                                                className="p-1"
-                                            >
-                                                <ChevronDown className={`w-5 h-5 transition-transform ${isPagesDropdownOpen ? 'rotate-180' : ''}`} />
-                                            </button>
-                                        )}
-                                    </div>
-                                </Link>
+    {/* Mobile Menu (Full Screen + Scrollable) */}
+    <div className={`${isMobileMenuOpen ? "flex" : "hidden"} 
+        fixed top-0 left-0 w-full h-screen bg-white 
+        flex-col z-40 shadow-lg overflow-hidden`}>
 
-                                {/* Dropdown Menu */}
-                                {item?.dropdown && isPagesDropdownOpen && (
-                                    <div className="ml-4 space-y-2">
-                                        {item.dropdown.map((subItem,idx) => {
-                                            const isSubItemActive = location.pathname === subItem.link; // Check if the sub-item is active
-                                            return (
-                                                <Link
-                                                    key={idx}
-                                                    to={subItem.link}
-                                                    onClick={() => setIsMobileMenuOpen(false)}
-                                                    className={`block px-3 py-2 text-gray-600 hover:bg-gray-100 rounded-md text-sm ${isSubItemActive ? 'text-purple-600' : ''}`}
-                                                >
-                                                    {subItem?.text}
-                                                </Link>
-                                            );
-                                        })}
-                                    </div>
+        {/* Scrollable Content */}
+        <div className="flex-1 overflow-y-auto px-2 pt-4 pb-6 sm:px-3 font-geist">
+            {navItems.map((item, idx) => {
+                const isActive = location.pathname === item.link;
+                return (
+                    <div key={idx}>
+                        <Link
+                            to={item.link}
+                            onClick={() => !item.dropdown && setIsMobileMenuOpen(false)}
+                            className={`text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium 
+                                ${isActive ? "text-purple-600" : ""}`}
+                        >
+                            <div className="flex justify-between items-center">
+                                {item.text}
+                                {item.dropdown && (
+                                    <button
+                                        onClick={() => setIsPagesDropdownOpen(!isPagesDropdownOpen)}
+                                        className="p-1"
+                                    >
+                                        <ChevronDown
+                                            className={`w-5 h-5 transition-transform ${
+                                                isPagesDropdownOpen ? "rotate-180" : ""
+                                            }`}
+                                        />
+                                    </button>
                                 )}
                             </div>
-                        );
-                    })}
+                        </Link>
 
-                    {/* Button */}
-                    <div style={{ marginTop: '20px' }}>
-                        <Button  to="https://apps.apple.com" icon={true} iconComponent={<FaApple />} text='Download in ios' />
+                        {/* Dropdown Menu */}
+                        {item?.dropdown && isPagesDropdownOpen && (
+                            <div className="ml-4 space-y-2">
+                                {item.dropdown.map((subItem, idx) => {
+                                    const isSubItemActive = location.pathname === subItem.link;
+                                    return (
+                                        <Link
+                                            key={idx}
+                                            to={subItem.link}
+                                            onClick={() => setIsMobileMenuOpen(false)}
+                                            className={`block px-3 py-2 text-gray-600 hover:bg-gray-100 
+                                                rounded-md text-sm ${isSubItemActive ? "text-purple-600" : ""}`}
+                                        >
+                                            {subItem?.text}
+                                        </Link>
+                                    );
+                                })}
+                            </div>
+                        )}
                     </div>
-                </div>
-            </div>
+                );
+            })}
         </div>
+
+        {/* Fixed Button at Bottom */}
+        <div className="p-4 border-t">
+            <Button to="https://apps.apple.com" icon={true} iconComponent={<FaApple />} text="Download in iOS" />
+        </div>
+    </div>
+</div>
+
     );
 };
 

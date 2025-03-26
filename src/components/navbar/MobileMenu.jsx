@@ -46,10 +46,10 @@ const MobileMenu = ({ navItems, isMobileMenuOpen, setIsMobileMenuOpen, setIsPage
             {/* Mobile Menu */}
             <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} absolute top-20 bg-white w-full h-screen z-50`}>
                 <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 font-geist">
-                    {navItems.map((item) => {
+                    {navItems.map((item,idx) => {
                         const isActive = location.pathname === item.link; // Check if the current path matches the item link
                         return (
-                            <div key={item.id}>
+                            <div key={idx}>
                                 <Link
                                     to={item.link}
                                     onClick={() => !item.dropdown && setIsMobileMenuOpen(false)}
@@ -69,18 +69,18 @@ const MobileMenu = ({ navItems, isMobileMenuOpen, setIsMobileMenuOpen, setIsPage
                                 </Link>
 
                                 {/* Dropdown Menu */}
-                                {item.dropdown && isPagesDropdownOpen && (
+                                {item?.dropdown && isPagesDropdownOpen && (
                                     <div className="ml-4 space-y-2">
-                                        {item.dropdown.map((subItem) => {
+                                        {item.dropdown.map((subItem,idx) => {
                                             const isSubItemActive = location.pathname === subItem.link; // Check if the sub-item is active
                                             return (
                                                 <Link
-                                                    key={subItem.id}
+                                                    key={idx}
                                                     to={subItem.link}
                                                     onClick={() => setIsMobileMenuOpen(false)}
                                                     className={`block px-3 py-2 text-gray-600 hover:bg-gray-100 rounded-md text-sm ${isSubItemActive ? 'text-purple-600' : ''}`}
                                                 >
-                                                    {subItem.text}
+                                                    {subItem?.text}
                                                 </Link>
                                             );
                                         })}

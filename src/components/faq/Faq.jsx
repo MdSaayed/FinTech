@@ -36,11 +36,11 @@ const Faq = () => {
     if (error) return <ErrorMessage error={error} />;
 
     return (
-        <section className="faq-section bg-lightGrayishWhite py-12">
-            <div className="container mx-auto">
+        <section>
+            <div className="container">
                 <div className="bg-white rounded-3xl px-4 py-10 md:p-20">
                     {/* Subtitle */}
-                    <Subtitle text="Frequently Asked Questions" align="justify-center" className='bg-purple-100' />
+                    <Subtitle text="Frequently Asked Questions" align="justify-center" className='bg-purple-200' />
 
                     {/* Title */}
                     <Title align='justify-center' className='text-center'>

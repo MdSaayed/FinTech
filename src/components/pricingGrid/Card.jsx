@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { GiCheckMark } from "react-icons/gi";
+import { Link } from 'react-router-dom';
+ 
 
 /**
  * Card Component
@@ -12,8 +14,10 @@ import { GiCheckMark } from "react-icons/gi";
  * @returns {JSX.Element} The rendered card component.
  */
 const Card = ({ plan, packageType }) => {
-    const { name, description, packages, featuredCard } = plan;
+    const { name, description, packages, featuredCard,id } = plan;
     const selectedPackage = packages?.[packageType]; // Select the right package based on 'packageType' prop
+
+    console.log(selectedPackage);
 
     return (
         <div 
@@ -33,15 +37,15 @@ const Card = ({ plan, packageType }) => {
                 <p className="text-3xl font-geist font-medium py-2">{selectedPackage?.price}</p>
                 <p>{description}</p>
 
-                <button 
-                    className={`mt-11 w-full py-2 md:py-3 rounded-3xl font-geist font-normal text-gray-700 
-                    transition-all duration-300 
-                    ${featuredCard ? 'bg-purple-600 text-white' : 'bg-gray-100'} 
-                    group-hover:bg-purple-600 group-hover:text-white`}
+                <Link
+                    to={`/pricing/${id}`} 
+                    className={`block mt-11 w-full py-2 md:py-3 rounded-3xl font-geist font-normal text-gray-700 
+                    transition-all duration-300 ${featuredCard ? 'bg-purple-600 text-white' : 'bg-gray-100'} 
+                    group-hover:bg-purple-600 group-hover:text-white text-center`}
                     aria-label={`Free 14 Day Trial for ${name}`}
                 >
                     Free-14 Day Trial
-                </button>
+                </Link>
             </div>
 
             {/* Features List */}

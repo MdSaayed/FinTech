@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaApple } from "react-icons/fa"; // Importing Apple icon from react-icons
-import Description from "../description/Description"; // Reusable Description component
-import Title from "../title/Title"; // Reusable Title component
-import Button from "../button/Button"; // Reusable Button component
+import {Description, Title, Button, AnimatedCursor } from "../../components";
 
 // Importing images for background instead of using src paths directly
 import HeroBgOne from "/assets/imgs/hero/hero-bg-1.png";
@@ -58,7 +56,7 @@ const FeaturesHero = () => {
   return (
     <section>
       <div className="container section-padding-0 relative">
-        <div id="mouse-area" className="bg-white rounded-3xl px-2 py-28 relative overflow-hidden">
+        <div id="mouse-area" className="bg-white rounded-3xl px-2 py-28 relative">
           
           {/* Title */}
           <Title align="justify-center" size="text-[2.5rem] lg:text-[4.1rem]" className="text-gray-900 text-center max-w-[800px] z-30">
@@ -78,18 +76,8 @@ const FeaturesHero = () => {
           </div>
 
           {/* Animated Cursors */}
-          <div
-            className="absolute transition-all duration-[5000ms] ease-in-out z-30"
-            style={{ left: `${cursorLeft.x}px`, top: `${cursorLeft.y}px` }}
-          >
-            <img src={MouseIcon1} alt="Mouse Icon 1" />
-          </div>
-          <div
-            className="absolute transition-all duration-[4500ms] ease-in-out z-30"
-            style={{ left: `${cursorRight.x}px`, top: `${cursorRight.y}px` }}
-          >
-            <img src={MouseIcon2} alt="Mouse Icon 2" />
-          </div>
+          <AnimatedCursor position={cursorLeft} imageSrc={MouseIcon1} duration={5000} altText="Mouse Icon 1" />
+          <AnimatedCursor position={cursorRight} imageSrc={MouseIcon2} duration={4500} altText="Mouse Icon 2" />
           
           {/* Background Images */}
           <div className="hidden md:block">

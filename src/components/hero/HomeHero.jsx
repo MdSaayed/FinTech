@@ -10,7 +10,7 @@ const HomeHero = () => {
                 <div className="grid grid-cols-1 xl:grid-cols-2 items-center px-5 lg:px-10 gap-y-20 py-12 bg-white rounded-xl">
                     <div className='lg:pr-20'>
                         {/* Subtitle */}
-                        <Subtitle label='New' align='justify-center md:justify-start' className='bg-purple-100' text="AI Update for January 2025"  />
+                        <Subtitle label='New' align='justify-center md:justify-start' className='bg-purple-200' text="AI Update for January 2025"  />
 
                         {/* Title */}
                         <div className="mb-6">

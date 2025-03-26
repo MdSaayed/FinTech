@@ -23,37 +23,37 @@ const DesktopMenu = ({ navItems, isPagesDropdownOpen, setIsPagesDropdownOpen }) 
         <div className="hidden lg:flex items-center justify-between w-full py-8">
             <div className='flex items-center lg:gap-16 w-full'>
                 <Logo />
-                <div className="hidden md:flex items-center space-x-8">
-                    {navItems.map((item) => {
+                <div className="hidden md:flex items-center space-x-4">
+                    {navItems.map((item,idx) => {
                         const isActive = location.pathname === item.link; // Check if the current page matches the link
                         return (
                             <div
-                                key={item.id}
+                                key={idx}
                                 className="relative font-geist z-40"
                                 onMouseEnter={() => item.dropdown && setIsPagesDropdownOpen(true)}
                                 onMouseLeave={() => item.dropdown && setIsPagesDropdownOpen(false)}
                             >
                                 <Link
-                                    to={item.link}
+                                    to={item?.link}
                                     className={`text-gray-700 hover:text-purple-600 px-3 py-2 leading-loose rounded-md text-sm font-medium flex items-center gap-1 ${isActive ? 'text-purple-600' : ''}`}
                                 >
-                                    {item.text}
-                                    {item.dropdown && (
+                                    {item?.text}
+                                    {item?.dropdown && (
                                         <ChevronDown className={`w-4 h-4 transition-transform ${isPagesDropdownOpen ? 'rotate-180' : ''}`} />
                                     )}
                                 </Link>
 
                                 {item.dropdown && isPagesDropdownOpen && (
                                     <div className="absolute top-10 left-0 w-48 bg-white shadow-lg rounded-lg py-2">
-                                        {item.dropdown.map((subItem) => {
+                                        {item?.dropdown?.map((subItem,idx) => {
                                             const isSubItemActive = location.pathname === subItem.link; // Check if the subItem's link matches the current path
                                             return (
                                                 <Link
-                                                    key={subItem.id}
-                                                    to={subItem.link}
+                                                    key={idx}
+                                                    to={subItem?.link}
                                                     className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 ${isSubItemActive ? 'text-purple-600' : ''}`}
                                                 >
-                                                    {subItem.text}
+                                                    {subItem?.text}
                                                 </Link>
                                             );
                                         })}

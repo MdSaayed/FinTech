@@ -46,8 +46,8 @@ const PricingSingle = () => {
     <>
       {/* Pricing Section */}
       <section>
-        <div className="container py-10 lg:py-24">
-          <div className="bg-white rounded-2xl p-5 md:p-10 md:mb-16">
+        <div className="container -mt-16 lg:mt-0">
+          <div className="bg-white rounded-2xl py-10 px-5 md:p-10 md:mb-16">
             <div className="flex flex-col lg:flex-row justify-between gap-y-12 gap-x-8">
               {/* Plan Details */}
               <div>

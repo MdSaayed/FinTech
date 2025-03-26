@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const ErrorMessage = ({ error }) => {
     return (
         <section>
-            <div className='container bg-lightGrayishWhite'>
+            <div className='container bg-white rounded-2xl'>
                 <p className="text-center text-red-500 py-5">Error: {error}</p>
             </div>
         </section>

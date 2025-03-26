@@ -13,8 +13,8 @@ const BlogSingle = () => {
     <>
       {/* Blog Single Section */}
       <section>
-        <div className="container">
-          <div className="bg-white rounded-2xl py-16 px-2 md:px-16 lg:px-28">
+        <div className="container -mt-16 lg:mt-0">
+          <div className="bg-white px-4 md:px-5 lg:px-10 py-16 rounded-2xl">
             <div className="text-center space-y-6">
               {author && <span className="text-sm font-normal font-geist text-purple-600">{author}</span>} {/* Post Author */}
               {title && <Title level={1} className="max-w-3xl">{title}</Title>} {/* Post Title */}

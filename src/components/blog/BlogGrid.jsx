@@ -33,7 +33,7 @@ const BlogGrid = () => {
         <Title>Cool News And <span>Updates</span></Title> {/* Title */}
         <Description text="Get The Scoop With Handy Tips, Money Advice, And The Freshest Updates To Help You Along Your Financial Path." className="max-w-xl" /> {/* Description */}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 my-16 px-6 md:px-12 lg:px-20 py-16 bg-white rounded-2xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 my-16 px-4 md:px-10 lg:px-20 py-16 bg-white rounded-2xl">
           {blogs?.slice(3, 9)?.map((blog) => ( // Slice Blogs, It Shows From 3 To 9
             <BlogGridItem key={blog?.id} blog={blog} />
           ))}

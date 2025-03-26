@@ -5,7 +5,7 @@ import MainLayout from "../layouts/MainLayout";
 import { singlePostLoader, blogLoader, singlePricingLoader } from "./Loader";
 
 // ✅ Lazy load pages for better performance
-const Home = lazy(() => import("../pages/Home"));
+const Index = lazy(() => import("../pages/Index"));
 const About = lazy(() => import("../pages/About"));
 const Features = lazy(() => import("../pages/Features"));
 const Blog = lazy(() => import("../pages/Blog"));
@@ -25,7 +25,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <MainLayout />,
     children: [
-      { path: "", element: <LazyLoad component={Home} /> },
+      { path: "", element: <LazyLoad component={Index} /> },
       { path: "about", element: <LazyLoad component={About} /> },
       { path: "features", element: <LazyLoad component={Features} /> },
       { path: "blog", element: <LazyLoad component={Blog} />, loader: blogLoader },

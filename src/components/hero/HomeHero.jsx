@@ -6,7 +6,7 @@ import { Title, Description, Button, Subtitle } from '../../components';
 const HomeHero = () => {
     return (
         <section>
-            <div className="container">
+            <div className="container section-padding-0">
                 <div className="grid grid-cols-1 xl:grid-cols-2 items-center px-5 lg:px-10 gap-y-20 py-12 bg-white rounded-xl">
                     <div className='lg:pr-20'>
                         {/* Subtitle */}

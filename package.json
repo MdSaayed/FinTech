@@ -16,6 +16,7 @@
     "emailjs-com": "^3.2.0",
     "framer-motion": "^12.5.0",
     "lottie-react": "^2.4.1",
+    "lucide-react": "^0.484.0",
     "prop-types": "^15.8.1",
     "react": "^19.0.0",
     "react-confetti": "^6.4.0",

@@ -2,7 +2,7 @@ import React from 'react';
 import { Advantage, Testimonials, Faq, BlogFeatured, PricingGrid, Cta, HowItWorks, Brands, HomeHero,FeatureGrid } from '../components';
 
 
-const Home = () => {
+const Index = () => {
     return (
        <>
          {/* Hero */}
@@ -39,4 +39,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default Index;

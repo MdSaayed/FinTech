@@ -33,8 +33,8 @@ const Navbar = () => {
         { id: 3, text: 'About', link: '/about' },
         { id: 4, text: 'Blog', link: '/blog' },
         { id: 5, text: 'Blog Single', link: '/blog/1' },
-        { id: 6, text: 'Pricing Single', link: '/pricing/1' },
-        { id: 7, text: 'Pricing', link: '/pricing' },
+        { id: 6, text: 'Pricing', link: '/pricing' },
+        { id: 7, text: 'Pricing Single', link: '/pricing/1' },
         { id: 8, text: 'Contact', link: '/contact' },
         { id: 9, text: 'Success', link: '/success' },
         { id: 10, text: 'Licenses', link: '/licenses' },
@@ -46,8 +46,8 @@ const Navbar = () => {
 
   return (
     <nav className="w-full z-50">
-      <div className="container section-padding-0">
-      <div class="nav-container max-w-5xl mx-auto">
+      <div className="container padding-y-0">
+      <div className="nav-container max-w-5xl mx-auto">
         {/* Desktop Menu Component */}
         <DesktopMenu 
           navItems={navItems} 

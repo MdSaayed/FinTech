@@ -29,8 +29,12 @@ const Cta = () => {
                         
                         {/* App Store and Google Play Buttons */}
                         <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
-                            <Link to=""><img src={AppStore} alt="App Store" /></Link>
-                            <Link to=""><img src={GooglePlay} alt="Google Play" /></Link>
+                            <Link to="https://play.google.com/store">
+                                <img src={AppStore} alt="App Store" />
+                            </Link>
+                            <Link to="https://www.apple.com/app-store">
+                                <img src={GooglePlay} alt="Google Play" />
+                            </Link>
                         </div>
                     </div>
                 </div>

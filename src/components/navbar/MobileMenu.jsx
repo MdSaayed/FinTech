@@ -92,7 +92,7 @@ const MobileMenu = ({ navItems, isMobileMenuOpen, setIsMobileMenuOpen, setIsPage
 
                     {/* Button */}
                     <div style={{ marginTop: '20px' }}>
-                        <Button  to="https://apps.apple.com" icon={true} iconComponent={<FaApple />} text='Download in iso' />
+                        <Button  to="https://apps.apple.com" icon={true} iconComponent={<FaApple />} text='Download in ios' />
                     </div>
                 </div>
             </div>

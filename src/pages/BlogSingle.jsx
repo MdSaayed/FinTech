@@ -1,6 +1,7 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
 import { Cta, BlogFeatured, Title } from "../components";
+import blogDateFormat from "../components/blog/blogDateFormat";
 
 /** BlogSingle Component Displays A Detailed View Of A Single Blog Post. */
 const BlogSingle = () => {
@@ -17,7 +18,7 @@ const BlogSingle = () => {
             <div className="text-center space-y-6">
               {author && <span className="text-sm font-normal font-geist text-purple-600">{author}</span>} {/* Post Author */}
               {title && <Title level={1} className="max-w-3xl">{title}</Title>} {/* Post Title */}
-              {date && <span className="text-sm text-gray-600 font-geist">{date}</span>} {/* Post Date */}
+              {date && <span className="text-sm text-gray-600 font-geist">{blogDateFormat(date)}</span>} {/* Post Date */}
               
               {(details_img || image) && ( // Post Thumbnail, Checks If Image Exists
                 <div className="py-12">

@@ -1,26 +1,34 @@
-/* In your global CSS file (e.g., styles.css or tailwind.css) */
+/* Global Container Styles */
 .container {
-  @apply py-16 px-20 mx-auto max-w-[1440px];
+  @apply py-16 px-20 mx-auto max-w-[1440px]; /* Setting Default Container Width And Padding */
 }
 
-/* Responsive styles for tablet (max-width: 1024px) */
+/* Responsive Styles For Tablet (Max-Width: 1024px) */
 @media (max-width: 1024px) {
   .container {
-    @apply px-10;
+    @apply px-10; /* Reducing Padding For Tablets */
   }
 }
 
-/* Responsive styles for mobile (max-width: 768px) */
+/* Responsive Styles For Mobile (Max-Width: 768px) */
 @media (max-width: 768px) {
   .container {
-    @apply px-5;
+    @apply px-5; /* Further Reducing Padding For Mobile Devices */
   }
 }
 
-.section-padding {
-  @apply py-12 ; 
-}
-.section-padding-0 {
-  @apply py-0 ; 
+/* Padding Utility Classes */
+.padding-y-12 {
+  @apply py-12; /* Applying Vertical Padding Of 12 Units */
 }
 
+.padding-t-0{
+    @apply pt-0;   /*Removing Top Padding */
+}
+.padding-b-0{
+    @apply pt-0;   /*Removing Bottom Padding */
+}
+
+.padding-y-0 {
+  @apply py-0; /* Removing Vertical Padding */
+}

@@ -3,6 +3,7 @@
     "id": 1,
     "name": "Personal",
     "featuredCard": false,
+    "inclusivePlans": "Morbi sed imperdiet in ipsum, adipiscing elit dui lectus. Tellus id scelerisque est ultricies ultricies. Duis est sit sed leo nisl, blandit elit sagittis. Quisque tristique consequat quam sed. Nisl at scelerisque amet nulla purus habitasse. Nunc sed faucibus bibendum feugiat sed interdum. Ipsum egestas condimentum mi massa.",
     "packages": {
       "monthly": {
         "price": "$10/mth",
@@ -30,6 +31,7 @@
     "id": 2,
     "name": "Professional",
     "featuredCard": true,
+    "inclusivePlans": "Nunc sed faucibus bibendum feugiat sed interdum. Ipsum egestas condimentum mi massa. In tincidunt pharetra consectetur sed duis facilisis metus. Etiam egestas in nec sed et. Quis lobortis at sit dictum eget nibh tortor commodo cursus. Morbi sed imperdiet in ipsum, adipiscing elit dui lectus. Duis est sit sed leo nisl.",
     "packages": {
       "monthly": {
         "price": "$70/mth",
@@ -57,6 +59,7 @@
     "id": 3,
     "name": "Teams",
     "featuredCard": false,
+    "inclusivePlans": "Aliquam senectus neque ut id eget consectetur dictum. Donec posuere pharetra odio consequat scelerisque et, nunc tortor. Nulla adipiscing erat a erat. Condimentum lorem posuere gravida enim posuere cursus diam. Morbi sed imperdiet in ipsum, adipiscing elit dui lectus. Nam elementum urna nisi aliquet erat dolor enim.",
     "packages": {
       "monthly": {
         "price": "$130/mth",

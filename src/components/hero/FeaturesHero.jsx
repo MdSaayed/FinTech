@@ -55,7 +55,7 @@ const FeaturesHero = () => {
 
   return (
     <section>
-      <div className="container section-padding-0 relative">
+      <div className="container padding-y-0 relative">
         <div id="mouse-area" className="bg-white rounded-3xl px-2 py-28 relative">
           
           {/* Title */}

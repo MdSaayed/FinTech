@@ -47,7 +47,7 @@ const PricingSingle = () => {
       {/* Pricing Section */}
       <section>
         <div className="container py-10 lg:py-24">
-          <div className="bg-white rounded-2xl p-5 md:p-10">
+          <div className="bg-white rounded-2xl p-5 md:p-10 md:mb-16">
             <div className="flex flex-col lg:flex-row justify-between gap-y-12 gap-x-8">
               {/* Plan Details */}
               <div>
@@ -104,7 +104,7 @@ const PricingSingle = () => {
             {/* Inclusive Plans Description */}
             <div className="mt-20">
               <h3 className="text-gray-600 text-3xl font-semibold mb-4">Inclusive Plans</h3>
-              <p className="text-base font-normal text-gray-700">{pricingData?.description}</p>
+              <p className="text-base font-normal text-gray-700">{pricingData?.inclusivePlans}</p>
             </div>
           </div>
         </div>

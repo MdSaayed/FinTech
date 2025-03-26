@@ -67,7 +67,7 @@ const DesktopMenu = ({ navItems, isPagesDropdownOpen, setIsPagesDropdownOpen }) 
 
             {/* Button */}
             <div className='w-60 flex justify-end'>
-                <Button to="https://apps.apple.com" icon={true} iconComponent={<FaApple />} className='w-fit' text="Download in iso" />
+                <Button to="https://apps.apple.com" icon={true} iconComponent={<FaApple />} className='w-fit' text="Download in ios" />
             </div>
         </div>
     );

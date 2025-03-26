@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types'; // Import PropTypes for prop validation
 import { blogLoader } from '../../routes/Loader.js'; // Import the loader to fetch blog data
-import { BlogHighlight, Description, Subtitle, Title  } from '../index.js';
+import { BlogHighlight, Description, ErrorMessage, Loading, Subtitle, Title  } from '../index.js';
 
 
 const BlogFeatured = ({ postLimit = 3 }) => {
@@ -14,7 +14,8 @@ const BlogFeatured = ({ postLimit = 3 }) => {
         const fetchBlogs = async () => {
             try {
                 const data = await blogLoader();  // Fetch the data (ensure it returns a Promise)
-                setBlogs(data);  // Store the fetched data in state
+                const featuredBlogs = data.filter(blog => blog.featured);  // Filter blogs to show only featured ones
+                setBlogs(featuredBlogs);  // Store the filtered data in state
             } catch (err) {
                 setError("Failed to load blogs");  // Set error message if fetching fails
             } finally {
@@ -26,8 +27,8 @@ const BlogFeatured = ({ postLimit = 3 }) => {
     }, []);  // Empty dependency array ensures the effect runs only once on mount
 
     // Show loading state or error if any
-    if (loading) return <div>Loading...</div>;  // You can replace this with a custom loading component
-    if (error) return <div>{error}</div>;  // Display error message if there's an error
+    if (loading) return <Loading />;  // You can replace this with a custom loading component
+    if (error) return <ErrorMessage />;  // Display error message if there's an error
 
     return (
         <section>

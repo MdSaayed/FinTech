@@ -10,3 +10,7 @@
 #F9FAFB --> gray-50
 #F3F4F6 --> gray-100
  
+
+ <!-- Inclusive Plans  -->
+ <!-- Need to show featured post -->
+ <!-- payment card close buttton -->

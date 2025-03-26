@@ -17,8 +17,6 @@ const Card = ({ plan, packageType }) => {
     const { name, description, packages, featuredCard,id } = plan;
     const selectedPackage = packages?.[packageType]; // Select the right package based on 'packageType' prop
 
-    console.log(selectedPackage);
-
     return (
         <div 
             className={`rounded-2xl py-8 transition-all duration-300 group 

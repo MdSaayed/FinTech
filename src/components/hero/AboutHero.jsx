@@ -3,7 +3,7 @@ import {Subtitle,Title,Description}from '../../components';
 const AboutHero = () => {
     return (
         <section>
-            <div className="container section-padding-0">
+            <div className="container padding-y-0">
                 <div className="bg-white px-2 md:px-5 lg:px-10 py-16 rounded-2xl">
                     {/* Subtitle */}
                     <Subtitle text='About' align='justify-center' />

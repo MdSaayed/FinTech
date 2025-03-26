@@ -28,10 +28,10 @@ const Navbar = () => {
   return (
     <nav className="  w-full z-50">
       <div className="container section-padding-0">
-          {/* Desktop Navigation */}
+          {/* Desktop Menu */}
           <DesktopMenu navItems={navItems} setIsPagesDropdownOpen={setIsPagesDropdownOpen} isPagesDropdownOpen={isPagesDropdownOpen} />
 
-          {/* Mobile Navigation */}
+          {/* Mobile Menu */}
           <MobileMenu navItems={navItems} isMobileMenuOpen={isMobileMenuOpen} setIsMobileMenuOpen={setIsMobileMenuOpen}   setIsPagesDropdownOpen={setIsPagesDropdownOpen} isPagesDropdownOpen={isPagesDropdownOpen} />
       </div>
     </nav>

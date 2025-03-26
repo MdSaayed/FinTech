@@ -38,7 +38,7 @@ const BlogGrid = () => {
         <Subtitle text="Blog" align="justify-center" />
 
         {/* Title Component Displays Section Title */}
-        <Title>Cool News And <span>Updates</span></Title>
+        <Title className="max-w-[740px] text-center">Cool News And <span>Updates</span></Title>
 
         {/* Description Component Displays Brief Description For The Section */}
         <Description text="Get The Scoop With Handy Tips, Money Advice, And The Freshest Updates To Help You Along Your Financial Path." className="max-w-xl" />

@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { useLoading } from "../context/LoadingContext";
-import { Cta, Faq, Loading } from "../components";
-import PaymentPopupWrapper from "../components/modal/PaymentPopup";
+import { Cta, ErrorMessage, Faq,PaymentPopupWrapper } from "../components";
 import TermsList from "../components/utility-components/TermsList";
 
 const PricingSingle = () => {
@@ -10,7 +9,7 @@ const PricingSingle = () => {
   const pricingData = useLoaderData(); 
   
   // Manage loading state
-  const { isLoading, startLoading, stopLoading } = useLoading();
+  const { startLoading, stopLoading } = useLoading();
 
   // Component states
   const [error, setError] = useState(null);
@@ -39,8 +38,7 @@ const PricingSingle = () => {
     ? parseFloat(monthlyPrice.replace(/[^0-9.]/g, "")) || 0
     : parseFloat(yearlyPrice.replace(/[^0-9.]/g, "")) || 0;
 
-  if (isLoading) return <Loading />;
-  if (error) return <p className="text-red-500">{error}</p>;
+  if (error) return <ErrorMessage />;
 
   return (
     <>

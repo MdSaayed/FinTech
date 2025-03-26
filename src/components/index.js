@@ -16,6 +16,7 @@ export { default as Description } from './description/Description';
 export { default as ErrorMessage } from './errorMessage/ErrorMessage';
 export { default as Faq } from './faq/Faq';
 export { default as FaqItem } from './faq/FaqItem';
+export { default as PaymentPopupWrapper } from './modal/PaymentPopup';
 export { default as FeatureGrid } from './featureCard/FeatureGrid';
 export { default as FeatureCard } from './featureCard/FeatureCard';
 export { default as Footer } from './footer/Footer';

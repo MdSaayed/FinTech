@@ -22,10 +22,21 @@ const Footer = () => {
                         
                         <div className="my-6 space-y-4 text-sm">
                             <p className="text-base text-gray-700 font-medium">Contact:</p>
-                            <p className="text-gray-600"><strong>Email:</strong> support@uiappX.com</p>
-                            <p className="text-gray-600"><strong>Phone:</strong> 123-456-7890</p>
-                            <p className="text-gray-600"><strong>Address:</strong> 123 Finance St., New York, NY 10001</p>
+                            <p className="text-gray-600">
+                                <strong>Email:</strong> 
+                                <a href="mailto:support@uiappX.com">
+                                support@uiappX.com
+                                </a>
+                            </p>
+                            <p className="text-gray-600">
+                                <strong>Phone:</strong> 
+                                <a href="tel:1234567890"> 123-456-7890 </a>
+                            </p>
+                            <p className="text-gray-600">
+                                <strong>Address:</strong> 123 Finance St., New York, NY 10001
+                            </p>
                         </div>
+
 
                         {/* Social Links */}
                         <div className="flex space-x-3 mt-4">
@@ -67,7 +78,7 @@ const Footer = () => {
                                         <li><Link to="/contact" className="hover:underline font-geist text-base text-gray-700">Contact</Link></li>
                                         <li><Link to="/privacy-policy" className="hover:underline font-geist text-base text-gray-700">Privacy Policy</Link></li>
                                         <li><Link to="/licenses" className="hover:underline font-geist text-base text-gray-700">Licenses</Link></li>
-                                        <li><Link to="/terms" className="hover:underline font-geist text-base text-gray-700">Terms & Conditions</Link></li>
+                                        <li><Link to="/terms-and-conditions" className="hover:underline font-geist text-base text-gray-700">Terms & Conditions</Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -77,7 +88,6 @@ const Footer = () => {
                             <h4 className="text-2xl text-neutral-900 font-geist font-semibold mb-5">Utility Page</h4>
                             <ul className="space-y-2 text-sm">
                                 <li><Link to="/404" className="hover:underline font-geist text-base text-gray-700">404 Not Found</Link></li>
-                                <li><Link to="/faq" className="hover:underline font-geist text-base text-gray-700">FAQs</Link></li>
                             </ul>
                         </div>
                     </div>

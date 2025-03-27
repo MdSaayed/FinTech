@@ -25,9 +25,7 @@ const PricingGrid = () => {
     
         fetchPricingData();
     }, []);    
-
-        fetchPricingData();
-    }, []);  // Empty dependency array ensures this effect runs only once when the component mounts
+   // Empty dependency array ensures this effect runs only once when the component mounts
 
 
     // Showing Error

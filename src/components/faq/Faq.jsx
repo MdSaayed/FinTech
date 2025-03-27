@@ -1,24 +1,28 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { faqLoader } from '../../routes/Loader.js'; // Ensure Loader Function Exists
-import { ErrorMessage, Description, Loading,  Title, Subtitle, FaqItem } from '../../components';
+import { useLoading } from "../../context/LoadingContext"; // Import Loading Context To Manage Loading State
+import { ErrorMessage, Description, Title, Subtitle, FaqItem } from '../../components';
 
 // Faq Component
 const Faq = () => {
     // State For Faq Data
     const [faqs, setFaqs] = useState([]);
     const [openIndex, setOpenIndex] = useState(null); // State For Opened Faq
-    const [loading, setLoading] = useState(true); // Loading State
     const [error, setError] = useState(null); // Error Handling State
+    const { startLoading, stopLoading } = useLoading(); // Get Loading Context Methods
 
     // Fetch Faq Data
     const fetchFaq = useCallback(async () => {
+        startLoading();
+
         try {
             const data = await faqLoader(); // Ensure faqLoader Is Returning A Promise
             setFaqs(data); // Set Faq Data
         } catch (err) {
+            stopLoading();
             setError("Failed To Load Faq Data"); // Error Handling
         } finally {
-            setLoading(false); // Stop Loading
+            stopLoading(); // Stop Loading
         }
     }, []);
 
@@ -32,7 +36,6 @@ const Faq = () => {
     };
 
     // If Loading Or Error, Show Respective Component
-    if (loading) return <Loading />;
     if (error) return <ErrorMessage error={error} />;
 
     return (

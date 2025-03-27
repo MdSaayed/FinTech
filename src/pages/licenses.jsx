@@ -6,9 +6,16 @@ import {Cta} from "../components"
 const licenses = () => {
     return (
         <>
+            {/* Instructions */}
             <InstructionsSection />
+
+            {/* Illustration */}
             <IllustrationSection />
+
+            {/* Iconography */}
             <IconographySection />
+
+            {/* Photography */}
             <PhotographySection />
 
             {/* Cta */}

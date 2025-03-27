@@ -1,11 +1,13 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
-import { Cta, BlogFeatured, Title } from "../components";
+import { Cta, BlogFeatured, Title, ErrorMessage } from "../components";
 import blogDateFormat from "../components/blog/blogDateFormat";
 
 /** BlogSingle Component Displays A Detailed View Of A Single Blog Post. */
 const BlogSingle = () => {
   const blog = useLoaderData(); // Fetch Blog Data Using useLoaderData Hook
+
+  if(!blog) return <ErrorMessage error="Oops! Blog Post Not Found." />
 
   const { title, image, date, content, details_img, author } = blog; // Destructure Blog Data
 

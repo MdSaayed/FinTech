@@ -6,29 +6,35 @@ import { Subtitle, Title, Description, BlogGridItem, ErrorMessage } from "../../
 /** BlogGrid Component Displays A Collection Of Blog Posts In A Grid Layout. */
 const BlogGrid = () => {
   const [blogs, setBlogs] = useState([]); // State To Hold Blog Data, Initially Empty
-  const [error, setError] = useState(null); // State To Manage Error Handling
+  const [error, setError] = useState(''); // State To Manage Error Handling
   const { startLoading, stopLoading } = useLoading(); // Get Loading Context Methods
 
-  /** useEffect Hook For Fetching Blogs When Component Mounts */
-  useEffect(() => {
-    startLoading(); // Trigger Loading Animation When Data Fetch Starts
+  /** useEffect Hook For Fetching Blogs When Component Mounts */useEffect(() => {
+  const fetchBlogs = async () => {
+    startLoading(); // Start loading state
 
-    /** Fetch Blogs Data Asynchronously */
-    const fetchBlogs = async () => {
-      try {
-        const data = await blogLoader(); // Fetch The Data (Ensure It Returns A Promise)
-        setBlogs(data); // Store The Fetched Data In State
-      } catch (err) {
-        setError("Failed To Load Blogs"); // Set Error Message If Fetching Fails
-        stopLoading(); // Stop Loading 
+    try {
+      const data = await blogLoader(); // Fetch blog data
+
+      if (!data || data.length === 0) {
+        throw new Error("No blogs available."); // Handle empty response
       }
-    };
 
-    fetchBlogs(); // Call The Function When The Component Mounts
-  }, []); // Empty Dependency Array Ensures The Effect Runs Only Once On Mount
+      setBlogs(data); // Store data in state
+      setError(""); // Clear any previous errors
+    } catch (error) {
+      setError("Failed to load blogs. Please try again later."); // Set user-friendly error
+    } finally {
+      stopLoading(); // Ensure loading state is stopped
+    }
+  };
+
+  fetchBlogs();
+}, []); // Run only on component mount
+
 
   // Display Error Message If There's An Error
-  if (error) return <ErrorMessage error={error} />;
+  if (error) return <ErrorMessage error={error}/>;
 
   return (
     <section>

@@ -38,7 +38,7 @@ const PricingSingle = () => {
     ? parseFloat(monthlyPrice.replace(/[^0-9.]/g, "")) || 0
     : parseFloat(yearlyPrice.replace(/[^0-9.]/g, "")) || 0;
 
-  if (error) return <ErrorMessage />;
+  if (error) return <ErrorMessage error={error} />;
 
   return (
     <>

@@ -51,7 +51,7 @@ const Advantage = () => {
                         <img 
                             src={tabs[index].image} 
                             alt={`Advantage ${index + 1}`} 
-                            className="transition-all duration-300 ease-in-out"
+                            className="transition-all duration-300 ease-in-out max-w-lg max-h-[420px] object-cover"
                         />
                     </div>
 

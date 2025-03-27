@@ -19,8 +19,13 @@ const BlogFeatured = ({ postLimit = 3 }) => {
                 const data = await blogLoader();  // Fetch the data (ensure it returns a Promise)
                 const featuredBlogs = data.filter(blog => blog.featured);  // Filter blogs to show only featured ones
                 setBlogs(featuredBlogs);  // Store the filtered data in state
+                
+                if (!data || data.length === 0) {
+                    throw new Error("No blogs available."); // Handle empty response
+                }
+
             } catch (err) {
-                setError("Failed to load blogs");  // Set error message if fetching fails
+                setError("Failed to load blogs. Please try again later.");  // Set error message if fetching fails
             } finally {
                 stopLoading(); // Stop Loading Animation In Case Of Error
             }
@@ -31,7 +36,7 @@ const BlogFeatured = ({ postLimit = 3 }) => {
 
     
     // Show loading state or error if any
-    if (error) return <ErrorMessage />;  // Display error message if there's an error
+    if (error) return <ErrorMessage error={error} />;  // Display error message if there's an error
 
     return (
         <section>

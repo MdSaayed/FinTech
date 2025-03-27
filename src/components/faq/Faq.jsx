@@ -18,6 +18,10 @@ const Faq = () => {
         try {
             const data = await faqLoader(); // Ensure faqLoader Is Returning A Promise
             setFaqs(data); // Set Faq Data
+            
+            if (!data || data.length === 0) {
+                throw new Error("No Faq available."); // Handle empty response
+            }
         } catch (err) {
             setError("Failed To Load Faq Data"); // Error Handling
         } finally {

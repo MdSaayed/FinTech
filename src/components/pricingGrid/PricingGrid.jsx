@@ -16,6 +16,10 @@ const PricingGrid = () => {
             try {
                 const data = await pricingLoader();  // Ensure pricingLoader is returning a Promise of an array
                 setPlans(data);
+                            
+                if (!data || data.length === 0) {
+                    throw new Error("No pricing data available."); // Handle empty response
+                }
             } catch (err) {
                 setError("Failed to load pricing data"); // error message
             } finally {

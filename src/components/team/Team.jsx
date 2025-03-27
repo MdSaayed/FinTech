@@ -17,6 +17,11 @@ const Team = () => {
             try {
                 const data = await teamMemberLoader();  // Ensure teamMemberLoader returns a Promise of an array
                 setMember(data);
+                
+                if (!data || data.length === 0) {
+                    throw new Error("No team member available."); // Handle empty response
+                }
+
             } catch (err) {
                 setError("Failed to load Team data");
             } finally {

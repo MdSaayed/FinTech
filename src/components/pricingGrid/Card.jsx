@@ -38,7 +38,7 @@ const Card = ({ plan, packageType }) => {
                 <Link
                     to={`/pricing/${id}`} 
                     className={`block mt-11 w-full py-2 md:py-3 rounded-3xl font-geist font-normal text-gray-700 
-                    transition-all duration-300 ${featuredCard ? 'bg-purple-600 text-white' : 'bg-gray-100'} 
+                    transition-all duration-300 ${featuredCard ? 'bg-purple-600 text-white hover:bg-white hover:text-gray-700' : 'bg-gray-100'} 
                     group-hover:bg-purple-600 group-hover:text-white text-center`}
                     aria-label={`Free 14 Day Trial for ${name}`}
                 >

@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Images
-import IllustrationImg from '/assets/imgs/global/illustration.png';
+import IllustrationImg from '/assets/images/global/illustration.png';
 
 /**
  * IllustrationSection - Displays the illustration with title and description.

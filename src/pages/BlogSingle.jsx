@@ -1,7 +1,7 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
 import { Cta, BlogFeatured, Title, ErrorMessage } from "../components";
-import blogDateFormat from "../components/blog/blogDateFormat";
+import blogDateFormat from "../components/blog/blogDateFormat"; 
 
 /** BlogSingle Component Displays A Detailed View Of A Single Blog Post. */
 const BlogSingle = () => {
@@ -9,7 +9,7 @@ const BlogSingle = () => {
 
   if(!blog) return <ErrorMessage error="Oops! Blog Post Not Found." />
 
-  const { title, image, date, content, details_img, author } = blog; // Destructure Blog Data
+  const { title, image, date, content, details_image, author } = blog; // Destructure Blog Data
 
   return (
     <>
@@ -22,9 +22,9 @@ const BlogSingle = () => {
               {title && <Title level={1} className="max-w-3xl">{title}</Title>} {/* Post Title */}
               {date && <span className="text-sm text-gray-600 font-geist">{blogDateFormat(date)}</span>} {/* Post Date */}
               
-              {(details_img || image) && ( // Post Thumbnail, Checks If Image Exists
+              {(details_image || image) && ( // Post Thumbnail, Checks If Image Exists
                 <div className="py-12">
-                  <img className="mx-auto max-w-full" src={details_img || image} alt={title} loading="lazy" />
+                  <img className="mx-auto max-w-full" src={details_image || image} alt={title} loading="lazy" />
                 </div>
               )}
 

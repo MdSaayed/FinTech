@@ -4,7 +4,7 @@ import {VideoPopup} from '../../components'; // Import Subtitle, Title, and Desc
 
 // Images
 import PlayButton from "/assets/icons/play-button.svg";
-import TestimonialImag from "/assets/imgs/global/man-with-laptop.png";
+import TestimonialImag from "/assets/images/global/man-with-laptop.png";
 
 
 /**

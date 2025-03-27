@@ -6,7 +6,7 @@ const AboutHero = () => {
             <div className="container padding-y-0">
                 <div className="bg-white px-4 md:px-5 lg:px-10 py-16 rounded-2xl">
                     {/* Subtitle */}
-                    <Subtitle text='About' align='justify-center' />
+                    <Subtitle text='About' align='justify-center' className='bg-purple-200' />
 
                     {/* Title */}
                     <Title className='max-w-2xl text-center'>Hey there! Let’s chat <span> about UIAppX.</span></Title>
@@ -16,7 +16,7 @@ const AboutHero = () => {
 
                     {/* Img */}
                     <div className='rounded-xl mt-12'>
-                        <img src="/assets/imgs/global/about-banner.png" alt="Banner Img" />
+                        <img src="/assets/images/global/about-banner.png" alt="Banner Img" />
                     </div>
 
                     {/* Content */}

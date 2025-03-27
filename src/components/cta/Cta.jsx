@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {Title, Description} from '../../components';
 // Image
-import CtaBg from '/assets/imgs/global/cta-bg.png';
-import AppStore from '/assets/imgs/global/app-store.png';
-import GooglePlay from '/assets/imgs/global/google-play.png';
+import CtaBg from '/assets/images/global/cta-bg.png';
+import AppStore from '/assets/images/global/app-store.png';
+import GooglePlay from '/assets/images/global/google-play.png';
 
 const Cta = () => {
     return (

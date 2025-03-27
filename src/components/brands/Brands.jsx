@@ -2,12 +2,12 @@ import React from 'react';
 import {LogoCard} from "../../components";
 
 // Import brand logo images from the assets folder
-import logo1 from '/assets/imgs/global/logo-1.png';
-import logo2 from '/assets/imgs/global/logo-2.png';
-import logo3 from '/assets/imgs/global/logo-3.png';
-import logo4 from '/assets/imgs/global/logo-4.png';
-import logo5 from '/assets/imgs/global/logo-5.png';
-import logo6 from '/assets/imgs/global/logo-6.png';
+import logo1 from '/assets/images/global/logo-1.png';
+import logo2 from '/assets/images/global/logo-2.png';
+import logo3 from '/assets/images/global/logo-3.png';
+import logo4 from '/assets/images/global/logo-4.png';
+import logo5 from '/assets/images/global/logo-5.png';
+import logo6 from '/assets/images/global/logo-6.png';
 
 /**
  * Brands Component

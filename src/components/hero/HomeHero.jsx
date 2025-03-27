@@ -1,5 +1,5 @@
 import React from 'react';
-import HeroImg from '/assets/imgs/hero/home-hero.png';
+import HeroImg from '/assets/images/hero/home-hero.png';
 import { FaApple } from "react-icons/fa";
 import { Title, Description, Button, Subtitle } from '../../components';
 

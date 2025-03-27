@@ -7,15 +7,15 @@ import PropTypes from 'prop-types';
  * A reusable card component that displays an image, title, and description.
  * Can be used in a grid layout where the column span can be customized.
  * 
- * @param {string} imgSrc - The source URL for the image to be displayed.
+ * @param {string} imagesrc - The source URL for the image to be displayed.
  * @param {string} title - The title of the step or card.
  * @param {string} description - The description or content of the card.
  * @param {string} colSpan - A class to define the column span for the card in a grid (e.g., "lg:col-span-2").
  */
-const StepCard = ({ imgSrc, title, description, colSpan = '' }) => (
+const StepCard = ({ imagesrc, title, description, colSpan = '' }) => (
     <div className={`bg-white border border-purple-100 rounded-xl ${colSpan}`}>
         {/* Image */}
-        <img src={imgSrc} alt={title} className="max-h-64 mx-auto" />
+        <img src={imagesrc} alt={title} className="max-h-64 mx-auto" />
 
         {/* Content */}
         <div className="space-y-2 px-6 md:px-10 my-6">
@@ -30,7 +30,7 @@ const StepCard = ({ imgSrc, title, description, colSpan = '' }) => (
 
 // Prop types validation
 StepCard.propTypes = {
-    imgSrc: PropTypes.string.isRequired, // The image source URL (string)
+    imagesrc: PropTypes.string.isRequired, // The image source URL (string)
     title: PropTypes.string.isRequired, // The title of the card (string)
     description: PropTypes.string.isRequired, // The description content (string)
     colSpan: PropTypes.string, // Optional: CSS class for grid column span

@@ -3,7 +3,7 @@
     "id": 1,
     "title": "How real-time analytics can transform your money strategy!",
     "excerpt": "Ideal for startups, our Starter Plan provides essential tools for easy financial management.",
-    "image": "/assets/imgs/blogs/blog-1.png",
+    "image": "/assets/images/blogs/blog-1.png",
     "content": "Real-time analytics has become a game-changer in financial strategy. With real-time insights, businesses can track their expenses, monitor cash flow, and make data-driven decisions instantly. Gone are the days when financial reports were only reviewed monthly. Now, with advanced data tools, companies can analyze patterns, predict trends, and optimize their spending in real-time.\n\nFinancial strategy today requires a proactive approach. For instance, startups that utilize real-time analytics can swiftly adjust their budgets, identify unnecessary expenses, and allocate resources more efficiently. By integrating data-driven insights, businesses can reduce risks and improve profitability.\n\nReal-time analytics also aids in fraud detection. Financial fraud can cripple a company’s growth, but with continuous data monitoring, businesses can immediately spot unusual activities and take preventive measures. Furthermore, AI-powered analytics can automate financial reports, reducing manual effort and ensuring accuracy.\n\nWith technology evolving rapidly, embracing real-time analytics is no longer a luxury but a necessity. Companies that leverage this technology stay ahead of their competitors, making their financial management more effective and streamlined. Whether you're an entrepreneur, a business owner, or an individual looking to improve personal finances, real-time analytics can transform your money strategy.",
     "author": "John Doe",
     "date": "2025-03-01",
@@ -13,13 +13,13 @@
     "views": 1200,
     "comments": 12,
     "featured": true,
-    "details_image": "/assets/imgs/blogs/blog-details-1.png"
+    "details_image": "/assets/images/blogs/blog-details-1.png"
   },
   {
     "id": 2,
     "title": "Simplify and empower your financial management with MezGo",
     "excerpt": "Our Launch Package is ideal for startups, providing all the tools to manage finances like never before.",
-    "image": "/assets/imgs/blogs/blog-2.png",
+    "image": "/assets/images/blogs/blog-2.png",
     "content": "Managing finances can be overwhelming, especially for startups and small businesses. MezGo offers a streamlined approach to financial management, simplifying accounting, budgeting, and forecasting.\n\nOne of the core advantages of MezGo is its user-friendly interface, making financial planning accessible to non-experts. It integrates seamlessly with various banking systems, ensuring a smooth transaction process. With real-time tracking, users can monitor their expenses and revenue, providing a clear picture of their financial health.\n\nAdditionally, MezGo provides automated financial reports, reducing the time spent on manual calculations. Businesses can set financial goals and track their progress effortlessly. The platform also includes features like invoice management, payment reminders, and tax calculations, making financial management hassle-free.\n\nFor startups, having control over finances is crucial for long-term sustainability. MezGo not only simplifies money management but also empowers businesses to make informed financial decisions. Whether you’re handling payroll, expenses, or investments, MezGo ensures that your financial data is secure, accessible, and efficient.",
     "author": "Jane Smith",
     "date": "2025-03-02",
@@ -29,13 +29,13 @@
     "views": 890,
     "comments": 7,
     "featured": true,
-    "details_image": "/assets/imgs/blogs/blog-details-2.png"
+    "details_image": "/assets/images/blogs/blog-details-2.png"
   },
   {
     "id": 3,
     "title": "The role of AI in personal finance management",
     "excerpt": "AI-driven finance tools are revolutionizing personal money management, offering insights and automation.",
-    "image": "/assets/imgs/blogs/blog-3.png",
+    "image": "/assets/images/blogs/blog-3.png",
     "content": "Artificial Intelligence (AI) is changing the way individuals manage their finances. With AI-powered tools, people can automate budgeting, investment tracking, and expense monitoring effortlessly.\n\nOne of the biggest advantages of AI in finance is its predictive analysis. AI algorithms analyze spending habits and provide recommendations on how to save money. For example, AI-powered apps categorize expenses and highlight areas where users can cut costs.\n\nAdditionally, AI-driven financial advisors, known as robo-advisors, help individuals make smarter investment decisions. These digital advisors assess risk tolerance, analyze market trends, and suggest the best investment strategies.\n\nFraud detection is another key area where AI plays a significant role. Banks and financial institutions use AI to detect suspicious transactions and prevent financial crimes.\n\nAI is making personal finance management smarter and more efficient. Whether it’s tracking expenses, managing savings, or investing wisely, AI-driven tools provide a hassle-free solution for financial well-being.",
     "author": "Mark Taylor",
     "date": "2025-03-03",
@@ -45,13 +45,13 @@
     "views": 1250,
     "comments": 15,
     "featured": true,
-    "details_image": "/assets/imgs/blogs/blog-details-3.png"
+    "details_image": "/assets/images/blogs/blog-details-3.png"
   },
   {
     "id": 4,
     "title": "Getting the Hang of Budgeting",
     "excerpt": "Check out some easy ways to set up and stick to a budget that fits your life.",
-    "image": "/assets/imgs/blogs/blog-4.png",
+    "image": "/assets/images/blogs/blog-4.png",
     "content": "Budgeting is a powerful tool for financial stability, but it can seem overwhelming for those unfamiliar with it. The first step is to track your income and expenses. By understanding where your money is going, you can identify areas where you might cut back. Once you have this data, it’s time to allocate your income to different categories such as savings, necessities, and entertainment.\n\nA popular method is the 50/30/20 rule, where 50% of your income goes toward needs, 30% to wants, and 20% to savings. This method ensures a balanced approach to spending and saving.\n\nAnother effective strategy is the envelope system, which involves using physical or digital envelopes to allocate money to specific categories. This can help you control impulse spending and stay within your budget.\n\nLastly, remember to adjust your budget as your financial situation changes. If you get a raise or face unexpected expenses, it’s important to review and modify your budget accordingly. Budgeting is not a one-size-fits-all approach, but with consistency, it can lead to greater financial freedom and peace of mind.",
     "author": "Lucy Green",
     "date": "2025-03-04",
@@ -61,13 +61,13 @@
     "views": 580,
     "comments": 5,
     "featured": false,
-    "details_image": "/assets/imgs/blogs/blog-details-4.png"
+    "details_image": "/assets/images/blogs/blog-details-4.png"
   },
   {
     "id": 5,
     "title": "Awesome Tools for Keeping Track of Your Money",
     "excerpt": "Find out the coolest apps and tools that make tracking your spending and saving super easy.",
-    "image": "/assets/imgs/blogs/blog-5.png",
+    "image": "/assets/images/blogs/blog-5.png",
     "content": "Keeping track of your finances is essential for maintaining control over your money. Fortunately, there are many apps and tools that make financial management easier than ever. These tools can help you track spending, set savings goals, and monitor your financial progress.\n\nOne popular tool is Mint, a free budgeting app that connects to your bank accounts and credit cards to track your spending. Mint categorizes expenses and gives you an overview of where your money is going. It also allows you to set budget limits and provides insights into your financial habits.\n\nAnother great tool is YNAB (You Need A Budget), which is designed to help you allocate money to specific categories and prioritize your spending. YNAB focuses on giving every dollar a job, ensuring that your money is used effectively.\n\nFor those looking to invest, platforms like Robinhood and Acorns offer simple ways to start investing with minimal effort. Robinhood allows you to buy and sell stocks, while Acorns rounds up your purchases to the nearest dollar and invests the change in diversified portfolios.\n\nThese tools can help you become more organized with your finances, making it easier to save, invest, and avoid debt. By regularly reviewing your financial progress, you can make informed decisions that lead to long-term financial health.",
     "author": "Mark Taylor",
     "date": "2025-03-05",
@@ -77,13 +77,13 @@
     "views": 650,
     "comments": 3,
     "featured": false,
-    "details_image": "/assets/imgs/blogs/blog-details-5.png"
+    "details_image": "/assets/images/blogs/blog-details-5.png"
   },
   {
     "id": 6,
     "title": "Starting Your Credit Journey",
     "excerpt": "Uncover some solid tips to boost your credit score and build a great financial reputation.",
-    "image": "/assets/imgs/blogs/blog-6.png",
+    "image": "/assets/images/blogs/blog-6.png",
     "content": "Your credit score plays a pivotal role in your financial life, impacting your ability to secure loans, get lower interest rates, and even rent a house. If you're just starting your credit journey, there are a few strategies to help you build a solid foundation.\n\nThe first step is to obtain a credit card. For beginners, a secured credit card is a great option, as it requires a deposit that serves as your credit limit. Using this card responsibly and paying off the balance each month will help you build a positive credit history.\n\nIt's also important to keep track of your credit utilization ratio, which is the percentage of your available credit that you're using. A low ratio indicates to lenders that you're responsible with your credit, which can improve your score.\n\nAnother key factor is making timely payments. Payment history is one of the most significant factors that influence your credit score. Set up reminders or automatic payments to ensure you're never late on your bills.\n\nFinally, regularly check your credit report to ensure that all information is accurate. Mistakes on your report can negatively affect your score, so it's essential to dispute any discrepancies you find.",
     "author": "Jane Smith",
     "date": "2025-03-06",
@@ -93,13 +93,13 @@
     "views": 420,
     "comments": 4,
     "featured": false,
-    "details_image": "/assets/imgs/blogs/blog-details-6.png"
+    "details_image": "/assets/images/blogs/blog-details-6.png"
   },
   {
     "id": 7,
     "title": "Easy Peasy Retirement Planning",
     "excerpt": "Here are some simple ideas to kickstart your retirement planning for a chill and secure future.",
-    "image": "/assets/imgs/blogs/blog-7.png",
+    "image": "/assets/images/blogs/blog-7.png",
     "content": "Planning for retirement is essential, but it doesn't have to be complicated. The earlier you start saving for retirement, the better, as time allows your investments to grow. One of the most straightforward ways to plan for retirement is by contributing to a retirement account, such as a 401(k) or IRA.\n\nMany employers offer matching contributions, so take full advantage of this benefit. If your employer offers a 401(k) match, contribute enough to receive the maximum match – it’s essentially free money.\n\nIn addition to your retirement accounts, consider building a diversified investment portfolio. Stocks, bonds, and real estate can help spread risk and increase returns over time.\n\nLastly, it's crucial to estimate how much you'll need for retirement based on your desired lifestyle. Use online calculators to determine your retirement goals and create a budget to ensure you're on track.",
     "author": "Mark Taylor",
     "date": "2025-03-07",
@@ -109,13 +109,13 @@
     "views": 550,
     "comments": 8,
     "featured": false,
-    "details_image": "/assets/imgs/blogs/blog-details-7.png"
+    "details_image": "/assets/images/blogs/blog-details-7.png"
   },
   {
     "id": 8,
     "title": "Money-Saving Tips for Millennials",
     "excerpt": "Check out these practical saving hacks that can help millennials reach financial freedom.",
-    "image": "/assets/imgs/blogs/blog-8.png",
+    "image": "/assets/images/blogs/blog-8.png",
     "content": "Millennials face unique financial challenges, such as student loan debt, rising housing costs, and a volatile job market. However, there are numerous strategies they can use to save money and build wealth.\n\nOne effective way to save money is by adopting a frugal mindset. This means being mindful of your spending and making intentional choices about how and where you allocate your money.\n\nAnother tip is to automate savings. Set up automatic transfers to a high-yield savings account, so you're consistently putting money away for emergencies or future goals.\n\nMillennials can also take advantage of cashback rewards and discounts offered by credit cards and shopping apps. This is an easy way to save money on everyday purchases.\n\nLastly, paying off high-interest debt as quickly as possible will help free up money for saving and investing. Focus on clearing off credit card balances or personal loans to reduce the burden of interest payments.",
     "author": "Lucy Green",
     "date": "2025-03-08",
@@ -125,13 +125,13 @@
     "views": 720,
     "comments": 10,
     "featured": false,
-    "details_image": "/assets/imgs/blogs/blog-details-8.png"
+    "details_image": "/assets/images/blogs/blog-details-8.png"
   },
   {
     "id": 9,
     "title": "How to Build an Emergency Fund",
     "excerpt": "Here are some practical steps to build a safety net for unexpected financial emergencies.",
-    "image": "/assets/imgs/blogs/blog-9.png",
+    "image": "/assets/images/blogs/blog-9.png",
     "content": "An emergency fund is essential for financial security. It acts as a safety net in case of unexpected events such as medical emergencies, job loss, or urgent repairs.\n\nStart by setting a goal for your emergency fund. A good rule of thumb is to save three to six months' worth of living expenses. This will provide a cushion in case of unforeseen circumstances.\n\nTo build your emergency fund, set aside a portion of your income each month. Treat this savings as a non-negotiable expense, like rent or utilities.\n\nYou can also cut back on unnecessary spending and redirect that money toward your emergency fund. For instance, cancel subscriptions you don't use, eat out less often, or shop for more affordable alternatives.\n\nLastly, keep your emergency fund in a liquid, easily accessible account, such as a high-yield savings account. This will ensure that you can quickly access your funds when needed.",
     "author": "Mark Taylor",
     "date": "2025-03-09",
@@ -141,6 +141,6 @@
     "views": 800,
     "comments": 6,
     "featured": false,
-    "details_image": "/assets/imgs/blogs/blog-details-9.png"
+    "details_image": "/assets/images/blogs/blog-details-9.png"
   }
 ]

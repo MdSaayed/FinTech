@@ -2,9 +2,9 @@ import React, { useState } from 'react'; // Import React and useState Hook
 import {Description ,Subtitle ,Title ,  TabItem} from '../../components';
 
 // Import Images Directly
-import advantage1 from '/assets/imgs/global/advantage-1.png'; 
-import advantage2 from '/assets/imgs/global/advantage-1.png';
-import advantage3 from '/assets/imgs/global/advantage-1.png';
+import advantage1 from '/assets/images/global/advantage-1.png'; 
+import advantage2 from '/assets/images/global/advantage-2.png';
+import advantage3 from '/assets/images/global/advantage-3.png';
 
 const Advantage = () => {
     const [index, setIndex] = useState(0); // Track Selected Tab

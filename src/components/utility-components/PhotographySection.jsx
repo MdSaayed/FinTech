@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // Images
-import LummiImg from '/assets/imgs/global/lummi.png';
+import LummiImg from '/assets/images/global/lummi.png';
 
 /**
  * PhotographySection - Displays information and images related to photography assets.

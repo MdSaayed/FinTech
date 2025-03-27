@@ -2,9 +2,9 @@ import React from 'react';
 import { Title, Description, Subtitle, FeatureCard } from '../../components';
 
 // Images
-import Feature1 from "/assets/imgs/features/feature-1.png";
-import Feature2 from "/assets/imgs/features/feature-2.png";
-import Feature3 from "/assets/imgs/features/feature-3.png";
+import Feature1 from "/assets/images/features/feature-1.png";
+import Feature2 from "/assets/images/features/feature-2.png";
+import Feature3 from "/assets/images/features/feature-3.png";
 
 const FeatureGrid = () => (
     <section>
@@ -24,21 +24,21 @@ const FeatureGrid = () => (
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 lg:gap-16 mt-20">
           {/* Feature Card 1: Real-Time Expense Tracking */}
           <FeatureCard
-            imgSrc={Feature1}
+            imagesrc={Feature1}
             title="Real-Time Expense Tracking"
             description="Monitor your spending in real-time with categorized insights for better money management."
           />
           
           {/* Feature Card 2: Smart Insights */}
           <FeatureCard
-            imgSrc={Feature2}
+            imagesrc={Feature2}
             title="Smart Insights"
             description="Rely on robust security features to protect your financial data and transactions."
           />
           
           {/* Feature Card 3: User-Friendly Dashboard */}
           <FeatureCard
-            imgSrc={Feature3}
+            imagesrc={Feature3}
             title="User-Friendly Dashboard"
             description="Enjoy a clean, intuitive interface that simplifies complex financial data for easy understanding."
           />

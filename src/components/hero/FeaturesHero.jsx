@@ -3,8 +3,8 @@ import { FaApple } from "react-icons/fa"; // Importing Apple icon from react-ico
 import {Description, Title, Button, AnimatedCursor } from "../../components";
 
 // Importing images for background instead of using src paths directly
-import HeroBgOne from "/assets/imgs/hero/hero-bg-1.png";
-import HeroBgTwo from "/assets/imgs/hero/hero-bg-2.png";
+import HeroBgOne from "/assets/images/hero/hero-bg-1.png";
+import HeroBgTwo from "/assets/images/hero/hero-bg-2.png";
 import MouseIcon1 from "/assets/icons/mouse-1.svg"; 
 import MouseIcon2 from "/assets/icons/mouse-2.svg"; 
 

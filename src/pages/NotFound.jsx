@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Button from '../components/button/Button';
 
 // Importing the error image via import method for better performance and bundle optimization
-import errorImage from '/assets/imgs/global/error-image.png';
+import errorImage from '/assets/images/global/error-image.png';
 
 /**
  * NotFound Component - This page is shown when the user navigates to a route that doesn't exist.

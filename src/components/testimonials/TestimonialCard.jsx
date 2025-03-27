@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 // Image
 import QuoteIcon from "/assets/icons/quote.svg";
-import Wildcrafted from "/assets/imgs/global/wildcrafted.png";
-import Avatar from "/assets/imgs/global/avatar.png";
+import Wildcrafted from "/assets/images/global/wildcrafted.png";
+import Avatar from "/assets/images/global/avatar.png";
 
 /**
  * TestimonialCard Component

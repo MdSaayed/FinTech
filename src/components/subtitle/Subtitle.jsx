@@ -16,11 +16,11 @@ const Subtitle = ({
   label = "", 
   text = "Default subtitle text", 
   align = "justify-center", 
-  className = "" 
+  className = "bg-white" 
 }) => {
   return (
     <div className={`flex ${align}`}>
-      <div className={`inline-flex items-center space-x-2 bg-white text-gray-900 text-sm px-2 py-1 rounded-full mb-5 ${className}`}>
+      <div className={`inline-flex items-center space-x-2 text-gray-900 text-sm px-2 py-1 rounded-full mb-5 ${className}`}>
         
         {/* Displays Label If Provided, Otherwise Shows Default Icon */}
         {label ? (

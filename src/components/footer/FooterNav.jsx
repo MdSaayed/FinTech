@@ -23,7 +23,8 @@ const FooterNav = () => {
         { name: 'Terms And Conditions', to: '/terms-and-conditions' }
     ];
     const colFour = [
-        { name: '404 Not Found', to: '/404' }
+        { name: '404 Not Found', to: '/404' },
+        { name: 'Success', to: '/success' }
     ];
 
     return (

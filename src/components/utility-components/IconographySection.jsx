@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // Images
-import TablerImg from '/assets/imgs/global/tabler.png';
+import TablerImg from '/assets/images/global/tabler.png';
 
 /**
  * IconographySection - Displays the section for the source of the iconography.

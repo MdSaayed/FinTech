@@ -1,11 +1,11 @@
 import { ChevronDown } from 'lucide-react';
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import Logo from './Logo';
 import Humbarger from './Humbarger';
 import { FaApple } from "react-icons/fa";
 import Button from '../button/Button';
 import { Link, useLocation } from 'react-router-dom';
+import Logo from '../../utils/Logo';
 
 /**
  * MobileMenu Component

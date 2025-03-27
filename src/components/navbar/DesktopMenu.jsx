@@ -2,9 +2,9 @@ import { ChevronDown } from 'lucide-react';
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '../button/Button';
-import Logo from './Logo';
 import { FaApple } from "react-icons/fa";
 import { Link, useLocation } from 'react-router-dom';
+import Logo from '../../utils/Logo';
 
 /**
  * DesktopMenu Component

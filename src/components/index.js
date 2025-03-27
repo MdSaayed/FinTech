@@ -33,7 +33,6 @@ export { default as VideoPopup } from './modal/VideoPopup';
 export { default as Navbar } from './navbar/Navbar';
 export { default as PricingGrid } from './pricingGrid/PricingGrid';
 export { default as ScrollToTop } from './scrollTop/ScrollTop';
-export { default as Slider } from './slider/Slider';
 export { default as Stats } from './stats/Stats';
 export { default as Subtitle } from './subtitle/Subtitle';
 export { default as Team } from './team/Team';

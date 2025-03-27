@@ -1,38 +1,47 @@
 import React, { Component } from "react";
 
 class ErrorBoundary extends Component {
-  state = { hasError: false };
+  // State To Track If An Error Has Occurred
+  state = { HasError: false };
 
-  static getDerivedStateFromError() {
-    return { hasError: true };
+  // Lifecycle Method To Update State When An Error Is Detected
+  static GetDerivedStateFromError() {
+    return { HasError: true };
   }
 
-  componentDidCatch(error, info) {
-    console.error("Error in component:", error, info);
+  // Lifecycle Method To Log The Error Details (Only In Development Mode)
+  componentDidCatch(Error, Info) {
+    console.error("Error In Component:", Error, Info);
   }
 
   render() {
-    if (this.state.hasError) {
+    // If An Error Occurs, Display The Error Message UI
+    if (this.state.HasError) {
       return (
-        <div className="flex items-center justify-center min-h-screen bg-gray-100">
-          <div className="text-center p-6 bg-white shadow-lg rounded-lg max-w-md w-full">
-            <h2 className="text-3xl font-semibold text-red-500 mb-4">
-              Oops! Something Went Wrong
-            </h2>
-            <p className="text-lg text-gray-700 mb-4">
-              We encountered an issue while loading the page. Please try again later.
-            </p>
-            <button
-              onClick={() => window.location.reload()}
-              className="px-4 py-2 bg-purple-500 text-white rounded-md hover:bg-purple-600 transition"
-            >
-              Reload Page
-            </button>
+        <section>
+          <div className="Container">
+            <div className="Flex Items-Center Justify-Center Min-H-Screen Bg-Gray-100">
+              <div className="Text-Center P-6 Bg-White Shadow-Lg Rounded-Lg Max-W-Md W-Full">
+                <h2 className="Text-3xl Font-Semibold Text-Red-500 Mb-4">
+                  Oops! Something Went Wrong
+                </h2>
+                <p className="Text-Lg Text-Gray-700 Mb-4">
+                  We Encountered An Issue While Loading The Page. Please Try Again Later.
+                </p>
+                <button
+                  onClick={() => window.location.reload()}
+                  className="Px-4 Py-2 Bg-Purple-500 Text-White Rounded-Md Hover:Bg-Purple-600 Transition"
+                >
+                  Reload Page
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
       );
     }
-    return this.props.children;
+    // Render Children Components If No Error Occurs
+    return this.props.Children;
   }
 }
 

@@ -58,7 +58,7 @@ const Advantage = () => {
                     {/* Dynamic Tabs Section */}
                     <div className="col-span-12 xl:col-span-7 space-y-12 md:p-6 bg-white">
                         {/* Map Over Tabs To Display Each TabItem */}
-                        {tabs.map((tab, i) => (
+                        {tabs?.map((tab, i) => (
                             <TabItem 
                                 key={i} 
                                 number={i + 1} // Tab Number

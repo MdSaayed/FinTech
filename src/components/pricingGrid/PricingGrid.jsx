@@ -1,32 +1,37 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card.jsx";
-import Subtitle from "../subtitle/Subtitle.jsx";
-import Title from "../title/Title.jsx";
-import Description from "../description/Description.jsx";
 import { pricingLoader } from '../../routes/Loader.js';
-
-  
+import {Subtitle, Title, Description, ErrorMessage, } from "../../components"
+import { useLoading } from "../../context/LoadingContext"; // Import Loading Context To Manage Loading State
 
 const PricingGrid = () => {
     const [plans,setPlans]=useState([]);
     const [packageType,setPackageType] = useState('monthly');
-    const [loading, setLoading] = useState(true);
+    const { startLoading, stopLoading } = useLoading(); // Get Loading Context Methods
     const [error, setError] = useState(null);
 
     useEffect(() => {
+        startLoading(); // Start Loading
         const fetchPricingData = async () => {
             try {
-                const data = await pricingLoader();  // Ensure blogLoader is returning a Promise of an array
+                const data = await pricingLoader();  // Ensure pricingLoader is returning a Promise of an array
                 setPlans(data);
             } catch (err) {
-                setError("Failed to load Team data");
+                setError("Failed to load pricing data"); // error message
             } finally {
-                setLoading(false);
+                stopLoading(); // Stop Loading (Only needed here)
             }
         };
+    
+        fetchPricingData();
+    }, []);    
 
         fetchPricingData();
     }, []);  // Empty dependency array ensures this effect runs only once when the component mounts
+
+
+    // Showing Error
+    if(error) return <ErrorMessage error={error} />
 
   return (
     <section>

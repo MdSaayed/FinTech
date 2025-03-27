@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { teamMemberLoader } from '../../routes/Loader.js'; 
 import {Subtitle, Title, TeamCard, ErrorMessage,Loading } from '../../components';
+import { useLoading } from "../../context/LoadingContext"; // Import Loading Context To Manage Loading State
 
 const Team = () => {
     // State for team data, loading, and error management
     const [member, setMember] = useState([]);
-    const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const { startLoading, stopLoading } = useLoading(); // Get Loading Context Methods
+    
 
     // Fetching team member data
     useEffect(() => {
+        startLoading();
         const fetchTeamMember = async () => {
             try {
                 const data = await teamMemberLoader();  // Ensure teamMemberLoader returns a Promise of an array
@@ -17,15 +20,13 @@ const Team = () => {
             } catch (err) {
                 setError("Failed to load Team data");
             } finally {
-                setLoading(false);
+                stopLoading();
             }
         };
 
         fetchTeamMember();
     }, []);  // Empty dependency array ensures this effect runs only once when the component mounts
 
-    // Loading state
-    if (loading) return <Loading />;
 
     // Error state
     if (error) return <ErrorMessage error={error} />;

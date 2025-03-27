@@ -19,7 +19,6 @@ const BlogFeatured = ({ postLimit = 3 }) => {
                 const data = await blogLoader();  // Fetch the data (ensure it returns a Promise)
                 const featuredBlogs = data.filter(blog => blog.featured);  // Filter blogs to show only featured ones
                 setBlogs(featuredBlogs);  // Store the filtered data in state
-                stopLoading(); // Stop Loading Animation After Data Is Fetched
             } catch (err) {
                 setError("Failed to load blogs");  // Set error message if fetching fails
             } finally {

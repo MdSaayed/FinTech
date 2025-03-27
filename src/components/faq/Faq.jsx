@@ -13,13 +13,12 @@ const Faq = () => {
 
     // Fetch Faq Data
     const fetchFaq = useCallback(async () => {
-        startLoading();
+        startLoading(); //Start Loading
 
         try {
             const data = await faqLoader(); // Ensure faqLoader Is Returning A Promise
             setFaqs(data); // Set Faq Data
         } catch (err) {
-            stopLoading();
             setError("Failed To Load Faq Data"); // Error Handling
         } finally {
             stopLoading(); // Stop Loading

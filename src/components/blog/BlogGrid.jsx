@@ -18,10 +18,9 @@ const BlogGrid = () => {
       try {
         const data = await blogLoader(); // Fetch The Data (Ensure It Returns A Promise)
         setBlogs(data); // Store The Fetched Data In State
-        stopLoading(); // Stop Loading Animation After Data Is Fetched
       } catch (err) {
         setError("Failed To Load Blogs"); // Set Error Message If Fetching Fails
-        stopLoading(); // Stop Loading Animation In Case Of Error
+        stopLoading(); // Stop Loading 
       }
     };
 

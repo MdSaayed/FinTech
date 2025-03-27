@@ -24,7 +24,7 @@ const DesktopMenu = ({ navItems, isPagesDropdownOpen, setIsPagesDropdownOpen }) 
             <div className='flex items-center lg:gap-16 w-full'>
                 <Logo />
                 <div className="hidden md:flex items-center space-x-4">
-                    {navItems.map((item,idx) => {
+                    {navItems?.map((item,idx) => {
                         const isActive = location.pathname === item.link; // Check if the current page matches the link
                         return (
                             <div

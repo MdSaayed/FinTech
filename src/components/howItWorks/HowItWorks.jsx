@@ -1,62 +1,70 @@
-import React from 'react';
-import { Title, Description,  Subtitle, StepCard   } from '../../components';
+import React, { useState, useEffect } from 'react';
+import { Title, Description, Subtitle, StepCard, ErrorMessage } from '../../components';
+import { howWorkLoader } from '../../routes/Loader';
+import { useLoading } from '../../context/LoadingContext';
 
-// Images
-import HowWorkIt1 from "/assets/images/how-it-works/how-it-works-1.png";
-import HowWorkIt2 from "/assets/images/how-it-works/how-it-works-2.png";
-import HowWorkIt3 from "/assets/images/how-it-works/how-it-works-3.png";
-import HowWorkIt4 from "/assets/images/how-it-works/how-it-works-4.png";
+const HowItWorks = () => {
+    const [works, setWorks] = useState([]); // State to hold data
+    const [error, setError] = useState(''); // State to handle errors
+    const { startLoading, stopLoading } = useLoading(); // Loading context
 
-const HowItWorks = () => (
-    <section>
-        <div className="container">
-            {/* Subtitle */}
-            <Subtitle text="How It works" align="justify-center" className="bg-white" />
+    // Fetching data when component mounts
+    useEffect(() => {
+        const fetchWork = async () => {
+            startLoading(); // Start loading state
+            try {
+                const data = await howWorkLoader(); // Fetch "How It Works" data
+                if (!data || data.length === 0) throw new Error("No data available."); // Handle empty response
+                setWorks(data); // Store data in state
+                setError(""); // Clear previous errors
+            } catch (error) {
+                setError("Failed to load how it works. Please try again later."); // User-friendly error message
+            } finally {
+                stopLoading(); // Ensure loading stops
+            }
+        };
+        fetchWork();
+    }, []); // Run only once when component mounts
 
-            {/* Title */}
-            <Title className="max-w-[498px] text-center">
-                See how it all fits in <span>4 easy steps!</span>
-            </Title>
+    // Display error message if there's an error
+    if (error) return <ErrorMessage error={error} />;
 
-            {/* Description */}
-            <Description text="The tips and tools that teams today need to help their companies succeed." align="justify-center" className="max-w-[440px]" />
+    return (
+        <section>
+            <div className="container">
+                {/* Subtitle */}
+                <Subtitle text="How It Works" align="justify-center" className="bg-white" />
 
-            {/* Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-12 md:grid-cols-12 gap-6 mt-20">
-                {/* Step 1 */}
-                <StepCard
-                    imagesrc={HowWorkIt1}
-                    title="Sign Up Today"
-                    description="Kick off your financial exploration!"
-                    colSpan="sm:col-span-12 md:col-span-6 lg:col-span-5"
+                {/* Title */}
+                <Title className="max-w-[498px] text-center">
+                    See how it all fits in <span>4 easy steps!</span>
+                </Title>
+
+                {/* Description */}
+                <Description
+                    text="The tips and tools that teams today need to help their companies succeed."
+                    align="justify-center"
+                    className="max-w-[440px]"
                 />
 
-                {/* Step 2 */}
-                <StepCard
-                    imagesrc={HowWorkIt2}
-                    title="Set Your Goals"
-                    description="Share your aspirations and get a strategy!"
-                    colSpan="sm:col-span-12 md:col-span-6 lg:col-span-7"
-                />
+                {/* Grid - Dynamically Render StepCards */}
+                <div className="grid grid-cols-1 sm:grid-cols-12 md:grid-cols-12 gap-6 mt-20">
+                    {works?.map((work, index) => {
+                        {/* Card Size Shown By Conditionally */}
+                        const colSpan = `
+                            ${index === 0 ? 'sm:col-span-12 md:col-span-6 lg:col-span-5' : ''}
+                            ${index === 1 ? 'sm:col-span-12 md:col-span-6 lg:col-span-7' : ''}
+                            ${(index !== 0 && index !== 1) ? 'sm:col-span-12 md:col-span-6 lg:col-span-6' : ''}
+                        `;
 
-                {/* Step 3 */}
-                <StepCard
-                    imagesrc={HowWorkIt3}
-                    title="Track Your Progress"
-                    description="Track your spending in real-time and reach your goals!"
-                    colSpan="sm:col-span-12 md:col-span-6 lg:col-span-6"
-                />
-
-                {/* Step 4 */}
-                <StepCard
-                    imagesrc={HowWorkIt4}
-                    title="Achieve Success"
-                    description="Unlock your financial potential with expert advice!"
-                    colSpan="sm:col-span-12 md:col-span-6 lg:col-span-6"
-                />
+                        return (
+                            <StepCard key={work.id || index} colSpan={colSpan} work={work} />
+                        );
+                    })}
+                </div>
             </div>
-        </div>
-    </section>
-);
+        </section>
+    );
+};
 
 export default HowItWorks;

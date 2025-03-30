@@ -1,6 +1,7 @@
 // StepCard.js
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 /**
  * StepCard Component
@@ -12,21 +13,29 @@ import PropTypes from 'prop-types';
  * @param {string} description - The description or content of the card.
  * @param {string} colSpan - A class to define the column span for the card in a grid (e.g., "lg:col-span-2").
  */
-const StepCard = ({ imagesrc, title, description, colSpan = '' }) => (
-    <div className={`bg-white border border-purple-100 rounded-xl ${colSpan}`}>
-        {/* Image */}
-        <img src={imagesrc} alt={title} className="max-h-64 mx-auto" />
+const StepCard = ({ work,colSpan }) => {
+    const { id,image, title, description } = work;
 
-        {/* Content */}
-        <div className="space-y-2 px-6 md:px-10 my-6">
-            {/* Title */}
-            <h2 className="font-geist font-medium text-2xl text-slate-900">{title}</h2>
+    return (
+        <div className={`bg-white border border-purple-100 rounded-xl ${colSpan}`}>
+            {/* Image */}
+            <Link to={`/how-it-work/${id}`}>
+                <img src={image} alt={title} className="max-h-64 mx-auto" />
+            </Link>
 
-            {/* Description */}
-            <p className="font-inter text-base text-gray-700">{description}</p>
+            {/* Content */}
+            <div className="space-y-2 px-6 md:px-10 my-6">
+                {/* Title */}
+                <Link to={`how-it-work/${id}`}>
+                    <h2 className="font-geist font-medium text-2xl text-slate-900">{title}</h2>
+                </Link>
+
+                {/* Description */}
+                <p className="font-inter text-base text-gray-700">{description}</p>
+            </div>
         </div>
-    </div>
-);
+    );
+};
 
 // Prop types validation
 StepCard.propTypes = {

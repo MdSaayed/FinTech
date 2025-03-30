@@ -30,7 +30,7 @@ const BlogHighlight = ({ blog }) => {
                 {
                     title && (
                         <Link to={`/blog/${id}`}> {/* Link to the specific blog post */}
-                            <h2 className='text-xl font-geist text-slate-900 font-medium leading-snug'>{title}</h2> {/* Blog Title */}
+                            <h2 className='text-2xl font-geist text-slate-900 font-medium leading-snug'>{title}</h2> {/* Blog Title */}
                         </Link>
                     )
                 }

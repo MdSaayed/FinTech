@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Personal",
     "featuredCard": false,
-    "inclusivePlans": "Morbi sed imperdiet in ipsum, adipiscing elit dui lectus. Tellus id scelerisque est ultricies ultricies. Duis est sit sed leo nisl, blandit elit sagittis. Quisque tristique consequat quam sed. Nisl at scelerisque amet nulla purus habitasse. Nunc sed faucibus bibendum feugiat sed interdum. Ipsum egestas condimentum mi massa.",
+    "inclusivePlans": "The Personal plan is designed for individuals who need essential features to manage their work efficiently. With this plan, users can access fundamental tools that enhance productivity and organization. It provides access to all basic features, including streamlined task management, essential analytics, and easy-to-use collaboration tools. Users benefit from a simple yet powerful interface that allows them to keep track of daily activities without any hassle. \n\nThis plan is ideal for freelancers, students, or anyone who needs a structured approach to managing their workload. With a focus on simplicity and efficiency, it ensures that users can maximize their potential without being overwhelmed by excessive functionalities. The Personal plan also includes 20 GB of individual storage, allowing users to securely store their files and documents. This ensures that important data is always accessible, whether working from home, in the office, or on the go. \n\nAdditionally, basic reporting and analytics provide insights into productivity trends, helping users make informed decisions about their time and resources. The inclusion of basic chat and email support ensures that assistance is available whenever needed. This plan is structured to be budget-friendly while still offering a robust set of tools to help users stay on top of their tasks.",
     "packages": {
       "monthly": {
         "price": "$10/mth",
@@ -31,7 +31,7 @@
     "id": 2,
     "name": "Professional",
     "featuredCard": true,
-    "inclusivePlans": "Nunc sed faucibus bibendum feugiat sed interdum. Ipsum egestas condimentum mi massa. In tincidunt pharetra consectetur sed duis facilisis metus. Etiam egestas in nec sed et. Quis lobortis at sit dictum eget nibh tortor commodo cursus. Morbi sed imperdiet in ipsum, adipiscing elit dui lectus. Duis est sit sed leo nisl.",
+    "inclusivePlans": "The Professional plan is tailored for power users and businesses that require advanced features for enhanced efficiency. This plan includes all the benefits of the Personal plan while offering significantly more capabilities for professionals and growing teams. \n\nUsers of the Professional plan gain access to unlimited user accounts, making it perfect for businesses that need to onboard multiple employees. With 50 GB of storage per user, data management is seamless, allowing professionals to store crucial files securely. \n\nAdvanced analytics provide deep insights into performance metrics, offering a clear view of business productivity and workflow optimization. Custom integrations ensure that the platform can be connected with existing tools, making it easier to incorporate into an established work environment. \n\nAdditionally, priority chat support ensures that users receive fast and efficient assistance whenever needed. For businesses looking to improve their workflow and collaboration efforts, the Professional plan offers powerful tools that facilitate better decision-making, enhanced security, and greater control over organizational processes.",
     "packages": {
       "monthly": {
         "price": "$70/mth",
@@ -59,7 +59,7 @@
     "id": 3,
     "name": "Teams",
     "featuredCard": false,
-    "inclusivePlans": "Aliquam senectus neque ut id eget consectetur dictum. Donec posuere pharetra odio consequat scelerisque et, nunc tortor. Nulla adipiscing erat a erat. Condimentum lorem posuere gravida enim posuere cursus diam. Morbi sed imperdiet in ipsum, adipiscing elit dui lectus. Nam elementum urna nisi aliquet erat dolor enim.",
+    "inclusivePlans": "The Teams plan is built for organizations that need enterprise-level features to manage their workforce effectively. This plan includes all the benefits of the Professional plan while introducing specialized tools for team collaboration and security. \n\nA dedicated onboarding specialist ensures that teams can quickly integrate the platform into their workflow. With 100 GB of storage per user, large-scale data management is effortless. Team collaboration tools enable seamless communication and project coordination, allowing multiple users to work together efficiently. \n\nAdvanced security controls protect sensitive data, ensuring compliance with industry standards. This makes the Teams plan an ideal choice for companies that prioritize data privacy and organizational efficiency. Additionally, the plan offers customized Service Level Agreements (SLAs), ensuring that businesses receive personalized support tailored to their unique needs. \n\nWith access to VIP technical support and personalized training sessions, teams can optimize their workflow, reduce operational bottlenecks, and enhance overall productivity. This plan is perfect for large teams and enterprises that require high-performance tools, security, and dedicated customer service.",
     "packages": {
       "monthly": {
         "price": "$130/mth",
@@ -84,3 +84,5 @@
     }
   }
 ]
+
+ 

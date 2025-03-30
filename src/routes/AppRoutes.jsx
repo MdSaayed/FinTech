@@ -2,8 +2,10 @@ import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import LazyLoad from "../components/lazyLoad/LazyLoad";
 import MainLayout from "../layouts/MainLayout";
-import { singlePostLoader, singlePricingLoader } from "./Loader";
+import { howItWorkLoader, singleFeatureLoader, singlePostLoader, singlePricingLoader } from "./Loader";
 import NotFound from './../pages/NotFound'; 
+import FeatureSingle from "../pages/FeatureSingle";
+import HowItWorkSingle from "../pages/HowItWorkSingle";
 
 // ✅ Lazy load all pages, including NotFound, licenses, PrivacyPolicy, etc.
 const Index = lazy(() => import("../pages/Index"));
@@ -27,11 +29,13 @@ const router = createBrowserRouter([
     children: [
       { path: "", element: <LazyLoad component={Index} /> },
       { path: "about", element: <LazyLoad component={About} /> },
-      { path: "features", element: <LazyLoad component={Features} /> },
+      { path: "features", element: <LazyLoad component={Features} />},
+      { path: "features/:id", element: <LazyLoad component={FeatureSingle} /> ,loader: singleFeatureLoader},
       { path: "blog", element: <LazyLoad component={Blog} /> },
       { path: "blog/:id", element: <LazyLoad component={BlogSingle} />, loader: singlePostLoader },
       { path: "pricing", element: <LazyLoad component={Pricing} /> },
       { path: "pricing/:id", element: <LazyLoad component={PricingSingle} />, loader: singlePricingLoader },
+      { path: "how-it-work/:id", element: <LazyLoad component={HowItWorkSingle} />, loader: howItWorkLoader },
       { path: "contact", element: <LazyLoad component={Contact} /> },
       { path: "licenses", element: <LazyLoad component={Licenses} /> },  
       { path: "privacy-policy", element: <LazyLoad component={PrivacyPolicy} /> }, 

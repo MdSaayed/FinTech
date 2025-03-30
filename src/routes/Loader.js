@@ -138,3 +138,46 @@ export const teamMemberLoader = async () => {
     
     return await fetchWithFallback(apiUrl, demoDataUrl);
 };
+
+// Loader for all features  
+export const featureLoader = async () => {
+    const apiUrl = import.meta.env.VITE_FEATURES_API_URL || '';
+    const demoDataUrl = '/data/features.json';
+    
+    return await fetchWithFallback(apiUrl, demoDataUrl);
+};
+
+// Loader for single feature
+export const singleFeatureLoader = async ({ params }) => {
+    const { id } = params; // Extract the id from the route params
+    const apiUrl = import.meta.env.VITE_FEATURES_API_URL;
+    const demoDataUrl = '/data/features.json';
+
+    // Fetch the data with fallback
+    const data = await fetchWithFallback(apiUrl, demoDataUrl);
+
+    // Convert id to a number and find the matching pricing
+    const pricing = data.find(pricing => pricing.id === Number(id));   
+    return pricing || {}; // Return the pricing or an empty object if not found
+};
+
+// Loader for all how it work  
+export const howWorkLoader = async () => {
+    const apiUrl = import.meta.env.VITE_HOWWORK_API_URL || '';
+    const demoDataUrl = '/data/work.json';
+    
+    return await fetchWithFallback(apiUrl, demoDataUrl);
+};
+
+export const howItWorkLoader = async ({ params }) => {
+    const { id } = params; // Extract the id from the route params
+    const apiUrl = import.meta.env.VITE_HOWWORK_API_URL;
+    const demoDataUrl = '/data/work.json';
+
+    // Fetch the data with fallbackd
+    const data = await fetchWithFallback(apiUrl, demoDataUrl);
+
+    // Convert id to a number and find the matching work
+    const work = data.find(work => work.id === Number(id));   
+    return work || {}; // Return the work or an empty object if not found
+};

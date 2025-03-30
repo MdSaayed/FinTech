@@ -25,7 +25,7 @@ const Button = ({ text, to= '#', icon = false, iconComponent = null, variant = '
       to={to} // Use 'to' prop for routing in React Router
       className={`
         group flex items-center justify-center space-x-3 px-4 py-2 font-normal font-geist text-base transition-colors duration-300 rounded-3xl 
-        ${isPrimary ? 'bg-neutral-900 text-white hover:bg-gray-100 hover:text-gray-700' 
+        ${isPrimary ? 'bg-neutral-900 text-white hover:bg-purple-600' 
         :'bg-gray-100 hover:bg-neutral-900 hover:text-white text-gray-700'}
         ${className} // Apply custom classes passed via props
         `}

@@ -139,6 +139,20 @@ export const teamMemberLoader = async () => {
     return await fetchWithFallback(apiUrl, demoDataUrl);
 };
 
+// Loader for single team members
+export const singleTeamMemberLoader = async ({ params }) => {
+    const { id } = params; // Extract the id from the route params
+    const apiUrl = import.meta.env.VITE_TEAM_API_URL;
+    const demoDataUrl = '/data/team.json';
+
+    // Fetch the data with fallback
+    const data = await fetchWithFallback(apiUrl, demoDataUrl);
+
+    // Convert id to a number and find the matching member
+    const member = data.find(pricing => pricing.id === Number(id));   
+    return member || {}; // Return the member or an empty object if not found
+};
+
 // Loader for all features  
 export const featureLoader = async () => {
     const apiUrl = import.meta.env.VITE_FEATURES_API_URL || '';

@@ -4,27 +4,31 @@
     "name": "James Bergson",
     "role": "Medical Assistant",
     "image": "/assets/images/team/member-1.png",
-    "linkedin": "https://linkedin.com/in/jamesbergson"
+    "linkedin": "https://linkedin.com/in/jamesbergson",
+    "bio": "With a passion for healthcare and patient well-being, James Bergson has dedicated his career to providing exceptional medical support. As a skilled Medical Assistant, he plays a crucial role in patient care, assisting with clinical procedures, maintaining medical records, and ensuring a smooth workflow in healthcare settings. His compassionate approach and attention to detail make him an invaluable asset to any medical team. James is known for his ability to communicate effectively with both patients and healthcare professionals, ensuring a seamless experience for everyone involved. His commitment to continuous learning keeps him up to date with the latest medical advancements, allowing him to provide the best possible support in clinical environments."
   },
   {
     "id": 2,
     "name": "Hanna Bergson",
     "role": "Dog Trainer",
     "image": "/assets/images/team/member-2.png",
-    "linkedin": "https://linkedin.com/in/hannabergson"
+    "linkedin": "https://linkedin.com/in/hannabergson",
+    "bio": "Hanna Bergson is an experienced dog trainer with a deep understanding of canine behavior and training techniques. She specializes in obedience training, behavioral correction, and strengthening the bond between dogs and their owners. With a patient and positive reinforcement approach, Hanna ensures that every dog she trains develops into a well-mannered companion. Her expertise extends to working with dogs of all breeds and temperaments, helping owners build trust and communication with their pets. Hanna believes in personalized training programs tailored to each dog's needs, making training a fun and rewarding experience for both the dog and its owner."
   },
   {
     "id": 3,
     "name": "Corey Dokidis",
     "role": "Web Designer",
     "image": "/assets/images/team/member-3.png",
-    "linkedin": "https://linkedin.com/in/coreydokidis"
+    "linkedin": "https://linkedin.com/in/coreydokidis",
+    "bio": "Corey Dokidis is a creative web designer with a keen eye for aesthetics and user experience. With expertise in UI/UX design, he crafts visually appealing and functional websites that engage users. His ability to blend modern design trends with intuitive navigation ensures high-quality digital experiences for businesses and individuals alike. Corey specializes in responsive web design, ensuring websites perform flawlessly across all devices. His strong background in front-end development allows him to implement interactive elements that enhance usability. Passionate about innovation, Corey stays updated with industry trends to deliver cutting-edge web solutions that leave a lasting impact."
   },
   {
     "id": 4,
     "name": "Anika Siphron",
     "role": "Marketing Coordinator",
     "image": "/assets/images/team/member-4.png",
-    "linkedin": "https://linkedin.com/in/anikasiphron"
+    "linkedin": "https://linkedin.com/in/anikasiphron",
+    "bio": "Anika Siphron is a dynamic marketing coordinator who excels in campaign management, brand strategy, and digital marketing. With a strong background in social media marketing and content creation, she helps brands establish a strong online presence and connect with their target audience. Anika is skilled at analyzing market trends and consumer behavior to develop marketing strategies that drive engagement and conversions. Her ability to coordinate cross-functional teams and manage multiple projects makes her an invaluable asset to any marketing team. She thrives in fast-paced environments, leveraging her creativity and analytical skills to create compelling marketing campaigns that deliver results."
   }
 ]

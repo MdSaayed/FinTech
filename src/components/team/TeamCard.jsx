@@ -9,12 +9,14 @@ const TeamCard = ({ member }) => {
         <div className="group">
             {/* Image Wrapper */}
             <div className="rounded-xl overflow-hidden">
-                <img
-                    className="w-full h-auto object-cover aspect-[4/5]"
-                    src={member.image}
-                    alt={`${member.name} - ${member.role}`}
-                    loading="lazy"
-                />
+                <Link to={`/team/${member?.id}`}>
+                    <img
+                        className="w-full h-auto object-cover aspect-[4/5]"
+                        src={member.image}
+                        alt={`${member.name} - ${member.role}`}
+                        loading="lazy"
+                    />
+                </Link>
             </div>
 
             {/* Info Section */}

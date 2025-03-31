@@ -24,7 +24,7 @@ const BlogSingle = () => {
               
               {(details_image || image) && ( // Post Thumbnail, Checks If Image Exists
                 <div className="py-12">
-                  <img className="mx-auto max-w-full" src={details_image || image} alt={title} loading="lazy" />
+                  <img className="mx-auto" src={details_image || image} alt={title} loading="lazy" />
                 </div>
               )}
 

@@ -2,10 +2,11 @@ import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import LazyLoad from "../components/lazyLoad/LazyLoad";
 import MainLayout from "../layouts/MainLayout";
-import { howItWorkLoader, singleFeatureLoader, singlePostLoader, singlePricingLoader } from "./Loader";
+import { howItWorkLoader, singleFeatureLoader, singlePostLoader, singlePricingLoader, singleTeamMemberLoader } from "./Loader";
 import NotFound from './../pages/NotFound'; 
 import FeatureSingle from "../pages/FeatureSingle";
 import HowItWorkSingle from "../pages/HowItWorkSingle";
+import TeamSingle from "../pages/TeamSingle";
 
 // ✅ Lazy load all pages, including NotFound, licenses, PrivacyPolicy, etc.
 const Index = lazy(() => import("../pages/Index"));
@@ -36,6 +37,7 @@ const router = createBrowserRouter([
       { path: "pricing", element: <LazyLoad component={Pricing} /> },
       { path: "pricing/:id", element: <LazyLoad component={PricingSingle} />, loader: singlePricingLoader },
       { path: "how-it-work/:id", element: <LazyLoad component={HowItWorkSingle} />, loader: howItWorkLoader },
+      { path: "team/:id", element: <LazyLoad component={TeamSingle} />, loader: singleTeamMemberLoader },
       { path: "contact", element: <LazyLoad component={Contact} /> },
       { path: "licenses", element: <LazyLoad component={Licenses} /> },  
       { path: "privacy-policy", element: <LazyLoad component={PrivacyPolicy} /> }, 

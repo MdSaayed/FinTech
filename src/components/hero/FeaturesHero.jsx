@@ -76,13 +76,13 @@ const FeaturesHero = () => {
           </div>
 
           {/* Animated Cursors */}
-          <AnimatedCursor position={cursorLeft} imageSrc={MouseIcon1} duration={5000} altText="Mouse Icon 1" />
+          <AnimatedCursor className='hidden md:block' position={cursorLeft} imageSrc={MouseIcon1} duration={5000} altText="Mouse Icon 1" />
           <AnimatedCursor position={cursorRight} imageSrc={MouseIcon2} duration={4500} altText="Mouse Icon 2" />
           
           {/* Background Images */}
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <img
-              className="absolute -left-10 -top-20 xl:left-0 xl:top-10 z-10"
+              className="absolute -left-10 -top-20 lg:left-0 lg:top-10 z-10"
               src={HeroBgOne} // Use imported image
               alt="Hero Bg One"
             />

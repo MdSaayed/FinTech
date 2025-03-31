@@ -11,10 +11,10 @@ import PropTypes from 'prop-types';
  * @param {string} altText - Alternative text for the image.
  * @returns {JSX.Element} The animated cursor component.
  */
-const AnimatedCursor = ({ position, imageSrc, duration, altText }) => {
+const AnimatedCursor = ({ position, imageSrc, duration, altText,className }) => {
   return (
     <div
-      className="absolute transition-all ease-in-out z-30"
+      className={`absolute transition-all ease-in-out z-30 ${className}`}
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`,
@@ -35,6 +35,7 @@ AnimatedCursor.propTypes = {
   imageSrc: PropTypes.string.isRequired,
   duration: PropTypes.number, // Optional, default is 5000ms
   altText: PropTypes.string, // Optional, default is "Cursor Icon"
+  className: PropTypes.string, // Optional, default is class Name
 };
 
 // Default props

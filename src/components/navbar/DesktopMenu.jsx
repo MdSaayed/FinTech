@@ -29,7 +29,7 @@ const DesktopMenu = ({ navItems, isPagesDropdownOpen, setIsPagesDropdownOpen }) 
                         return (
                             <div
                                 key={idx}
-                                className="relative font-geist z-40"
+                                className="relative  z-40"
                                 onMouseEnter={() => item.dropdown && setIsPagesDropdownOpen(true)}
                                 onMouseLeave={() => item.dropdown && setIsPagesDropdownOpen(false)}
                             >

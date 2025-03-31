@@ -46,7 +46,7 @@ const Faq = () => {
             <div className="container">
                 <div className="bg-white rounded-3xl px-4 py-10 md:p-20">
                     {/* Subtitle */}
-                    <Subtitle text="Frequently Asked Questions" align="justify-center" className='bg-purple-200' />
+                    <Subtitle text="Frequently Asked Questions" align="justify-center" className='bg-customPurple' />
 
                     {/* Title */}
                     <Title align='justify-center' className='text-center'>

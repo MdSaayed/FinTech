@@ -28,7 +28,7 @@ const BlogGridItem = ({ blog }) => {
       <div className="space-y-4 mt-5">
         {/* Blog Title (only render if title exists) */}
         {title && (
-          <h2 className="text-2xl font-geist font-semibold text-slate-900 leading-snug">
+          <h2 className="text-2xl  font-semibold text-slate-900 leading-snug">
             <Link to={`/blog/${id}`}>{title}</Link>
           </h2>
         )}

@@ -46,7 +46,7 @@ const Advantage = () => {
                 {/* Grid Layout For Tab Items */}
                 <div className="grid grid-cols-12 gap-6 mt-16 bg-white rounded-xl p-6 md:p-10">
                     {/* Tab Image Section */}
-                    <div className="flex items-center justify-center col-span-12 xl:col-span-5 px-6 py-8 lg:py-16 bg-white rounded-3xl border border-gray-200">
+                    <div className="flex items-center justify-center col-span-12 xl:col-span-5 px-6 py-8 lg:py-16 bg-white rounded-3xl">
                         {/* Display Active Tab Image */}
                         <img 
                             src={tabs[index].image} 

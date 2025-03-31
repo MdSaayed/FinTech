@@ -17,7 +17,7 @@ const TabItem = ({number, title, description, active, onClick }) => {
             </div>
             <div className='space-y-4'>
                 {/* Tab Title */}
-                <h3 className="text-2xl md:text-3xl font-geist text-neutral-900 font-semibold">{title}</h3>
+                <h3 className="text-2xl md:text-3xl  text-neutral-900 font-semibold">{title}</h3>
                 {/* Tab Description */}
                 <p className="text-gray-600">{description}</p>
             </div>

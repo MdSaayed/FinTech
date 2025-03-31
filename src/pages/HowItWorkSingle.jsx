@@ -17,13 +17,13 @@ const HowItWorkSingle = () => {
                 {/* Title */}
                 <Title className="text-center">{title}</Title>
 
-                {/* Feature Content */}
+                {/* How it works */}
                 <div className="mt-6">
-                    {/* Features Image */}
-                    <img className="mx-auto" src={features?.image} alt="" />
+                    {/* Image */}
+                    <img className="mx-auto" src={features?.detail_image || features?.image} alt="" />
 
-                    {/* Feature Description */}
-                    <p className="text-gray-600 font-normal text-base font-inter mt-10">{features?.details}</p>
+                    {/* Description */}
+                    <p className="text-gray-600 max-w-3xl mx-auto font-normal text-base font-inter mt-10">{features?.description}</p>
                 </div>
             </div>
         </section>

@@ -1,7 +1,7 @@
 // Testimonials.js
 import React, { useState } from 'react'; // Import React and useState hook
 import { Subtitle, Title, Description, TestimonialCard, VideoSection} from '../../components'; // Import Subtitle, Title, and Description components
-
+import reviewVideo from "/assets/videos/testimonial-review.mp4";
 /**
  * Testimonials Component
  * Displays a section with user testimonials, customer stories video, and user information.
@@ -35,7 +35,7 @@ const Testimonials = () => {
                     <VideoSection
                         setShowPopup={setShowPopup}
                         showPopup={showPopup}
-                        videoLink="https://www.w3schools.com/html/mov_bbb.mp4"
+                        videoLink={reviewVideo}
                     />
 
                     {/* Testimonial Card */}

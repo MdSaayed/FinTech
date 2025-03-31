@@ -12,7 +12,7 @@ const Title = ({
 
   return (
     <div className={`flex ${align}`}>
-      <Tag className={`text-slate-900 font-medium !leading-tight tracking-tight font-geist ${size} ${className}`}>
+      <Tag className={`text-slate-900 font-medium !leading-tight tracking-tight  ${size} ${className}`}>
         {React.Children.map(children, (child) =>
           typeof child === "string" ? (
             child

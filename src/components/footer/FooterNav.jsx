@@ -31,7 +31,7 @@ const FooterNav = () => {
         <div className="md:col-span-2 lg:col-span-3 xl:col-span-4 grid lg:grid-cols-3 xl:grid-cols-4 justify-between gap-y-16 md:gap-8 lg:gap-16">
             {/* Main Navigation Section */}
             <div className="col-span-3 md:col-span-3">
-                <h4 className="text-2xl text-neutral-900 font-geist font-semibold mb-5">Main Page</h4>
+                <h4 className="text-2xl text-neutral-900  font-semibold mb-5">Main Page</h4>
                 <div className="grid grid-cols-2 md:grid-cols-3 justify-between gap-y-16 md:gap-8 lg:gap-16">
                     {/* Use NavList Component For Repeating Sections */}
                     <div>
@@ -48,7 +48,7 @@ const FooterNav = () => {
 
             {/* Utility Pages Section */}
             <div className='col-span-2 lg:col-span-1'>
-                <h4 className="text-2xl text-neutral-900 font-geist font-semibold mb-5">Utility Page</h4>
+                <h4 className="text-2xl text-neutral-900  font-semibold mb-5">Utility Page</h4>
                 <NavList navItems={colFour} />
             </div>
         </div>

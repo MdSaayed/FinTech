@@ -19,7 +19,7 @@ import TestimonialImag from "/assets/images/global/man-with-laptop.png";
  */
 const VideoSection = ({ setShowPopup, showPopup, videoLink }) => (
     <div className="mx-auto relative w-full">
-        <img className='w-full' src={TestimonialImag} alt="Testimonial Thumbnail" /> {/* Thumbnail */}
+        <img className='w-full rounded-2xl' src={TestimonialImag} alt="Testimonial Thumbnail" /> {/* Thumbnail */}
 
         {/* Play Button */}
         <div className="flex items-center gap-3 text-white absolute bottom-8 right-5">

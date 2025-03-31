@@ -33,7 +33,7 @@ const Subtitle = ({
         )}
         
         {/* Subtitle Text */}
-        <span className={`${label ? 'border-l border-gray-300 pl-2' : ''} text-gray-700 text-sm font-geist font-normal leading-tight`}>
+        <span className={`${label ? 'border-l border-gray-300 pl-2' : ''} text-gray-700 text-sm  font-normal leading-tight`}>
           {text}
         </span>
         

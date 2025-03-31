@@ -42,12 +42,12 @@ const PrivacyPolicy = () => {
 
                     {/* Last Update Date */}
                         <div className='mt-12'>
-                            <p className='font-geist text-base font-normal text-gray-600'>Last update: 25 March, 2025</p>
+                            <p className=' text-base font-normal text-gray-600'>Last update: 25 March, 2025</p>
                         </div>
 
                     {/* Disclaimer Note */}
                         <div className='mt-12'>
-                            <p className='font-geist text-base font-normal text-gray-600'><strong>Note:</strong> This privacy policy should be customized to accurately reflect UIAppX specific data practices and comply with all applicable laws and regulations in the jurisdictions where UIAppX operates.</p>
+                            <p className=' text-base font-normal text-gray-600'><strong>Note:</strong> This privacy policy should be customized to accurately reflect UIAppX specific data practices and comply with all applicable laws and regulations in the jurisdictions where UIAppX operates.</p>
                         </div>
                 </div>
             </div>

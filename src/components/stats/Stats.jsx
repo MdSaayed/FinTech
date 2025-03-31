@@ -55,7 +55,7 @@ const Stats = () => {
               `}
             >
               {/* Animated counter: Show animated numbers when section is in view */}
-              <h2 className="text-4xl font-geist font-semibold text-slate-900">
+              <h2 className="text-4xl  font-semibold text-slate-900">
                 {inView ? (
                   <CountUp
                     start={0}
@@ -69,7 +69,7 @@ const Stats = () => {
                   "0" // Display 0 initially before animation starts
                 )}
               </h2>
-              <p className="text-gray-700 font-geist text-base mt-3">
+              <p className="text-gray-700  text-base mt-3">
                 {stat.label} {/* Label for the statistic */}
               </p>
             </div>

@@ -45,7 +45,7 @@ const MobileMenu = ({ navItems, isMobileMenuOpen, setIsMobileMenuOpen, setIsPage
 
             {/* Mobile Menu */}
             <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} absolute top-20 bg-white w-full overflow-y-auto h-[calc(100vh-5rem)] z-40`}>
-                <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 font-geist">
+                <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 ">
                     {navItems.map((item,idx) => {
                         const isActive = location.pathname === item.link; // Check if the current path matches the item link
                         return (

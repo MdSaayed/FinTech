@@ -13,10 +13,10 @@ const Table = ({ plans, features }) => {
         {/* Table Header Section: Accessible header for screen readers */}
         <thead>
           <tr className="bg-purple-600 text-left">
-            <th className="py-4 px-10 text-white font-geist font-medium" scope="col">Feature</th>
+            <th className="py-4 px-10 text-white  font-medium" scope="col">Feature</th>
             {/* Dynamically creating table headers based on available plans */}
             {plans?.map(plan => (
-              <th key={plan.key} className="py-4 px-10 text-center text-white font-geist font-medium" scope="col">
+              <th key={plan.key} className="py-4 px-10 text-center text-white  font-medium" scope="col">
                 {plan?.name}
               </th>
             ))}

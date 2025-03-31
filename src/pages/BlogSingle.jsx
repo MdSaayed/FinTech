@@ -18,9 +18,9 @@ const BlogSingle = () => {
         <div className="container -mt-16 lg:mt-0">
           <div className="bg-white px-4 md:px-5 lg:px-10 py-16 rounded-2xl">
             <div className="text-center space-y-6">
-              {author && <span className="text-sm font-normal font-geist text-purple-600">{author}</span>} {/* Post Author */}
+              {author && <span className="text-sm font-normal  text-purple-600">{author}</span>} {/* Post Author */}
               {title && <Title level={1} className="max-w-3xl">{title}</Title>} {/* Post Title */}
-              {date && <span className="text-sm text-gray-600 font-geist">{blogDateFormat(date)}</span>} {/* Post Date */}
+              {date && <span className="text-sm text-gray-600 ">{blogDateFormat(date)}</span>} {/* Post Date */}
               
               {(details_image || image) && ( // Post Thumbnail, Checks If Image Exists
                 <div className="py-12">
@@ -30,7 +30,7 @@ const BlogSingle = () => {
 
               {content && ( // Post Content
                 <div className="px-6 md:px-6 lg:px-12">
-                  <p className="text-left text-gray-600 font-inter text-lg">{content}</p>
+                  <p className="max-w-3xl mx-auto text-left text-gray-600 font-inter text-lg">{content}</p>
                 </div>
               )}
             </div>

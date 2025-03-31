@@ -30,7 +30,7 @@ const ComparePlans = () => {
     <section className="overflow-x-auto">
       <div className="container mx-auto px-4">
         {/* Page Title - Clear heading for screen readers and search engines */}
-        <h2 className="text-5xl font-medium font-geist text-center mb-16 text-slate-900">
+        <h2 className="text-5xl font-medium  text-center mb-16 text-slate-900">
           Compare Plans
         </h2>
         {/* Table Component Rendering the Features Comparison */}

@@ -15,7 +15,7 @@ const TermsList = ({ items, className = " text-base mt-12" }) => {
       {items.map((item, index) => (
         <li
           key={index}
-          className="relative font-geist font-normal text-gray-600 pl-5 before:content-['\2022'] before:absolute before:left-0 before:text-gray-600 before:text-xl before:leading-none before:top-3 before:-translate-y-1/2"
+          className="relative  font-normal text-gray-600 pl-5 before:content-['\2022'] before:absolute before:left-0 before:text-gray-600 before:text-xl before:leading-none before:top-3 before:-translate-y-1/2"
         >
           {item}
         </li>

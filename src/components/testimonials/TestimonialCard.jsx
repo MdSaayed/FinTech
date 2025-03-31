@@ -21,7 +21,7 @@ const TestimonialCard = ({ name, username, testimonial }) => (
     <div className="lg:col-span-2 bg-white rounded-3xl p-8 h-full">
         <img className="mb-12" src={QuoteIcon} alt="Quote Icon" /> {/* Quote Icon */}
 
-        <h2 className="text-slate-900 leading-normal font-medium text-2xl font-geist">
+        <h2 className="text-slate-900 leading-normal font-medium text-2xl ">
             "{testimonial}"
         </h2>
 
@@ -29,8 +29,8 @@ const TestimonialCard = ({ name, username, testimonial }) => (
             <div className="flex items-center gap-3">
                 <img src={Avatar} alt="User Avatar" /> {/* User Avatar */}
                 <div>
-                    <h2 className="text-base font-normal text-slate-900 font-geist">{name}</h2>
-                    <p className="text-base font-geist text-gray-600">{username}</p> {/* User Name and Handle */}
+                    <h2 className="text-base font-normal text-slate-900 ">{name}</h2>
+                    <p className="text-base  text-gray-600">{username}</p> {/* User Name and Handle */}
                 </div>
             </div>
 

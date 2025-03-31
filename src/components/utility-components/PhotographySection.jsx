@@ -20,7 +20,7 @@ const PhotographySection = () => {
                             </p>
                         </div>
                         <div>
-                            <p className="text-gray-600 font-geist font-normal text-lg mt-12">
+                            <p className="text-gray-600  font-normal text-lg mt-12">
                                 All images used in the UIAppX <Link to="#" className="text-purple-600 underline" title="Link to Fintech SAAS Template">Fintach aps landing Template</Link> are licensed for free personal and commercial use. If you'd like to use any specific image, you can check the licenses and download the images for free on Lummi.
                             </p>
                         </div>

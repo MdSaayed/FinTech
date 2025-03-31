@@ -49,7 +49,7 @@ const PricingSingle = () => {
             <div className="flex flex-col lg:flex-row justify-between gap-y-12 gap-x-8">
               {/* Plan Details */}
               <div>
-                <h1 className="text-gray-900 text-left text-3xl font-geist font-bold">
+                <h1 className="text-gray-900 text-left text-3xl  font-bold">
                   {pricingData?.name}
                 </h1>
                 <div className="mt-8">
@@ -60,7 +60,7 @@ const PricingSingle = () => {
               {/* Pricing Box */}
               <div className="order-first lg:-order-none max-w-md">
                 <div className="md:min-w-72 bg-gray-50 rounded-lg p-8 border border-gray-100 shadow">
-                  <span className="text-lg text-gray-800 font-geist font-normal">
+                  <span className="text-lg text-gray-800  font-normal">
                     Get Your Plan Today
                   </span>
                   <h3 className="text-4xl text-primary font-semibold my-4">
@@ -68,7 +68,7 @@ const PricingSingle = () => {
                   </h3>
 
                   <div>
-                    <p className="font-semibold font-geist text-2xl text-gray-800">
+                    <p className="font-semibold  text-2xl text-gray-800">
                       {isMonthly ? "Monthly" : "Yearly"}
                     </p>
                     <p className="text-base font-normal text-gray-700 mt-3">

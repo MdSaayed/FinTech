@@ -77,7 +77,7 @@ const FeaturesHero = () => {
 
           {/* Animated Cursors */}
           <AnimatedCursor className='hidden md:block' position={cursorLeft} imageSrc={MouseIcon1} duration={5000} altText="Mouse Icon 1" />
-          <AnimatedCursor position={cursorRight} imageSrc={MouseIcon2} duration={4500} altText="Mouse Icon 2" />
+          <AnimatedCursor className='hidden md:block' position={cursorRight} imageSrc={MouseIcon2} duration={4500} altText="Mouse Icon 2" />
           
           {/* Background Images */}
           <div className="hidden lg:block">

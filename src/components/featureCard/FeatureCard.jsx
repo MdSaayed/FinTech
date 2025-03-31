@@ -24,11 +24,11 @@ const FeatureCard = ({ feature}) => (
         <div className='space-y-4 p-4 mt-10'>
             {/* Title: Displays The Feature Title */}
             <Link to={`features/${feature?.id}`}>
-                <h2 className='font-geist font-medium text-2xl text-slate-900'>{feature?.title}</h2>
+                <h2 className=' font-medium text-2xl text-slate-900'>{feature?.title}</h2>
             </Link>
 
             {/* Description: Displays The Feature Description */}
-            <p className='font-roboto text-base font-normal text-gray-700'>{feature?.excerpt}</p>
+            <p className=' text-base font-normal text-gray-700'>{feature?.excerpt}</p>
         </div>
     </div>
 );

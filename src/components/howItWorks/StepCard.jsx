@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom';
  * @param {string} colSpan - A class to define the column span for the card in a grid (e.g., "lg:col-span-2").
  */
 const StepCard = ({ work,colSpan }) => {
-    const { id,image, title, description } = work;
+    const { id,image, title, excerpt } = work;
 
     return (
         <div className={`bg-white border border-purple-100 rounded-xl ${colSpan}`}>
@@ -27,11 +27,11 @@ const StepCard = ({ work,colSpan }) => {
             <div className="space-y-2 px-6 md:px-10 my-6">
                 {/* Title */}
                 <Link to={`how-it-work/${id}`}>
-                    <h2 className="font-geist font-medium text-2xl text-slate-900">{title}</h2>
+                    <h2 className=" font-medium text-2xl text-slate-900">{title}</h2>
                 </Link>
 
                 {/* Description */}
-                <p className="font-inter text-base text-gray-700">{description}</p>
+                <p className="font-inter text-base text-gray-700">{excerpt}</p>
             </div>
         </div>
     );
@@ -41,7 +41,7 @@ const StepCard = ({ work,colSpan }) => {
 StepCard.propTypes = {
     imagesrc: PropTypes.string.isRequired, // The image source URL (string)
     title: PropTypes.string.isRequired, // The title of the card (string)
-    description: PropTypes.string.isRequired, // The description content (string)
+    excerpt: PropTypes.string.isRequired, // The description content (string)
     colSpan: PropTypes.string, // Optional: CSS class for grid column span
 };
 

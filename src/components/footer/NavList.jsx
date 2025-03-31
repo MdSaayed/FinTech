@@ -10,7 +10,7 @@ const NavList = ({ navItems }) => {
         <ul className="space-y-2 text-sm">
             {navItems.map((item, index) => (
                 <li key={index}>
-                    <Link to={item.to} className="hover:underline font-geist text-base text-gray-700">
+                    <Link to={item.to} className="hover:underline  text-base text-gray-700">
                         {item.name}
                     </Link>
                 </li>

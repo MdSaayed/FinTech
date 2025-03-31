@@ -28,16 +28,16 @@ const Card = ({ plan, packageType }) => {
             <div className="px-8 pb-0">
                 <span 
                     className={`${featuredCard ? 'text-white':'text-purple-600'} 
-                    text-purple-600 group-hover:text-white font-geist font-normal text-base leading-snug`} 
+                    text-purple-600 group-hover:text-white  font-normal text-base leading-snug`} 
                     id={`${name}-card`}>
                     {name}
                 </span>
-                <p className="text-3xl font-geist font-medium py-2">{selectedPackage?.price}</p>
+                <p className="text-3xl  font-medium py-2">{selectedPackage?.price}</p>
                 <p>{description}</p>
 
                 <Link
                     to={`/pricing/${id}`} 
-                    className={`block mt-11 w-full py-2 md:py-3 rounded-3xl font-geist font-normal text-gray-700 
+                    className={`block mt-11 w-full py-2 md:py-3 rounded-3xl  font-normal text-gray-700 
                     transition-all duration-300 ${featuredCard ? 'bg-purple-600 text-white hover:bg-white hover:text-gray-700' : 'bg-gray-100'} 
                     group-hover:bg-purple-600 group-hover:text-white text-center`}
                     aria-label={`Free 14 Day Trial for ${name}`}
@@ -48,7 +48,7 @@ const Card = ({ plan, packageType }) => {
 
             {/* Features List */}
             <ul 
-                className={`font-geist font-normal text-base mt-5 px-8 pt-8 space-y-4 border-t group-hover:border-gray-600 
+                className={` font-normal text-base mt-5 px-8 pt-8 space-y-4 border-t group-hover:border-gray-600 
                 ${featuredCard ? 'border-gray-600' : 'border-gray-200'}`} 
                 aria-labelledby={`${name}-features`}
             >

@@ -5,7 +5,7 @@ import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 // FaqItem Component For Rendering Each Item
 const FaqItem = ({ question, answer, index, openIndex, toggleFAQ }) => (
     <div
-        className={`faq-item px-4 py-5 rounded-md ${openIndex === index ? 'bg-softWhite' : ''}`}
+        className={`faq-item px-4 py-3 rounded-md ${openIndex === index ? 'bg-softWhite' : ''}`}
     >
         <button
             onClick={() => toggleFAQ(index)}

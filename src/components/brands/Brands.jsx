@@ -24,7 +24,7 @@ const Brands = () => {
         <section>
             <div className="container">
                 {/* Flexbox layout to align the section content */}
-                <div className="flex flex-wrap justify-center md:justify-between gap-x-4 gap-y-8">
+                <div className="flex flex-col justify-center items-center xl:flex-row xl:justify-between gap-x-10 gap-y-8">
                     
                     {/* Section Heading: Describe the trust factor */}
                     <div>
@@ -34,7 +34,7 @@ const Brands = () => {
                     </div>
 
                     {/* Brand Logos: Display logos in a responsive grid layout */}
-                    <div className='flex flex-wrap items-center justify-center md:justify-start lg:justify-between gap-x-6 md:gap-x-16 gap-y-6'>
+                    <div className='flex flex-wrap items-center justify-center lg:justify-between gap-x-6 md:gap-x-16 gap-y-6'>
                         {/* Dynamically render logos by mapping over the logos array */}
                         {logos.map((logo, index) => (
                             <LogoCard key={index} logo={logo} />

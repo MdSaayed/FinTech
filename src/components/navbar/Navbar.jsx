@@ -30,6 +30,7 @@ const Navbar = () => {
       dropdown: [
         { id: 1, text: 'Home', link: '/' },
         { id: 2, text: 'Features', link: '/features' },
+        { id: 2, text: 'Features Single', link: '/features/1' },
         { id: 3, text: 'About', link: '/about' },
         { id: 4, text: 'Blog', link: '/blog' },
         { id: 5, text: 'Blog Single', link: '/blog/1' },

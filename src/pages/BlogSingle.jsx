@@ -1,6 +1,6 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
-import { Cta, BlogFeatured, Title, ErrorMessage } from "../components";
+import { Cta, BlogFeatured, Title, ErrorMessage, Faq } from "../components";
 import blogDateFormat from "../components/blog/blogDateFormat"; 
 
 /** BlogSingle Component Displays A Detailed View Of A Single Blog Post. */
@@ -24,7 +24,7 @@ const BlogSingle = () => {
               
               {(details_image || image) && ( // Post Thumbnail, Checks If Image Exists
                 <div className="py-12">
-                  <img className="mx-auto" src={details_image || image} alt={title} loading="lazy" />
+                  <img className="mx-auto rounded-3xl" src={details_image || image} alt={title} loading="lazy" />
                 </div>
               )}
 
@@ -38,7 +38,10 @@ const BlogSingle = () => {
         </div>
       </section>
 
-      {/* Featured Blog Section */}
+      {/* Faq */}
+      <Faq/>
+
+      {/* Featured Blog */}
       <BlogFeatured />
 
       {/* Cta */}

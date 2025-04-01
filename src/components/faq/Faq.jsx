@@ -61,7 +61,7 @@ const Faq = () => {
 
                     {/* Faq List Grid */}
                     <div className="mt-12 max-w-4xl mx-auto">
-                        <div className="faqs md:space-y-3 lg:space-y-6">
+                        <div className="faqs space-y-1">
                             {faqs?.map((faq, index) => {
                                 const { question, answer } = faq;
                                 return (

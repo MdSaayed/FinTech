@@ -25,8 +25,8 @@ const TermsOfServices = () => {
                     </p>
 
                     {/* Terms Sections Using Reusable Component */}
-                    <TermsSection title="1. Acceptance of Terms" content="By accessing or using Bazpay website, services, or products, you agree to be bound by these Terms of Service. If you do not agree, please do not use our Services." />
-                    <TermsSection title="2. Description of Services" content="Bazpay is a digital agency providing web design, development, marketing, and related digital services. The specific services we offer may change over time." />
+                    <TermsSection title="1. Acceptance of Terms" content="By accessing or using UIAppX website, services, or products, you agree to be bound by these Terms of Service. If you do not agree, please do not use our Services." />
+                    <TermsSection title="2. Description of Services" content="UIAppX is a digital agency providing web design, development, marketing, and related digital services. The specific services we offer may change over time." />
                     <TermsSection title="3. User Responsibilities" content="You agree to use our Services only for lawful purposes and in accordance with these Terms. You shall not:" />
 
                     {/* List Of User Responsibilities */}
@@ -35,12 +35,12 @@ const TermsOfServices = () => {
                             "Use the Services in any way that violates applicable laws or regulations.",
                             "Attempt to gain unauthorized access to any part of the Services.",
                             "Interfere with or disrupt the integrity or performance of the Services.",
-                            "Reproduce, duplicate, copy, sell, resell, or exploit any portion of the Services without express written permission from Bazpay."
+                            "Reproduce, duplicate, copy, sell, resell, or exploit any portion of the Services without express written permission from UIAppX."
                         ]}
                     />
 
                     {/* More Terms Sections */}
-                    <TermsSection title="4. Intellectual Property" content="All content, features, and functionality of our Services are owned by Bazpay or its licensors and are protected by copyright, trademark, and other intellectual property laws." />
+                    <TermsSection title="4. Intellectual Property" content="All content, features, and functionality of our Services are owned by UIAppX or its licensors and are protected by copyright, trademark, and other intellectual property laws." />
                     <TermsSection title="5. Payment and Billing" content="For paid Services, you agree to pay all fees associated with the Services you select. All fees are non-refundable unless otherwise specified." />
                     <TermsSection title="6. Termination" content="We reserve the right to terminate or suspend your access to our Services at our sole discretion, without notice, for conduct that we believe violates these Terms." />
                     <TermsSection title="7. Governing Law" content="These Terms shall be governed by and construed in accordance with the laws of [insert applicable jurisdiction], without regard to its conflict of law provisions." />

@@ -20,7 +20,7 @@ const HowItWorkSingle = () => {
                 {/* How it works */}
                 <div className="mt-6">
                     {/* Image */}
-                    <img className="mx-auto" src={features?.detail_image || features?.image} alt="" />
+                    <img className="mx-auto rounded-3xl" src={features?.detail_image || features?.image} alt="" />
 
                     {/* Description */}
                     <p className="text-gray-600 max-w-3xl mx-auto font-normal text-base font-inter mt-10">{features?.description}</p>

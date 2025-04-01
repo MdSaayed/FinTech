@@ -7,13 +7,15 @@ const FooterNav = () => {
         { name: 'Home', to: '/' },
         { name: 'Feature', to: '/features' },
         { name: 'About', to: '/about' },
-        { name: 'Blog', to: '/blog' }
+        { name: 'Blog', to: '/blog' },
+        { name: 'Pricing', to: '/pricing' }
     ];
 
     const colTwo = [
         { name: 'Blog Single', to: '/blog/1' },
-        { name: 'Pricing', to: '/pricing' },
-        { name: 'Pricing Single', to: '/pricing/1' }
+        { name: 'Pricing Single', to: '/pricing/1' },
+        { name: 'Feature Single', to: '/features/1' },
+        { name: 'Team Single', to: '/team/1' }
     ];
 
     const colThree = [

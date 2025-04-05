@@ -37,7 +37,7 @@ const Features = () => {
 
                 {/* Title */}
                 <Title className="max-w-2xl text-center">
-                    Everything comes together in just <span>4 easy steps!</span>
+                    Everything comes together in just <span> 4 easy steps!</span>
                 </Title>
 
                 {/* Description */}
@@ -63,7 +63,7 @@ const Features = () => {
                     })}
 
                     </div>
-                    <div className="flex items-center justify-center mt-16 gap-6">
+                    <div className="flex flex-wrap items-center justify-center mt-16 gap-6">
                         <Button variant="secondary" text="Browse all features" to='/features' />
                         <Button variant="primary" text="Get started for free" to='/pricing' />
                     </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Cta, Faq, Stats, FeaturesHero, FeaturesSection } from "../components";
+import {Cta, Faq, Stats, FeaturesHero, FeaturesSection, AdditionalFeatures } from "../components";
 
 const Features = () => {
     return (
@@ -12,6 +12,9 @@ const Features = () => {
 
             {/* Features Section */}
             <FeaturesSection />
+
+            {/* Additional features */}
+            <AdditionalFeatures />
 
             {/* Faq Section */}
             <Faq />

@@ -1,6 +1,7 @@
 // Export All Components
 
 export { default as Advantage } from './advantage/Advantage';
+export { default as AdditionalFeatures } from './additionalFeatures/AdditionalFeatures';
 export { default as AnimatedCursor } from './animatedCursor/AnimatedCursor';
 export { default as TabItem } from './advantage/TabItem';
 export { default as BlogFeatured } from './blog/BlogFeatured';

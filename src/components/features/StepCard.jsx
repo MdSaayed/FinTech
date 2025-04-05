@@ -13,8 +13,8 @@ import { Link } from 'react-router-dom';
  * @param {string} description - The description or content of the card.
  * @param {string} colSpan - A class to define the column span for the card in a grid (e.g., "lg:col-span-2").
  */
-const StepCard = ({ work,colSpan }) => {
-    const { id,image, title, excerpt } = work;
+const StepCard = ({ feature,colSpan }) => {
+    const { id,image, title, excerpt } = feature;
 
     return (
         <div className={`bg-white border border-purple-100 rounded-xl ${colSpan}`}>

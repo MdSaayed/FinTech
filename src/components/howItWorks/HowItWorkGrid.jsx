@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Title, Description, Subtitle, FeatureCard } from "../../components";
+import { Title, Description, Subtitle, HowItWorkCard } from "..";
 import { useLoading } from "../../context/LoadingContext";
-import { featureLoader } from "../../routes/Loader";
+import { howItWorkLoader } from "../../routes/Loader";
 
-const FeatureGrid = () => {
-  const [features, setFeatures] = useState([]); // Corrected state setter
+const HowItWorkGrid = () => {
+  const [works, setWorks] = useState([]); // Corrected state setter
   const [error, setError] = useState(""); // State for error handling
   const { startLoading, stopLoading } = useLoading(); // Loading context
 
@@ -13,16 +13,16 @@ const FeatureGrid = () => {
       startLoading(); 
 
       try {
-        const data = await featureLoader(); // Fetch data
+        const data = await howItWorkLoader(); // Fetch data
 
         if (!data || data.length === 0) {
-          throw new Error("No feature available.");
+          throw new Error("No data available.");
         }
 
-        setFeatures(data);
+        setWorks(data);
         setError("");
       } catch (error) {
-        setError("Failed to load features. Please try again later.");
+        setError("Failed to load data. Please try again later.");
       } finally {
         stopLoading();
       }
@@ -36,7 +36,7 @@ const FeatureGrid = () => {
   return (
     <section>
       <div className="container">
-        <Subtitle text="Our Best Features" align="justify-center" className="bg-white" />
+        <Subtitle text="How it Works" align="justify-center" className="bg-white" />
         <Title className="max-w-[664px] text-center">
           Unlock the <span>full potential of</span> your organization's data!
         </Title>
@@ -46,9 +46,9 @@ const FeatureGrid = () => {
           className="max-w-lg"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 lg:gap-16 mt-20">
-          {features?.map((feature, index) => (
-            <FeatureCard key={index} feature={feature} />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8 mt-20">
+          {works?.map((work, index) => (
+            <HowItWorkCard key={index} work={work} />
           ))}
         </div>
       </div>
@@ -56,4 +56,4 @@ const FeatureGrid = () => {
   );
 };
 
-export default FeatureGrid;
+export default HowItWorkGrid;

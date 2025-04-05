@@ -14,7 +14,7 @@ const HomeHero = () => {
 
                         {/* Title */}
                         <div className="mb-6">
-                            <Title size='text-[2.5rem] lg:text-7xl' align='justify-center md:justify-start' className='max-w-xl text-center md:text-left'> Your go-to app for mastering your <span> Finances</span> </Title>
+                            <Title size='text-[2.5rem] lg:text-7xl' align='justify-center md:justify-start' className='max-w-xl text-center md:text-left'> Your go-to app for mastering your <span> finances</span> </Title>
                         </div>
                         
                         {/* Description */}
@@ -22,8 +22,7 @@ const HomeHero = () => {
 
                         {/* Buttons */}
                         <div className="flex gap-6 justify-center md:justify-start flex-col md:flex-row flex-wrap mt-12">
-                            <Button text="Get Started for Free" to='' icon={false} />
-                            <Button text="Get Started for Free" to='' icon={true} iconComponent={<FaApple />} variant="secondary" />
+                            <Button variant="secondary" text="Get Started for Free" to='' icon={false} />
                         </div>
                     </div>
                     <div>

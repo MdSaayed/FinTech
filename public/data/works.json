@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "icon": "/assets/icons/signup.svg",
+    "title": "Sign Up and Set Up",
+    "description": "Create your account and set up your dashboard in minutes"
+  },
+  {
+    "id": 2,
+    "icon": "/assets/icons/connect-and-manage.svg",
+    "title": "Connect and Manage",
+    "description": "Import contacts, integrate tools, and manage everything in one place."
+  },
+  {
+    "id": 3,
+    "icon": "/assets/icons/analyze-and-optimize.svg",
+    "title": "Analyze and Optimize",
+    "description": "Use analytics and automation to refine workflows and drive growth."
+  },
+  {
+    "id": 4,
+    "icon": "/assets/icons/support-24.svg",
+    "title": "24/7 Support",
+    "description": "Import contacts, integrate tools, and manage everything in one place."
+  }
+]

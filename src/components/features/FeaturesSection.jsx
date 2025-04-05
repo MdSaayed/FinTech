@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Title, Description, Subtitle, StepCard, ErrorMessage } from '../../components';
-import { howWorkLoader } from '../../routes/Loader';
+import { Title, Description, Subtitle, StepCard, ErrorMessage, Button } from '..';
 import { useLoading } from '../../context/LoadingContext';
+import { featuresLoader } from '../../routes/Loader';
 
-const HowItWorks = () => {
-    const [works, setWorks] = useState([]); // State to hold data
+const Features = () => {
+    const [features, setFeatures] = useState([]); // State to hold data
     const [error, setError] = useState(''); // State to handle errors
     const { startLoading, stopLoading } = useLoading(); // Loading context
 
@@ -13,12 +13,12 @@ const HowItWorks = () => {
         const fetchWork = async () => {
             startLoading(); // Start loading state
             try {
-                const data = await howWorkLoader(); // Fetch "How It Works" data
+                const data = await featuresLoader(); // Fetch features data
                 if (!data || data.length === 0) throw new Error("No data available."); // Handle empty response
-                setWorks(data); // Store data in state
+                setFeatures(data); // Store data in state
                 setError(""); // Clear previous errors
             } catch (error) {
-                setError("Failed to load how it works. Please try again later."); // User-friendly error message
+                setError("Failed to load how it features. Please try again later."); // User-friendly error message
             } finally {
                 stopLoading(); // Ensure loading stops
             }
@@ -33,11 +33,11 @@ const HowItWorks = () => {
         <section>
             <div className="container">
                 {/* Subtitle */}
-                <Subtitle text="How It Works" align="justify-center" className="bg-white" />
+                <Subtitle text="Our features" align="justify-center" className="bg-white" />
 
                 {/* Title */}
-                <Title className="max-w-[498px] text-center">
-                    See how it all fits in <span>4 easy steps!</span>
+                <Title className="max-w-2xl text-center">
+                    Everything comes together in just <span>4 easy steps!</span>
                 </Title>
 
                 {/* Description */}
@@ -49,7 +49,7 @@ const HowItWorks = () => {
 
                 {/* Grid - Dynamically Render StepCards */}
                 <div className="grid grid-cols-1 sm:grid-cols-12 md:grid-cols-12 gap-6 mt-20">
-                    {works?.map((work, index) => {
+                    {features?.map((feature, index) => {
                         {/* Card Size Shown By Conditionally */}
                         const colSpan = `
                             ${index === 0 ? 'sm:col-span-12 md:col-span-6 lg:col-span-5' : ''}
@@ -58,13 +58,18 @@ const HowItWorks = () => {
                         `;
 
                         return (
-                            <StepCard key={work.id || index} colSpan={colSpan} work={work} />
+                            <StepCard key={feature.id || index} colSpan={colSpan} feature={feature} />
                         );
                     })}
-                </div>
+
+                    </div>
+                    <div className="flex items-center justify-center mt-16 gap-6">
+                        <Button variant="secondary" text="Browse all features" to='/features' />
+                        <Button variant="primary" text="Get started for free" to='/pricing' />
+                    </div>
             </div>
         </section>
     );
 };
 
-export default HowItWorks;
+export default Features;

@@ -2,14 +2,14 @@ import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import LazyLoad from "../components/lazyLoad/LazyLoad";
 import MainLayout from "../layouts/MainLayout";
-import { howItWorkLoader, singleFeatureLoader, singlePostLoader, singlePricingLoader, singleTeamMemberLoader } from "./Loader";
+import {singleFeatureLoader, singlePostLoader, singlePricingLoader, singleTeamMemberLoader } from "./Loader";
 import NotFound from './../pages/NotFound'; 
 import FeatureSingle from "../pages/FeatureSingle";
 import HowItWorkSingle from "../pages/HowItWorkSingle";
 import TeamSingle from "../pages/TeamSingle";
 
 // ✅ Lazy load all pages, including NotFound, licenses, PrivacyPolicy, etc.
-const Index = lazy(() => import("../pages/Index"));
+const Home = lazy(() => import("../pages/Home"));
 const About = lazy(() => import("../pages/About"));
 const Features = lazy(() => import("../pages/Features"));
 const Blog = lazy(() => import("../pages/Blog"));
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <MainLayout />,
     children: [
-      { path: "", element: <LazyLoad component={Index} /> },
+      { path: "", element: <LazyLoad component={Home} /> },
       { path: "about", element: <LazyLoad component={About} /> },
       { path: "features", element: <LazyLoad component={Features} />},
       { path: "features/:id", element: <LazyLoad component={FeatureSingle} /> ,loader: singleFeatureLoader},
@@ -36,7 +36,6 @@ const router = createBrowserRouter([
       { path: "blog/:id", element: <LazyLoad component={BlogSingle} />, loader: singlePostLoader },
       { path: "pricing", element: <LazyLoad component={Pricing} /> },
       { path: "pricing/:id", element: <LazyLoad component={PricingSingle} />, loader: singlePricingLoader },
-      { path: "how-it-work/:id", element: <LazyLoad component={HowItWorkSingle} />, loader: howItWorkLoader },
       { path: "team/:id", element: <LazyLoad component={TeamSingle} />, loader: singleTeamMemberLoader },
       { path: "contact", element: <LazyLoad component={Contact} /> },
       { path: "licenses", element: <LazyLoad component={Licenses} /> },  

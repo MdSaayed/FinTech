@@ -18,7 +18,7 @@ const Title = ({
             child
           ) : (
             React.cloneElement(child, {
-              className: `${child.props.className || ""} text-purple-600 italic inline-block`,
+              className: `${child.props.className || ""} text-purple-500 font-playfair  italic inline-block`,
             })
           )
         )}

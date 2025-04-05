@@ -37,6 +37,7 @@ const Navbar = () => {
         { id: 6, text: 'Pricing', link: '/pricing' },
         { id: 7, text: 'Pricing Single', link: '/pricing/1' },
         { id: 8, text: 'Contact', link: '/contact' },
+        { id: 8, text: 'Team Single', link: '/team/1' },
         { id: 9, text: 'Success', link: '/success' },
         { id: 10, text: 'Licenses', link: '/licenses' },
         { id: 11, text: 'Privacy & Policy', link: '/privacy-policy' },

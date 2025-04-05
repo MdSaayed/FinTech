@@ -71,8 +71,7 @@ const FeaturesHero = () => {
 
           {/* Buttons Section */}
           <div className="flex justify-center flex-col md:flex-row gap-6 mt-12 z-30">
-            <Button text="Get Started for Free" to="/pricing" icon={false} iconComponent={<FaApple />} />
-            <Button text="Download in iOS" to="https://apps.apple.com"  icon={true} iconComponent={<FaApple />} variant="secondary" />
+            <Button text="Get Started for Free" to="/pricing"  icon={false} variant="secondary" />
           </div>
 
           {/* Animated Cursors */}

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types'; // Import PropTypes for prop validation
 import { blogLoader } from '../../routes/Loader.js'; // Import the loader to fetch blog data
 import { useLoading } from "../../context/LoadingContext"; // Import Loading Context To Manage Loading State
-import { BlogHighlight, Description, ErrorMessage, Loading, Subtitle, Title  } from '../index.js';
+import { BlogHighlight, Button, Description, ErrorMessage, Loading, Subtitle, Title  } from '../index.js';
 
 
 const BlogFeatured = ({ postLimit = 3 }) => {
@@ -41,16 +41,21 @@ const BlogFeatured = ({ postLimit = 3 }) => {
     return (
         <section>
             <div className="container">
-                {/* Subtitle for the section */}
-                <Subtitle text="Blog" align={'justify-center'} className={'bg-white'} />
+                <div className='flex flex-col gap-6 md:flex-row justify-between items-center md:items-end'>
+                    <div>
+                        {/* Subtitle for the section */}
+                        <Subtitle text="Blog" align={'justify-center md:justify-start'} className={'bg-white'} />
 
-                {/* Title for the section */}
-                <Title className="max-w-[740px] text-center">
-                    Unlock the <span>full potential of</span> your organization's data!
-                </Title>
+                        {/* Title for the section */}
+                        <Title className="max-w-[740px] text-center md:text-left">
+                            Latest news & <span>articles</span> 
+                        </Title>
+                    </div>
 
-                {/* Description for the section */}
-                <Description text="The tools and tricks that today’s teams need to help their companies thrive." className="max-w-[480px]" />
+                    <div className=''>
+                        <Button variant="secondary" text="Browse all articles" to='/blog' icon={false} />
+                    </div>
+                </div>
 
                 {/* Blog Grid Layout */}
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mt-20">

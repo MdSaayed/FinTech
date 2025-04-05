@@ -1,7 +1,8 @@
 import React from 'react';
-import { Advantage, Testimonials, Faq, BlogFeatured, PricingGrid, Cta, HowItWorks, Brands, HomeHero,FeatureGrid } from '../components';
+import { Advantage, Testimonials, Faq, BlogFeatured, PricingGrid, Cta, Brands, HomeHero, FeaturesSection } from '../components';
+import HowItWorkGrid from '../components/howItWorks/HowItWorkGrid';
 
-const Index = () => {
+const Home = () => {
     return (
        <>
          {/* Hero */}
@@ -10,11 +11,11 @@ const Index = () => {
          {/* Stats */}
          <Brands />
 
-         {/* Features */}
-         <FeatureGrid />
-
          {/* How It Works */}
-         <HowItWorks />
+         <HowItWorkGrid />
+
+         {/* Features */}
+         <FeaturesSection />
 
          {/* Advantage */}
          <Advantage />
@@ -29,7 +30,7 @@ const Index = () => {
          <PricingGrid />
          
          {/* Blogs */}
-         <BlogFeatured />
+         <BlogFeatured /> 
 
          {/* Cta */}
          <Cta />
@@ -38,4 +39,4 @@ const Index = () => {
     );
 };
 
-export default Index;
+export default Home;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Advantage, Testimonials, Faq, BlogFeatured, PricingGrid, Cta, Brands, HomeHero, FeaturesSection } from '../components';
 import HowItWorkGrid from '../components/howItWorks/HowItWorkGrid';
+import Integrations from '../integrations/Integrations';
 
 const Home = () => {
     return (
@@ -25,6 +26,9 @@ const Home = () => {
 
          {/* Faq */}
          <Faq />
+
+         {/* Integrations */}
+         <Integrations />
 
          {/* Pricing */}
          <PricingGrid />

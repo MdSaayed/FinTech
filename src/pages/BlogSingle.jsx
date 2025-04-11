@@ -9,7 +9,7 @@ const BlogSingle = () => {
 
   if(!blog) return <ErrorMessage error="Oops! Blog Post Not Found." />
 
-  const { title, image, date, content, details_image, author } = blog; // Destructure Blog Data
+  const { title, image, date, details_image, author } = blog; // Destructure Blog Data
 
   return (
     <>

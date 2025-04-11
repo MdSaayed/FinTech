@@ -19,15 +19,15 @@ const StepCard = ({ feature,colSpan }) => {
     return (
         <div className={`bg-white border border-purple-100 rounded-xl ${colSpan}`}>
             {/* Image */}
-            <Link to={`/how-it-work/${id}`}>
+            <Link to={`/features/${id}`}>
                 <img src={image} alt={title} className="max-h-64 mx-auto" />
             </Link>
 
             {/* Content */}
             <div className="space-y-2 px-6 md:px-10 my-6">
                 {/* Title */}
-                <Link to={`how-it-work/${id}`}>
-                    <h2 className=" font-medium text-2xl text-slate-900">{title}</h2>
+                <Link to={`features/${id}`}>
+                    <h2 className=" font-medium text-2xl text-slate-900">{title}</h2> 
                 </Link>
 
                 {/* Description */}

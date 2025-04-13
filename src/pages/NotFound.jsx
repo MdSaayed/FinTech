@@ -22,8 +22,8 @@ const NotFound = () => {
 
                     {/* Back to Homepage Button: Redirects the user to the homepage */}
                     <Button 
-                        className="bg-purple-600 hover:bg-transparent border hover:border-purple-600 hover:text-purple-600 transition-all duration-300 mt-8" 
-                        text="Back To Homepage"
+                        className="hover:bg-purple-600 border hover:border-purple-600 hover:text-purple-600 transition-all duration-300 mt-8" 
+                        text="Back to Homepage"
                         to="/"
                     />
                 </div>

@@ -46,13 +46,11 @@ const Stats = () => {
     <section ref={sectionRef}>
       <div className="container padding-y-12">
         {/* Stats Grid: Layout with responsive columns and borders */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 border-t border-b border-gray-300 divide-y sm:divide-y-0 sm:[&>:not(:nth-child(2n+1))]:border-l sm:[&>:not(:nth-child(2n+1))]:border-gray-300 sm:[&>:nth-child(n+3)]:border-t sm:[&>:nth-child(n+3)]:border-gray-300 md:divide-x md:divide-gray-300">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 ">
           {statsData?.map((stat, index) => (
             <div
               key={index}
-              className={`flex flex-col items-center text-center py-8 px-6 
-                ${index % 4 === 0 ? "md:border-l-0" : ""}
-              `}
+              className={`flex flex-col items-center text-center py-8 px-6`}
             >
               {/* Animated counter: Show animated numbers when section is in view */}
               <h2 className="text-4xl  font-semibold text-slate-900">

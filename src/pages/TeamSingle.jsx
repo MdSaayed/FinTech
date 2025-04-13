@@ -11,11 +11,11 @@ const TeamSingle = () => {
             {/* Team Content */}
             <section>
                 <div className="container">
-                    <div className="grid grid-cols-1 lg:grid-cols-3 bg-white rounded-2xl lg:gap-x-10 gap-y-20 p-8">
+                    <div className="flex flex-col lg:flex-row bg-white rounded-2xl lg:gap-x-20 gap-y-20 p-8">
                         {/* Image Section (Order First on Mobile, Second on Large Screens) */}
-                        <div className="flex justify-center lg:justify-end order-1 lg:order-2">
+                        <div className="flex justify-center lg:justify-end order-1 lg:order-2 w-full md:w-fit mx-auto">
                             <div className='relative'>
-                                <img className='w-full h-full object-cover rounded-xl' src={member?.image} alt={member.name} />
+                                <img className='w-full md:min-w-96 h-full object-cover rounded-xl' src={member?.image} alt={member.name} />
                                 <div className="absolute top-2 right-2 rounded-full cursor-pointer transition duration-300 hover:text-white hover:bg-purple-600 bg-white p-2">
                                     <Link to={member?.linkedin}>
                                         <CiLinkedin className='text-xl' />

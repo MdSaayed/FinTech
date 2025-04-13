@@ -38,7 +38,7 @@ const BlogHighlight = ({ blog }) => {
                 {/* Blog Excerpt */}
                 {
                     excerpt && (
-                        <p className='mt-4 mb-6'>{excerpt}</p> /* Excerpt of the blog post */
+                        <p className='mt-4 mb-6  text-base'>{excerpt}</p> 
                     )
                 }
 

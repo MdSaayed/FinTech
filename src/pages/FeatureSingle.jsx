@@ -20,17 +20,19 @@ const FeatureSingle = () => {
                         <Title className="text-center">{title}</Title>
 
                         {/* Feature Content */}
-                        <div className="space-y-10 mt-10">
+                        <div className="space-y-10 mt-10 max-w-3xl mx-auto">
                             {/* Feature Image */}
-                            <img
-                                className="mx-auto rounded-3xl"
-                                src={features?.detail_image || features?.image}
-                                alt={title || "Feature Image"}
-                            />
+                            <div className="bg-[#F3F4F6] p-10 rounded-3xl">
+                                <img
+                                    className="mx-auto rounded-3xl"
+                                    src={features?.detail_image || features?.image}
+                                    alt={title || "Feature Image"}
+                                />
+                            </div>
 
                             
                             {/*  Content  */}
-                            <div className="space-y-10 text-left max-w-3xl mx-auto"> 
+                            <div className="space-y-10 text-left mx-auto"> 
                                 <div className="space-y-5">
                                     <h3 className="text-2xl font-medium text-slate-900">Understand Your Spending Habits</h3>
                                     <p className="max-w-3xl text-left text-gray-600 font-inter text-lg">

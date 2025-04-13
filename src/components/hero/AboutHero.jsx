@@ -9,7 +9,7 @@ const AboutHero = () => {
                     <Subtitle text='About' align='justify-center' className='bg-customPurple' />
 
                     {/* Title */}
-                    <Title className='max-w-2xl text-center'>Hey there! Let’s chat <span> about UIAppX.</span></Title>
+                    <Title className='max-w-xs lg:max-w-2xl text-center'>Hey there! Let’s chat <span> about UIAppX.</span></Title>
 
                     {/* Description */}
                     <Description text='We provide cool tools and friendly support to help people and businesses reach their money goals and succeed in the long run.' className='max-w-[600px]' />

@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Title, Description, Subtitle, StepCard, ErrorMessage, Button } from '..';
 import { useLoading } from '../../context/LoadingContext';
 import { featuresLoader } from '../../routes/Loader';
+import PropTypes from 'prop-types';
 
-const Features = () => {
+const Features = (pageName='home') => {
     const [features, setFeatures] = useState([]); // State to hold data
     const [error, setError] = useState(''); // State to handle errors
     const { startLoading, stopLoading } = useLoading(); // Loading context
@@ -65,13 +66,22 @@ const Features = () => {
                     </div>
 
                     {/* Buttons */}
-                    <div className="flex gap-6 justify-center flex-col md:flex-row flex-wrap mt-16">
-                        <Button variant="secondary" text="Browse all features" to='/features' />
-                        <Button variant="primary" text="Get started for free" to='/pricing' />
-                    </div>
+                    {
+                        pageName == 'home' && (
+                            <div className="flex gap-6 justify-center flex-col md:flex-row flex-wrap mt-16">
+                                <Button variant="secondary" text="Browse all features" to='/features' />
+                                <Button variant="primary" text="Get started for free" to='/pricing' />
+                            </div>
+                        )
+                    }
             </div>
         </section> 
     );
+};
+
+// Prop types validation
+Features.propTypes = {
+    pageName: PropTypes.string.isRequired, 
 };
 
 export default Features;

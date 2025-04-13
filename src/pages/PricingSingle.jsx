@@ -49,16 +49,19 @@ const PricingSingle = () => {
             <div className="flex flex-col lg:flex-row justify-between gap-y-12 gap-x-8">
               {/* Plan Details */}
               <div>
-                <h1 className="text-gray-900 text-left text-3xl  font-bold">
+                <h1 className="text-gray-900 text-left text-4xl lg:text-7xl  font-medium">
                   {pricingData?.name}
                 </h1>
-                <div className="mt-8">
+
+                <p  className="mt-4 text-gray-500 text-lg">Eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                <div className="mt-4">
                     <TermsList items={featuresList} className="text-xl space-y-3" />
                 </div>
               </div>
 
               {/* Pricing Box */}
-              <div className="order-first lg:-order-none max-w-md">
+              <div className="order-first lg:-order-none lg:min-w-[350px] max-w-md">
                 <div className="md:min-w-72 bg-gray-50 rounded-lg p-8 border border-gray-100 shadow">
                   <span className="text-lg text-gray-800  font-normal">
                     Get Your Plan Today
@@ -90,7 +93,7 @@ const PricingSingle = () => {
 
                   {/* Buy Now Button */}
                   <button
-                    className="bg-purple-600 text-white border px-4 py-[6px] rounded-[32px] w-full text-center block text-primary hover:text-primary transition-all duration-300 ease-in-out"
+                    className="bg-slate-900 hover:bg-purple-600 text-white border px-4 py-[6px] rounded-[32px] w-full text-center block text-primary hover:text-primary transition-all duration-300 ease-in-out"
                     onClick={() => setShowPayment(true)}
                   >
                     Buy Now
@@ -100,9 +103,11 @@ const PricingSingle = () => {
             </div>
 
             {/* Inclusive Plans Description */}
-            <div className="mt-20">
-              <h3 className="text-gray-600 text-3xl font-semibold mb-4">Inclusive Plans</h3>
-              <p className="text-base font-normal text-gray-700">{pricingData?.inclusivePlans}</p>
+            <div className="mt-20 space-y-4 max-w-3xl">
+              <h3 className="text-gray-600 text-3xl font-semibold">Inclusive Plans</h3>
+              <p className="text-base font-normal text-gray-700">Morbi sed imperdiet in ipsum, adipiscing elit dui lectus. Tellus id scelerisque est ultricies ultricies. Duis est sit sed leo nisl, blandit elit sagittis. Quisque tristique consequat quam sed. Nisl at scelerisque amet nulla purus habitasse.</p>
+              <p className="text-base font-normal text-gray-700">Nunc sed faucibus bibendum feugiat sed interdum. Ipsum egestas condimentum mi massa. In tincidunt pharetra consectetur sed duis facilisis metus. Etiam egestas in nec sed et. Quis lobortis at sit dictum eget nibh tortor commodo cursus.</p>
+              <p className="text-base font-normal text-gray-700">Odio felis sagittis, morbi feugiat tortor vitae feugiat fusce aliquet. Nam elementum urna nisi aliquet erat dolor enim. Ornare id morbi eget ipsum. Aliquam senectus neque ut id eget consectetur dictum. Donec posuere pharetra odio consequat scelerisque et, nunc tortor. Nulla adipiscing erat a erat. Condimentum lorem posuere gravida enim posuere cursus diam.</p>
             </div>
           </div>
         </div>

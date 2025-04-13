@@ -63,12 +63,14 @@ const Features = () => {
                     })}
 
                     </div>
-                    <div className="flex flex-wrap items-center justify-center mt-16 gap-6">
+
+                    {/* Buttons */}
+                    <div className="flex gap-6 justify-center flex-col md:flex-row flex-wrap mt-16">
                         <Button variant="secondary" text="Browse all features" to='/features' />
                         <Button variant="primary" text="Get started for free" to='/pricing' />
                     </div>
             </div>
-        </section>
+        </section> 
     );
 };
 

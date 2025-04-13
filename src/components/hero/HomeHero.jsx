@@ -3,7 +3,7 @@ import HeroImg from '/assets/images/hero/home-hero.png';
 import { FaApple } from "react-icons/fa";
 import { Title, Description, Button, Subtitle } from '../../components';
 
-const HomeHero = () => {
+const HomeHero = () => { 
     return (
         <section>
             <div className="container padding-y-0">

@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import DesktopMenu from './DesktopMenu';
-import MobileMenu from './MobileMenu'; 
+import MobileMenu from './MobileMenu';
 
 /**
  * Navbar Component
@@ -16,6 +16,9 @@ const Navbar = () => {
 
   // State To Manage Pages Dropdown Visibility
   const [isPagesDropdownOpen, setIsPagesDropdownOpen] = useState(false);
+
+  // State to manage scroll position
+  const [isScrolled, setIsScrolled] = useState(false);
 
   // Navigation Items
   const navItems = [
@@ -46,28 +49,46 @@ const Navbar = () => {
     },
   ];
 
-  return (
-    <nav className="w-full z-50">
-      <div className="container padding-y-0">
-      <div className="nav-container max-w-5xl mx-auto">
-        {/* Desktop Menu Component */}
-        <DesktopMenu 
-          navItems={navItems} 
-          setIsPagesDropdownOpen={setIsPagesDropdownOpen} 
-          isPagesDropdownOpen={isPagesDropdownOpen} 
-        />
+  // Effect to detect scroll and update state
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
 
-        {/* Mobile Menu Component */}
-        <MobileMenu 
-          navItems={navItems} 
-          isMobileMenuOpen={isMobileMenuOpen} 
-          setIsMobileMenuOpen={setIsMobileMenuOpen} 
-          setIsPagesDropdownOpen={setIsPagesDropdownOpen} 
-          isPagesDropdownOpen={isPagesDropdownOpen} 
-        />
-      </div>
-      </div>
-    </nav>
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <>
+      <nav className={`top-0 left-0 w-full z-50 transition-all duration-300 ${
+        isScrolled ? 'fixed bg-white/30 backdrop-blur-md' : 'relative'
+      }`}>
+        <div className="container padding-y-0">
+          <div className="nav-container max-w-5xl mx-auto">
+            {/* Desktop Menu Component */}
+            <DesktopMenu 
+              navItems={navItems} 
+              setIsPagesDropdownOpen={setIsPagesDropdownOpen} 
+              isPagesDropdownOpen={isPagesDropdownOpen} 
+            />
+
+            {/* Mobile Menu Component */}
+            <MobileMenu 
+              navItems={navItems} 
+              isMobileMenuOpen={isMobileMenuOpen} 
+              setIsMobileMenuOpen={setIsMobileMenuOpen} 
+              setIsPagesDropdownOpen={setIsPagesDropdownOpen} 
+              isPagesDropdownOpen={isPagesDropdownOpen} 
+            />
+          </div>
+        </div>
+      </nav>
+    </>
   );
 };
 

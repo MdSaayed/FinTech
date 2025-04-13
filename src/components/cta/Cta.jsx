@@ -17,14 +17,14 @@ const Cta = () => {
                     {/* Content Wrapper */}
                     <div className="relative z-10 text-center px-4">
                         {/* Title */}
-                        <Title className="max-w-[660px] text-white mx-auto">
+                        <Title className="max-w-sm lg:max-w-[660px] text-white mx-auto">
                             Simple and fun way to see our <span style={{color:'#CAEF7D'}}>growth progress!</span>
                         </Title>
                         
                         {/* Description */}
                         <Description 
                             text="Don't miss out on the excitement! Stay tuned for all the thrilling events we have lined up just for you!" 
-                            className="text-white max-w-[540px] mx-auto" 
+                            className="text-white max-w-sm lg:max-w-[540px] mx-auto" 
                         />
                         
                         {/* App Store and Google Play Buttons */}
